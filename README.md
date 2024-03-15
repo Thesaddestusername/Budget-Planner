@@ -9,7 +9,7 @@
 ---
 ### Problem Definition: outline the problem requirements and include the application domain and motivations of your project. 
 >  1. Problem Description
->     - Develop a web
+>     - Develop a web application for a personal budget tracker that tracks and organises income, expenses, and overall spending. The software prioritises user-friendliness, customizability, and privacy. 
 >  2. Requirements Elicitation
 >     - 2.1 User Roles
 >         - Parent
