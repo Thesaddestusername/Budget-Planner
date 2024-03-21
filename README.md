@@ -4,7 +4,7 @@
 ## Contributers
 - Hunter Bayliss   *baylissh@uregina.ca*
 - Levi Brown
-- Braden Breit     *bbb560@uregina.ca*
+- Braden Breit (Bradenzee)     *bbb560@uregina.ca*
 - Reanne Daviduk   *rcd714@uregina.ca*
 ---
 ### Problem Definition: outline the problem requirements and include the application domain and motivations of your project. 
