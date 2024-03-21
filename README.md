@@ -3,7 +3,7 @@
 ---
 ## Contributers
 - Hunter Bayliss   *baylissh@uregina.ca*
-- Levi Brown
+- Levi Brown (Lebbl)           *lsb360@uregina.ca*
 - Braden Breit (Bradenzee)     *bbb560@uregina.ca*
 - Reanne Daviduk   *rcd714@uregina.ca*
 ---
