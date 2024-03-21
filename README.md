@@ -5,7 +5,7 @@
 - Hunter Bayliss   *baylissh@uregina.ca*
 - Levi Brown (Lebbl)           *lsb360@uregina.ca*
 - Braden Breit (Bradenzee)     *bbb560@uregina.ca*
-- Reanne Daviduk   *rcd714@uregina.ca*
+- Reanne Daviduk - @reannedaviduk   *rcd714@uregina.ca*
 ---
 ### Problem Definition: outline the problem requirements and include the application domain and motivations of your project. 
 >  1. Problem Description
