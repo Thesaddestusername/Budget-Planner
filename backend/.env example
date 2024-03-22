@@ -1,0 +1,4 @@
+PORT=(pick a number for the port)
+MONGO_URL=Put the Mongo database url here.
+
+```
