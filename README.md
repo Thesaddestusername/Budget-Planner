@@ -2,7 +2,7 @@
 476 Software Development Project Report
 ---
 ## Contributers
-- Hunter Bayliss   *baylissh@uregina.ca*
+- Hunter Bayliss (Thesaddestusername)   *baylissh@uregina.ca*
 - Levi Brown (Lebbl)           *lsb360@uregina.ca*
 - Braden Breit (Bradenzee)     *bbb560@uregina.ca*
 - Reanne Daviduk - @reannedaviduk   *rcd714@uregina.ca*
