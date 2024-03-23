@@ -2,7 +2,7 @@
 476 Software Development Project Report
 ---
 ## Contributers
-- Hunter Bayliss (Thesaddestusername)   *baylissh@uregina.ca*
+- Hunter Bayliss   *baylissh@uregina.ca*
 - Levi Brown (Lebbl)           *lsb360@uregina.ca*
 - Braden Breit (Bradenzee)     *bbb560@uregina.ca*
 - Reanne Daviduk - @reannedaviduk   *rcd714@uregina.ca*
@@ -92,13 +92,22 @@ Table of Contents of the System Data
 
 ### Technical Documentation
 List of Programming Languages
-> JavaScript, C++, CSS
+> JavaScript, C++, CSS, HTML
 
 List of reused algorithms and small programs with references
 > .
 
 List of software tools and environmets. Provide briefly their benefits specifically for your application.
 > Node.js
+> Express
+> Mongodb 
+> dotenv 
+> Mongoose
+> JWT 
+> Postman 
+> Validator
+> bcrypt
+> cookie-parser
 
 ### Acceptance Testing
 Correctness testing using four test cases only (sc of both inputs and outputs).
