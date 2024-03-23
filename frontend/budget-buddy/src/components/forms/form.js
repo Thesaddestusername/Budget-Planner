@@ -28,10 +28,10 @@ function Form(){
     return(
         <StyledFrm onSubmit={handleSubmit}>
             <div className="inputEffect">
-                <input type="text" required value={label} name={'label'} placeholder="Salary Label" onChange={handleInput('label')}/>
+                <input type="text" required value={label} name={'label'} placeholder="Income Name" onChange={handleInput('label')}/>
             </div>
             <div className="inputEffect">
-                <input type="text" required value={amount} name={'amount'} placeholder="Salary Amount" onChange={handleInput('amount')}/>
+                <input type="text" required value={amount} name={'amount'} placeholder="Income Amount" onChange={handleInput('amount')}/>
             </div>
             <div className="inputEffect">
                 <DatePicker id='date' placeholderText = 'Choose Date' required selected={date} dateFormat="dd/MM//yyy" onChange={(date) => {setInputState({...inputState, date: date})}}/>

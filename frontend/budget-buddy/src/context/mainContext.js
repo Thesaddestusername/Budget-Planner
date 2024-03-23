@@ -13,7 +13,7 @@ export const MainSource = ({children}) => {
     const[error, setError] = useState(null);
 
     const addIncome = async(income) => {
-        const response = await axios.post(`${BASE_URL}addIncome`, income)
+        const response = await axios.post(`${BASE_URL}add-income`, income)
         .catch((err) =>{
             setError(err.response.data.message)
         })
