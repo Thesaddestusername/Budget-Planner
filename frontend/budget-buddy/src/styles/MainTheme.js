@@ -20,6 +20,5 @@ export const MainTheme = createGlobalStyle`
         color: rgb(34,34,96);
         font-size: clamp(0.5rem, 2.5vw, 1.5rem);
         overflow: hidden;
-
     }
 `;

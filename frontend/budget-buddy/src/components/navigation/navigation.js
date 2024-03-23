@@ -22,7 +22,6 @@ function Navigation({current, setCurrent}){
                     <li>
                     </li>
                 </div>    
-        
             </div>
         </StyledNav>
     )
@@ -46,8 +45,7 @@ const StyledNav = styled.nav`
         //align-items: center;
         //gap: 0.5rem;
         img{
-            //width: 60px;
-            //height: 60px;
+
             object-fit: cover;
             align-items: center;
         }
@@ -63,26 +61,25 @@ const StyledNav = styled.nav`
             align-items: center;
             margin: 0.7rem 0;
             padding-left: 1rem;
+            position: relative;
         }
     }
 
     .current{
-        color: rgba(255,217,61, 0.9);
+        color: rgba(255,217,61, 0.9) !important;
         i{
-        color: rgba(255,217,61, 0.9); 
+            color: rgba(255,217,61, 0.9) !important; 
         }
-        /* &::before{
+        &::before{
             content: "";
             position: absolute;
-            left:0;
+            left: 0;
             top: 0;
-            width: 4px;
-            height: 100%;
-            background: #222260;
-            border-radius: 0px 10px 10px 0px;
-        } */
-
-
+            width: 10px;
+            height: 25%;
+            background: rgba(255,217,61, 0.9);
+            border-radius: 10px 10px 10px 10px;
+        }
     }
 `;
 
