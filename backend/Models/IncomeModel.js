@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 const IncomeSchema = new mongoose.Schema({
-    title: {
+    label: {
         type: String,
         required: true,
         trim: true,
@@ -26,13 +26,7 @@ const IncomeSchema = new mongoose.Schema({
         required: true,
         default: Date.now
     },
-    category: {
-        type: String,
-        required: true,
-        trim: true,
-        maxLength: 30
-    },
-    description: {
+    notes: {
         type: String,
         required: true,
         trim: true,
