@@ -19,6 +19,13 @@ function Form(){
     const handleSubmit = e =>{
         e.preventDefault();
         addIncome(inputState);
+        setInputState({
+            label: '',
+            amount: '',
+            date: '',
+            type: '',
+            notes: '',
+        })
     }
     const handleInput = name => e =>{
         setInputState({...inputState, [name]: e.target.value})
@@ -34,7 +41,8 @@ function Form(){
                 <input type="number" required value={amount} name={'amount'} placeholder="Income Amount" onChange={handleInput('amount')}/>
             </div>
             <div className="inputEffect">
-                <DatePicker id='date' placeholderText = 'Choose Date' required selected={date} dateFormat="dd/MM//yyy" onChange={(date) => {setInputState({...inputState, date: date})}}/>
+                <DatePicker id='date' placeholderText = 'Choose Date' required selected={date} dateFormat="dd/MM/yyyy" onChange={(date) => {
+                        setInputState({...inputState, date: date})}}/>
             </div>
             <div className="inputEffect">
                 <div className="selectInputEffect">
