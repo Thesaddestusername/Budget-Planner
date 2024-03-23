@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { InnerLayout } from "../../styles/pageLayouts";
 import { GetMainContext } from "../../context/mainContext";
+import Form from "../forms/form";
 
 function Incomes(){
     const {addIncome} = GetMainContext()
@@ -11,7 +12,7 @@ function Incomes(){
                 <h1>Incomes</h1>
                 <div className = "incomePage">
                     <div className= "IncomeInfo">
-
+                        <Form/>
                     </div>
                 </div>
             </InnerLayout>
