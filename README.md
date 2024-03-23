@@ -92,13 +92,22 @@ Table of Contents of the System Data
 
 ### Technical Documentation
 List of Programming Languages
-> JavaScript, C++, CSS
+> JavaScript, C++, CSS, HTML
 
 List of reused algorithms and small programs with references
 > .
 
 List of software tools and environmets. Provide briefly their benefits specifically for your application.
 > Node.js
+> Express
+> Mongodb 
+> dotenv 
+> Mongoose
+> JWT 
+> Postman 
+> Validator
+> bcrypt
+> cookie-parser
 
 ### Acceptance Testing
 Correctness testing using four test cases only (sc of both inputs and outputs).

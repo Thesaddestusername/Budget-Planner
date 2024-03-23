@@ -2,7 +2,7 @@ const ExpenseSchema = require('../models/ExpenseModel') // Despite this throwing
 
 exports.addExpense = async (req, res) => {
     const { title, amount, category, description, date } = req.body
-    const newExpense = new IncomeSchema({
+    const newExpense = new ExpenseSchema({
         title,
         amount,
         category,
