@@ -5,6 +5,7 @@ require("dotenv").config()
 
 const secret = process.env.SECRET
 
+// Middleware to check if the user is authenticated
 const requireAuth = (req, res, next) => {
     const token = req.cookies.jwt
 
@@ -22,6 +23,29 @@ const requireAuth = (req, res, next) => {
     }
     else {
         res.redirect('/login')
+    }
+}
+
+// Check the current user
+const checkUser = (req, res, next) => {
+    const token = req.cookies.jwt
+
+    if(token){
+        jwt.verify(token, secret, async (err, decodedToken) => {
+            if(err){
+                console.log(err.message)
+                res.locals.user = null
+                next()
+            } else {
+                console.log(decodedToken)
+                let user = await User.findById(decodedToken.id)
+                res.locals.user = user
+                next()
+            }
+        })
+    } else {
+        res.locals.user = null
+        next()
     }
 }
 
