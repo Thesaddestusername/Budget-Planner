@@ -7,6 +7,7 @@ import Dashboard from "./components/dashboard/dashboard";
 import Incomes from "./components/incomes/incomes";
 import Expenses from "./components/expenses/expenses";
 import { GetMainContext } from "./context/mainContext";
+import { MainTheme } from "./styles/MainTheme";
 
 function App() {
   const [current, setCurrent] = useState(1);
@@ -16,10 +17,10 @@ function App() {
 
   const showInfo = () =>{
     if(current === 1){
-      return <Dashboard/>;
+      return <Incomes/>;
     }
     else if(current === 2){
-      return <Dashboard/>;
+      return <Expenses/>;
     }
     else if(current === 3){
       return <Incomes/>
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <StyledDiv className="App">
+      <MainTheme/>
       <Gradient></Gradient>
       <OutterLayout>
         <Navigation current={current} setCurrent={setCurrent}/>
@@ -55,7 +57,6 @@ const StyledDiv = styled.div`
     border: 2px solid #ffe863;
     backdrop-filter: blur(3px);
     border-radius: 32px;
-    overflow: auto;
     overflow-x: hidden;
     &::-webkit-scrollbar{
       width: 0;

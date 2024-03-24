@@ -10,9 +10,9 @@ router
     .post('/addIncome', addIncome)
     .get('/getIncomes', getIncome)
     .delete('/deleteIncome/:id', deleteIncome)
-    .post('/add-expense', addExpense)
-    .get('/get-expenses', getExpense)
-    .delete('/delete-expense/:id', deleteExpense)
+    .post('/addExpense', addExpense)
+    .get('/getExpenses', getExpense)
+    .delete('/deleteExpense/:id', deleteExpense)
     
     // Routes for authentication
     .post('/signup', signup)

@@ -7,35 +7,35 @@ import { DateFormatting } from "../../utils/dateFormatting";
 /// MAKE SURE TO IMNPORT AND ADD ICONS
 
 
-function IncomeComponent({id, label, amount, date, type, notes, deleteMe, pipColor}){
+function ExpenseComponent({id, label, amount, date, type, notes, deleteMe, pipColor}){
 
     const getCategoryIcon =() =>{
-        if(type === 'salary'){
-            return 'salarySign';
+        if(type === 'fastfood'){
+            return 'fastfoodSign';
         }
-        else if(type === 'bank'){
-            return dollarSign;
+        else if(type === 'groceries'){
+            return 'groceriesSign';
         }
         else if(type === 'gift'){
             return 'giftSign';
         }
-        else if(type === 'refund'){
-            return 'refundSign';
+        else if(type === 'gas'){
+            return 'gasSign';
         }
-        else if(type === 'stocks'){
-            return 'stockSign';
+        else if(type === 'health'){
+            return 'healthSign';
         }
-        else if(type === 'crypto'){
-            return 'cryptoSign';
+        else if(type === 'online Purchase'){
+            return 'onlinePurchaseSign'
         }
-        else if(type === 'nft'){
-            return 'cryptoSign';
+        else if(type === 'membership'){
+            return 'membershipSign';
         }
-        else if(type === 'sale'){
-            return 'soldSign';
+        else if(type === 'school/education'){
+            return 'schoolSign';
         }
-        else if(type === 'liquidation'){
-            return 'liquidationSign';
+        else if(type === 'travel'){
+            return 'travelSign';
         }
         else{
             return '';
@@ -43,7 +43,7 @@ function IncomeComponent({id, label, amount, date, type, notes, deleteMe, pipCol
     }
 
     return(
-        <StyledIncome pip={pipColor}>
+        <StyledExpense pip={pipColor}>
             <div className="icon">
                 {getCategoryIcon()}
             </div>
@@ -61,11 +61,11 @@ function IncomeComponent({id, label, amount, date, type, notes, deleteMe, pipCol
                         </div>
                     </div>    
             </div>  
-        </StyledIncome>
+        </StyledExpense>
     )
 }
 
-const StyledIncome = styled.div`
+const StyledExpense = styled.div`
     border: 3px solid #ffe863;
     border-radius: 25px;
     padding: 1rem;
@@ -86,7 +86,7 @@ const StyledIncome = styled.div`
         justify-content: center;
         border:  1px solid #ffe863;
         i{
-            font-size: 3.5rem;
+            font-size: 5.0rem;
         }
     }
 
@@ -131,4 +131,4 @@ const StyledIncome = styled.div`
 
 `;
 
-export default IncomeComponent;
+export default ExpenseComponent;

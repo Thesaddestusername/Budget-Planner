@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 const ExpenseSchema = new mongoose.Schema({
-    title: {
+    label: {
         type: String,
         required: true,
         trim: true,
@@ -11,7 +11,7 @@ const ExpenseSchema = new mongoose.Schema({
     amount: {
         type: Number,
         required: true,
-        maxLength: 20,
+        maxLength: 1000000,
         trim: true,
     },
     type: {
@@ -26,13 +26,7 @@ const ExpenseSchema = new mongoose.Schema({
         required: true,
         default: Date.now
     },
-    category: {
-        type: String,
-        required: true,
-        trim: true,
-        maxLength: 30
-    },
-    description: {
+    notes: {
         type: String,
         required: true,
         trim: true,

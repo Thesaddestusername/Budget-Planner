@@ -7,8 +7,8 @@ import { MainTheme } from "../../styles/MainTheme";
 import Button from "../button/button";
 import { addSign } from "../../utils/icons";
 
-function Form(){
-    const {addIncome, getIncomes} = GetMainContext();
+function Form2(){
+    const {addExpense, getExpenses} = GetMainContext();
     const[inputState, setInputState] = useState({
         label: '',
         amount: '',
@@ -21,8 +21,8 @@ function Form(){
 
     const handleSubmit = e =>{
         e.preventDefault();
-        addIncome(inputState);
-        getIncomes();
+        addExpense(inputState);
+        getExpenses();
         setInputState({
             label: '',
             amount: '',
@@ -37,12 +37,12 @@ function Form(){
 
 
     return(
-        <StyledFrm onSubmit={handleSubmit}>
+        <StyledFrm2 onSubmit={handleSubmit}>
             <div className="inputEffect">
-                <input type="text" required value={label} name={'label'} placeholder="Income Name" onChange={handleInput('label')}/>
+                <input type="text" required value={label} name={'label'} placeholder="Expense Name" onChange={handleInput('label')}/>
             </div>
             <div className="inputEffect">
-                <input type="number" required value={amount} name={'amount'} placeholder="Income Amount" onChange={handleInput('amount')}/>
+                <input type="number" required value={amount} name={'amount'} placeholder="Expense Amount" onChange={handleInput('amount')}/>
             </div>
             <div className="inputEffect">
                 <DatePicker id='date' placeholderText = 'Choose Date' required selected={date} dateFormat="dd/MM/yyyy"  onChange={(date) => {
@@ -52,15 +52,15 @@ function Form(){
                 <div className="selectInputEffect">
                     <select required value={type} name="type" id="type" placeholder="Choose Type" onChange={handleInput('type')}>
                         <option value="" disabled>Choose Type</option>
-                        <option value="salary">Salary</option>
-                        <option value="bank">Bank</option>
+                        <option value="fast food">Fast Food</option>
+                        <option value="groceries">Groceries</option>
                         <option value="gift">Gift</option>
-                        <option value="refund">Refund</option>
-                        <option value="stocks">Stocks</option>
-                        <option value="crypto">Crypto</option>
-                        <option value="nft">NFT</option>
-                        <option value="sale">Item Sold</option>
-                        <option value="liquidation">Liquidation</option>
+                        <option value="gas">Gas</option>
+                        <option value="health">Health</option>
+                        <option value="online purchase">Online Purchase</option>
+                        <option value="membership">membership</option>
+                        <option value="school/education">School/Education</option>
+                        <option value="travel">Travel</option>
                     </select>
                 </div>
             </div>
@@ -68,13 +68,13 @@ function Form(){
                     <textarea type="text" required value={notes} name={'notes'} placeholder="- Notes" id = "notes" cols="15" rows="3" onChange={handleInput('notes')}/> 
                 </div>
                 <div className="confirmButton">
-                    <Button name={"Add This Income"} icon={addSign} buttonPad={'0.9 1.9rem'} buttonRadius={'10px'} buttonBackground={'#FFE863'} textColor={'white'}/>
+                    <Button name={"Add This Expense"} icon={addSign} buttonPad={'0.9 1.9rem'} buttonRadius={'10px'} buttonBackground={'#FFE863'} textColor={'white'}/>
                 </div>
-        </StyledFrm>
+        </StyledFrm2>
     )
 }
 
-const StyledFrm = styled.form`
+const StyledFrm2 = styled.form`
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -115,4 +115,4 @@ const StyledFrm = styled.form`
 
 
 `;
-export default Form;
+export default Form2;

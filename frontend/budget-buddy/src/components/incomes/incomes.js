@@ -6,12 +6,15 @@ import IncomeComponent from "../incomeComponent/incomeComponent";
 import Form from "../forms/form";
 
 function Incomes(){
-    const {addIncome, incomes, getIncomes, deleteIncome} = GetMainContext()
-    useEffect(() =>{getIncomes()}, [incomes])
+    const {incomes, getIncomes, deleteIncome, calcTotalIncome} = GetMainContext()
+    useEffect(() =>{getIncomes()}, [])
     return(
         <StyledIncomes>
             <InnerLayout>
-                <h1>Incomes</h1>
+                <h1 className="totalIncome">
+                    Income Total: <span>+${calcTotalIncome()}</span>  
+                </h1>
+                <h2>Incomes</h2>
                 <div className = "incomePage">
                     <div className= "IncomeInfo">
                         <Form/>
@@ -31,6 +34,25 @@ function Incomes(){
 const StyledIncomes= styled.div`
     display: flex;
     overflow: auto;
+    .totalIncome{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        border: 2px solid #ffe863; 
+        box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-size: 3rem;
+        gap: .5rem;
+        span{
+            font-size: 3rem;
+            font-weight: 900;
+            color: lightgreen;
+        }
+
+    }
     .incomePage{
             display: flex;
             gap: 2rem;

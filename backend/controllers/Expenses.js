@@ -1,12 +1,12 @@
 const ExpenseSchema = require('../models/ExpenseModel') // Despite this throwing an error in VSCode, it is actually needed for the app to work.
 
 exports.addExpense = async (req, res) => {
-    const { title, amount, category, description, date } = req.body
+    const { label, amount, type, notes, date } = req.body
     const newExpense = new ExpenseSchema({
-        title,
+        label,
         amount,
-        category,
-        description,
+        type,
+        notes,
         date
     })
     
@@ -14,7 +14,7 @@ exports.addExpense = async (req, res) => {
 
     try {
         // Validation of the incoming data
-        if (!title || !category || !description || !date) {
+        if (!label || !type || !notes || !date) {
             return res.status(400).json({ message: "Please ensure that all fields are filled in!" })
         }
         // Amount must be above 0
@@ -47,7 +47,7 @@ exports.getExpense = async (req, res) => {
 // Used to delete an expense from the database
 exports.deleteExpense = async (req, res) => {
     const {id} = req.params
-    ExpenseSchema.findbyIDAndDelete(id)
+    ExpenseSchema.findByIdAndDelete(id)
     .then((expense) => res.status(200).json({message: "Expense deleted successfully"}))
     .catch((error) => res.status(500).json({message: error.message}))
 }
