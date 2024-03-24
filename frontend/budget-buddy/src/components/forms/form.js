@@ -3,9 +3,12 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { GetMainContext } from "../../context/mainContext";
 import styled from "styled-components";
+import { MainTheme } from "../../styles/MainTheme";
+import Button from "../button/button";
+import { addSign } from "../../utils/icons";
 
 function Form(){
-    const {addIncome} = GetMainContext();
+    const {addIncome, getIncomes} = GetMainContext();
     const[inputState, setInputState] = useState({
         label: '',
         amount: '',
@@ -19,6 +22,7 @@ function Form(){
     const handleSubmit = e =>{
         e.preventDefault();
         addIncome(inputState);
+        getIncomes();
         setInputState({
             label: '',
             amount: '',
@@ -41,7 +45,7 @@ function Form(){
                 <input type="number" required value={amount} name={'amount'} placeholder="Income Amount" onChange={handleInput('amount')}/>
             </div>
             <div className="inputEffect">
-                <DatePicker id='date' placeholderText = 'Choose Date' required selected={date} dateFormat="dd/MM/yyyy" onChange={(date) => {
+                <DatePicker id='date' placeholderText = 'Choose Date' required selected={date} dateFormat="dd/MM/yyyy"  onChange={(date) => {
                         setInputState({...inputState, date: date})}}/>
             </div>
             <div className="inputEffect">
@@ -64,7 +68,7 @@ function Form(){
                     <textarea type="text" required value={notes} name={'notes'} placeholder="- Notes" id = "notes" cols="15" rows="3" onChange={handleInput('notes')}/> 
                 </div>
                 <div className="confirmButton">
-                    <button>Add This Income</button>
+                    <Button name={"Add this income"} icon={addSign} buttonPad={'0.9 1.9rem'} buttonRadius={'10px'} buttonBackground={'#FFE863'} textColor={'white'}/>
                 </div>
         </StyledFrm>
     )

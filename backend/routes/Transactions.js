@@ -7,9 +7,9 @@ const router = require('express').Router();
 
 router
     // Routes for adding getting and deleting incomes and expenses.
-    .post('/add-income', addIncome)
-    .get('/get-incomes', getIncome)
-    .delete('/delete-income/:id', deleteIncome)
+    .post('/addIncome', addIncome)
+    .get('/getIncomes', getIncome)
+    .delete('/deleteIncome/:id', deleteIncome)
     .post('/add-expense', addExpense)
     .get('/get-expenses', getExpense)
     .delete('/delete-expense/:id', deleteExpense)

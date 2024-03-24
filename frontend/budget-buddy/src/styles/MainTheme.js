@@ -14,6 +14,7 @@ export const MainTheme = createGlobalStyle`
         --secondaryColor: #F58D1F
         --secondaryColor2: #ffd93d
         --secondaryColor3: #FFE863
+        --boxShadow: 0px 2px 16px rgba(0, 0, 0, 0.25)
     }
     body{
         font-family: "Besley", serif;

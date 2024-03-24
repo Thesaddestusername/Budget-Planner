@@ -1,3 +1,9 @@
 export const singout = <i className="fa-solid fa-gear"></i>;
 export const calender = <i className="fa-solid fa-calendar-days"></i>;
-export const chart = <i class="fa-solid fa-chart-simple"></i>;
+export const chart = <i className="fa-solid fa-chart-simple"></i>;
+export const dollarSign = <i className="fa-solid fa-dollar-sign"></i>
+export const dateSign = <i className="fa-solid fa-calendar-day"></i>
+export const typeSign = <i className="fa-solid fa-sack-dollar"></i>
+export const noteSign = <i className="fa-solid fa-note-sticky"></i>
+export const trashBin = <i className="fa-solid fa-trash"></i>
+export const addSign = <i className="fa-solid fa-plus"></i>
