@@ -1,20 +1,20 @@
 const IncomeSchema = require('../models/IncomeModel') // Despite this throwing an error in VSCode, it is actually needed for the app to work.
 
 exports.addIncome = async (req, res) => {
-    const { title, amount, category, description, date } = req.body
+    const { label, amount, date, type, notes} = req.body
     const newIncome = new IncomeSchema({
-        title,
+        label,
         amount,
-        category,
-        description,
-        date
+        date,
+        type,
+        notes,
     })
-
+    
     console.log(newIncome)
 
     try {
         // Validation of the incoming data
-        if (!title || !category || !description || !date) {
+        if (!label || !type || !notes || !date) {
             return res.status(400).json({ message: "Please ensure that all fields are filled in!" })
         }
         // Amount must be above 0
@@ -47,7 +47,7 @@ exports.getIncome = async (req, res) => {
 // Used to delete an income from the database
 exports.deleteIncome = async (req, res) => {
     const {id} = req.params
-    IncomeSchema.findbyIDAndDelete(id)
+    IncomeSchema.findByIdAndDelete(id)
     .then((income) => res.status(200).json({message: "Income deleted successfully"}))
     .catch((error) => res.status(500).json({message: error.message}))
 }

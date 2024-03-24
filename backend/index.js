@@ -4,7 +4,7 @@ const { database } = require('./database/database')
 const {readdirSync} = require('fs')
 const { router } = require('./Routes/Transactions')
 const cookieParser = require('cookie-parser')
-const { requireAuth } = require('./middleware/auth')
+const { requireAuth, checkUser } = require('./middleware/auth')
 
 const application = express();
 
@@ -23,7 +23,14 @@ application.use(cookieParser())
 
 
 // Routes
-readdirSync('./routes').map((route) => application.use('/api',  require('./routes/' + route), requireAuth))
+// Setting every single page to run checkUser to see if the user is logged in or not. Used to display the correct information on the page.
+
+// application.get("*", checkUser)
+
+// Need to figure out a better way to do this.
+readdirSync('./routes').map((route) => application.use('/api', require('./routes/' + route)))
+
+
 // Routes will need to be added here for all of the web pages that will be accessible. 
 // Example of what it should look like when authentication is required:
 // application.get('/dashboard', requireAuth, (req, res) => { res.render('dashboard')})

@@ -2,6 +2,13 @@ const mongoose = require('mongoose');
 
 
 const ExpenseSchema = new mongoose.Schema({
+    // Added to track what user the expense belongs to
+    belongsto: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+
     title: {
         type: String,
         required: true,
