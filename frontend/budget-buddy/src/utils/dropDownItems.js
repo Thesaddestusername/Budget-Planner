@@ -1,4 +1,4 @@
-import { downArrowSign, upArrowSign } from "./icons";
+import { downArrowSign, logOutSign, upArrowSign } from "./icons";
 import { chart } from "./icons";
 
 export const dropDownItems = [
@@ -18,6 +18,12 @@ export const dropDownItems = [
         id: 3,
         title: 'Graph View',
         icon: chart,
+        link: ''
+    },
+    {
+        id: 4,
+        title: 'Log Out',
+        icon: logOutSign,
         link: ''
     }
 

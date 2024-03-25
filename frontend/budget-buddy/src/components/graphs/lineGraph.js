@@ -12,7 +12,7 @@ function LineGraph(){
     const {incomes, expenses, getExpenses, getIncomes} = GetMainContext();
 
     const info = {
-        labels: expenses.map((expense) =>{const {date} = expense; return DateFormatting(date)}).sort(),
+        labels: incomes.map((income) =>{const {date} = income; return DateFormatting(date)}).sort(),
         datasets: [
             {
                 label: 'Income',

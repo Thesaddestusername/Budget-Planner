@@ -21,10 +21,6 @@ function Navigation({current, setCurrent}){
                     }
                     )}
                 </ul>
-                <div className="bottomNav">
-                    <li>
-                    </li>
-                </div>    
             </div>
         </StyledNav>
     )
@@ -83,6 +79,10 @@ const StyledNav = styled.nav`
             background: rgba(255,217,61, 0.9);
             border-radius: 10px 10px 10px 10px;
         }
+    }
+
+    .bottomNav{
+
     }
 `;
 

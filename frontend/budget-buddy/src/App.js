@@ -6,13 +6,12 @@ import React, {useState} from "react";
 import Dashboard from "./components/dashboard/dashboard";
 import Incomes from "./components/incomes/incomes";
 import Expenses from "./components/expenses/expenses";
-import { GetMainContext } from "./context/mainContext";
 import { MainTheme } from "./styles/MainTheme";
+import LogOut from "./components/logOut/logOut";
+import LogIn from "./components/logIn/logIn";
 
 function App() {
   const [current, setCurrent] = useState(3);
-
-  const mainCont = GetMainContext();
 
   const showInfo = () =>{
     if(current === 1){
@@ -25,10 +24,10 @@ function App() {
       return <Dashboard/>
     }
     else if(current === 4){
-      return <Expenses/>;
+      return <LogOut setCurrent={setCurrent}/>;
     }
-    else{
-      return <Dashboard/>;
+    else if(current === 5){
+      return <LogIn setCurrent={setCurrent}/>;
     }
   }
 
@@ -37,7 +36,7 @@ function App() {
       <MainTheme/>
       <Gradient></Gradient>
       <OutterLayout>
-        <Navigation current={current} setCurrent={setCurrent}/>
+      {current != 5 ? <Navigation current={current} setCurrent={setCurrent}/> : ''}  
           <main>
             {showInfo()}
           </main>
