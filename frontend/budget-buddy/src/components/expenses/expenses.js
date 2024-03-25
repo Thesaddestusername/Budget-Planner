@@ -38,7 +38,7 @@ const StyledExpense= styled.div`
         display:flex;
         justify-content: center;
         align-items: center;
-        background: transparent;
+        background: white;
         border: 2px solid #ffe863; 
         box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
