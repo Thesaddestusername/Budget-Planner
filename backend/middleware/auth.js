@@ -1,5 +1,6 @@
 // Homebrew middleware used to check if the user is authenticated or not, if not they are redirected to the login page.
 const jwt = require('jsonwebtoken')
+const User = require('../Models/UserModel')
 require("dotenv").config()
 
 
@@ -12,7 +13,7 @@ const requireAuth = (req, res, next) => {
     // Check if the token exists
     if(token){
         jwt.verify(token, secret, (err, decodedToken) => {
-            if(err){
+            if(!err){
                 console.log(err.message)
                 res.redirect('/login')
             } else {
@@ -40,6 +41,7 @@ const checkUser = (req, res, next) => {
                 console.log(decodedToken)
                 let user = await User.findById(decodedToken.id)
                 res.locals.user = user
+                console.log("User: ", user.id)
                 next()
             }
         })

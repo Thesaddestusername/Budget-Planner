@@ -11,16 +11,16 @@ exports.addIncome = async (req, res) => {
     })
     
     // This SHOULD WORK once things are routed correctly to check auth on each route, especially the /api routes.
-    /*
-    const belongsto = res.local.user
-    console.log(belongsto)
+    
+    const belongsto = res.locals.user
+    console.log(belongsto + " is the user")
     newIncome.belongsto = belongsto
     console.log(newIncome)
-    */
+    
 
     try {
         // Validation of the incoming data
-        if (!label || !type || !notes || !date /*|| !belongsto*/) {
+        if (!label || !type || !notes || !date || !belongsto) {
             return res.status(400).json({ message: "Please ensure that all fields are filled in!" })
         }
         // Amount must be above 0

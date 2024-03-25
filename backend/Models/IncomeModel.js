@@ -6,7 +6,7 @@ const IncomeSchema = new mongoose.Schema({
     belongsto: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: false
+        required: true
     },
 
     label: {

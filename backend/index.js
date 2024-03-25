@@ -1,3 +1,4 @@
+// Important includes for all modules and files required.
 const express = require('express')
 const cors = require('cors')
 const { database } = require('./database/database')
@@ -14,37 +15,29 @@ require("dotenv").config()
 // Pulling port number from .evn file
 const PORT = process.env.PORT
 
-// Middleware
+        // Middleware //
+
+//Express middleware to parse incoming requests with JSON payloads        
 application.use(express.json())
-
+// Cors middleware to allow for cross-origin requests
 application.use(cors())
-
+// Cookie parser middleware to parse incoming cookies
 application.use(cookieParser())
+// Each page from the backend behind API will requireAuth. This will check if the user is authenticated or not. If they are not, they will be redirected to the login page.
+application.use('api/', requireAuth)
+// This is simply used to check if a user is logged in and storing their information in res.locals.user for the database queries.
+application.use(checkUser)
 
 
-//application.use(checkUser())
 
-// Routes
-// Setting every single page to run checkUser to see if the user is logged in or not. Used to display the correct information on the page.
+        // Routes //
 
-// application.get("*", checkUser)
-
-// Need to figure out a better way to do this.
-// This is basically taking all of the files in the routes folder and adding them to the application.
-//readdirSync('./routes').map((route) => application.use('/api', require('./routes/' + route)))
+// This is the route that will be used to access the transactions. It will be used to add, get, and delete transactions.
 application.use('/api', require('./routes/Transactions'))
-//application.use('/api', requireAuth)
-//application.use('/api', checkUser)
-//application.use('/api', requireAuth)
-
-//application.use('/api', require('./routes/' + route))
-
-// Routes will need to be added here for all of the web pages that will be accessible. 
-// Example of what it should look like when authentication is required:
-// application.get('/dashboard', requireAuth, (req, res) => { res.render('dashboard')})
 
 
-// Server function. It will start the server and listen on the port specified in the .env
+
+        // Server function. It will start the server and listen on the port specified in the .env //
 const server = () => {
     database()
 
