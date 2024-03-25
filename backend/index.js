@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const { database } = require('./database/database')
 const {readdirSync} = require('fs')
-const { router } = require('./Routes/Transactions')
+const { router } = require('./routes/Transactions')
 const cookieParser = require('cookie-parser')
 const { requireAuth, checkUser } = require('./middleware/auth')
 
@@ -22,14 +22,22 @@ application.use(cors())
 application.use(cookieParser())
 
 
+//application.use(checkUser())
+
 // Routes
 // Setting every single page to run checkUser to see if the user is logged in or not. Used to display the correct information on the page.
 
 // application.get("*", checkUser)
 
 // Need to figure out a better way to do this.
-readdirSync('./routes').map((route) => application.use('/api', require('./routes/' + route)))
+// This is basically taking all of the files in the routes folder and adding them to the application.
+//readdirSync('./routes').map((route) => application.use('/api', require('./routes/' + route)))
+application.use('/api', require('./routes/Transactions'))
+//application.use('/api', requireAuth)
+//application.use('/api', checkUser)
+//application.use('/api', requireAuth)
 
+//application.use('/api', require('./routes/' + route))
 
 // Routes will need to be added here for all of the web pages that will be accessible. 
 // Example of what it should look like when authentication is required:
