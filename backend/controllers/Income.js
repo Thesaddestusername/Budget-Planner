@@ -10,18 +10,28 @@ exports.addIncome = async (req, res) => {
         notes,
     })
     
-    // This SHOULD WORK once things are routed correctly to check auth on each route, especially the /api routes.
-    
+
+
+    // Grabbing belongsto parameter from the request.
     const belongsto = res.locals.user
-    console.log(belongsto + " is the user")
+    // Console logging for debug.
+    //console.log(belongsto + " is the user")
+
+    // Assigning the belongsto parameter to the newIncome object.
     newIncome.belongsto = belongsto
-    console.log(newIncome)
+    
+    // Console logging for debug.
+    //console.log(newIncome)
     
 
     try {
         // Validation of the incoming data
-        if (!label || !type || !notes || !date || !belongsto) {
+        if (!label || !type || !notes || !date || !amount) {
             return res.status(400).json({ message: "Please ensure that all fields are filled in!" })
+        }
+        // Ensuring a user is logged in before adding an income
+        if (belongsto == null || !belongsto){
+            return res.status(400).json({ message: "Please ensure that you are logged in!" })
         }
         // Amount must be above 0
         if (amount <= 0) {

@@ -15,8 +15,8 @@ router
     .delete('/delete-expense/:id', deleteExpense)
     
     // Routes for authentication
-    .post('/signup', signup)
-    .post('/login', login)
+    //.post('/signup', signup)
+    //.post('/login', login)
     .get('/logout', logout)
 
 module.exports = router

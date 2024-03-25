@@ -1,21 +1,35 @@
 const ExpenseSchema = require('../models/ExpenseModel') // Despite this throwing an error in VSCode, it is actually needed for the app to work.
 
 exports.addExpense = async (req, res) => {
-    const { title, amount, category, description, date } = req.body
+    const { label, amount, type, notes, date } = req.body
     const newExpense = new ExpenseSchema({
-        title,
+        label,
         amount,
-        category,
-        description,
+        type,
+        notes,
         date
     })
     
-    console.log(newExpense)
+
+    // Grabbing belongsto parameter from the request.
+    const belongsto = res.locals.user
+    // Console logging for debug.
+    //console.log(belongsto + " is the user")
+
+    // Assigning the belongsto parameter to the newIncome object.
+    newExpense.belongsto = belongsto
+
+    // For debugging
+    //console.log(newExpense)
 
     try {
         // Validation of the incoming data
-        if (!title || !category || !description || !date) {
+        if (!label || !type || !notes || !date || !amount) {
             return res.status(400).json({ message: "Please ensure that all fields are filled in!" })
+        }
+        // Ensuring a user is logged in before adding an expense
+        if (belongsto == null || !belongsto){
+            return res.status(400).json({ message: "Please ensure that you are logged in!" })
         }
         // Amount must be above 0
         if (amount <= 0) {

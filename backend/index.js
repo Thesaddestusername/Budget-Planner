@@ -6,6 +6,7 @@ const {readdirSync} = require('fs')
 const { router } = require('./routes/Transactions')
 const cookieParser = require('cookie-parser')
 const { requireAuth, checkUser } = require('./middleware/auth')
+const {login, signup} = require('./controllers/auth')
 
 const application = express();
 
@@ -35,6 +36,9 @@ application.use(checkUser)
 // This is the route that will be used to access the transactions. It will be used to add, get, and delete transactions.
 application.use('/api', require('./routes/Transactions'))
 
+// Creating unprotected routes for signup and login
+application.post('/signup', signup)
+application.post('/login', login)
 
 
         // Server function. It will start the server and listen on the port specified in the .env //
