@@ -54,7 +54,6 @@ function Form2(){
                         <option value="" disabled>Choose Type</option>
                         <option value="fast food">Fast Food</option>
                         <option value="groceries">Groceries</option>
-                        <option value="gift">Gift</option>
                         <option value="gas">Gas</option>
                         <option value="health">Health</option>
                         <option value="online purchase">Online Purchase</option>

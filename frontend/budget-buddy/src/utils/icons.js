@@ -8,4 +8,4 @@ export const noteSign = <i className="fa-solid fa-note-sticky"></i>
 export const trashBin = <i className="fa-solid fa-trash"></i>
 export const addSign = <i className="fa-solid fa-plus"></i>
 export const upArrowSign = <i className="fa-solid fa-circle-up"></i>
-export const downArrowSign = <i class="fa-solid fa-circle-down"></i>
+export const downArrowSign = <i className="fa-solid fa-circle-down"></i>

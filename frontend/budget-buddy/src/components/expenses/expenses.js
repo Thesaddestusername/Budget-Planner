@@ -12,7 +12,7 @@ function Expenses(){
         <StyledExpense>
             <InnerLayout>
                 <h1 className="totalExpense">
-                    Expense Total: <span>-${calcTotalExpense()}</span>  
+                    Expense Total: <span>-${calcTotalExpense().toFixed(2)}</span>  
                 </h1>
                 <h2>Expenses</h2>
                 <div className = "expensePage">

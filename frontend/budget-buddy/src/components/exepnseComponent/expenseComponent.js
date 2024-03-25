@@ -16,9 +16,6 @@ function ExpenseComponent({id, label, amount, date, type, notes, deleteMe, pipCo
         else if(type === 'groceries'){
             return 'groceriesSign';
         }
-        else if(type === 'gift'){
-            return 'giftSign';
-        }
         else if(type === 'gas'){
             return 'gasSign';
         }

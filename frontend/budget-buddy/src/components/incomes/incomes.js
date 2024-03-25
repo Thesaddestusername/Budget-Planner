@@ -12,7 +12,7 @@ function Incomes(){
         <StyledIncomes>
             <InnerLayout>
                 <h1 className="totalIncome">
-                    Income Total: <span>+${calcTotalIncome()}</span>  
+                    Income Total: <span>+${calcTotalIncome().toFixed(2)}</span>  
                 </h1>
                 <h2>Incomes</h2>
                 <div className = "incomePage">

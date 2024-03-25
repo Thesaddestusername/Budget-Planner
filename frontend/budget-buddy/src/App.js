@@ -10,10 +10,9 @@ import { GetMainContext } from "./context/mainContext";
 import { MainTheme } from "./styles/MainTheme";
 
 function App() {
-  const [current, setCurrent] = useState(1);
+  const [current, setCurrent] = useState(3);
 
   const mainCont = GetMainContext();
-  console.log(mainCont);
 
   const showInfo = () =>{
     if(current === 1){
@@ -23,7 +22,7 @@ function App() {
       return <Expenses/>;
     }
     else if(current === 3){
-      return <Incomes/>
+      return <Dashboard/>
     }
     else if(current === 4){
       return <Expenses/>;

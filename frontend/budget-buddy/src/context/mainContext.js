@@ -67,9 +67,22 @@ export const MainSource = ({children}) => {
         return total;
     }
 
+    const calcTotalBalance = () =>{
+        let total = 0;
+        total -= calcTotalExpense();
+        total += calcTotalIncome();
+        return total;
+    }
+
+    const recentTransactionHistory = () =>{
+        const recentHistory = [...incomes, ...expenses];
+        recentHistory.sort((x, y) => {return new Date(y.createdAt) - new Date(x.createdAt)});
+        return recentHistory.slice(0, 6);
+    }
+
 
     return(
-        <mainContext.Provider value={{addIncome, getIncomes, incomes, deleteIncome, calcTotalIncome, addExpense, getExpenses, deleteExpense, calcTotalExpense, expenses}}>
+        <mainContext.Provider value={{addIncome, getIncomes, incomes, deleteIncome, calcTotalIncome, addExpense, getExpenses, deleteExpense, calcTotalExpense, expenses, calcTotalBalance, recentTransactionHistory}}>
             {children}
         </mainContext.Provider>
     )
