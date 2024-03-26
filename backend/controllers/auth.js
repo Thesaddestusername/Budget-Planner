@@ -68,6 +68,9 @@ module.exports.signup = async (req, res) => {
 // Login controller function
 module.exports.login = async (req, res) => {   
     // Grabbing the email and password from the request body
+    if (!email || !password){
+        return res.status(400).json({message: "No email or password detected."})
+    }
     const {email, password} = req.body
 
     try{

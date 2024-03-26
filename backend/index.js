@@ -24,11 +24,15 @@ application.use(express.json())
 application.use(cors())
 // Cookie parser middleware to parse incoming cookies
 application.use(cookieParser())
-// Each page from the backend behind API will requireAuth. This will check if the user is authenticated or not. If they are not, they will be redirected to the login page.
-application.use('api/', requireAuth)
+
+// Each page that is not /signup and login will require the user to be authenticated.
+application.use(requireAuth)
 // This is simply used to check if a user is logged in and storing their information in res.locals.user for the database queries.
 application.use(checkUser)
 
+// Creating unprotected routes for signup and login
+application.post('/signup', signup)
+application.post('/login', login)
 
 
         // Routes //
@@ -36,9 +40,6 @@ application.use(checkUser)
 // This is the route that will be used to access the transactions. It will be used to add, get, and delete transactions.
 application.use('/api', require('./routes/Transactions'))
 
-// Creating unprotected routes for signup and login
-application.post('/signup', signup)
-application.post('/login', login)
 
 
         // Server function. It will start the server and listen on the port specified in the .env //

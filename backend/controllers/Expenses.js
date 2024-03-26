@@ -62,7 +62,7 @@ exports.getExpense = async (req, res) => {
 exports.deleteExpense = async (req, res) => {
     const {id} = req.params
     // Make sure it's using the lowercase Id, not ID. This caused me lots of pain.
-    ExpenseSchema.findbyIdAndDelete(id)
+    ExpenseSchema.findByIdAndDelete(id)
     .then((expense) => res.status(200).json({message: "Expense deleted successfully"}))
     .catch((error) => res.status(500).json({message: error.message}))
 }
