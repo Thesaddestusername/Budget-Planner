@@ -98,8 +98,7 @@ List of reused algorithms and small programs with references
 > .
 
 List of software tools and environmets. Provide briefly their benefits specifically for your application.
------backend-------- <br/>
-
+> -----backend-------- <br/>
 > Node.js <br/>
 > Express <br/>
 > Mongodb <br/>
@@ -112,7 +111,7 @@ List of software tools and environmets. Provide briefly their benefits specifica
 > cookie-parser <br/>
 > nodemon <br/>
 > cors <br/>
------frontend--------
+-----frontend-------- <br/>
 > axios <br/>
 > chart.js <br/>
 > moment <br/>
