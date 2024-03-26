@@ -9,9 +9,6 @@ exports.addIncome = async (req, res) => {
         type,
         notes,
     })
-    
-
-
     // Grabbing belongsto parameter from the request.
     const belongsto = res.locals.user
     // Console logging for debug.
@@ -22,7 +19,6 @@ exports.addIncome = async (req, res) => {
     
     // Console logging for debug.
     //console.log(newIncome)
-    
 
     try {
         // Validation of the incoming data

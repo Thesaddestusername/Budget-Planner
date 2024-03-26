@@ -9,8 +9,6 @@ exports.addExpense = async (req, res) => {
         notes,
         date
     })
-    
-
     // Grabbing belongsto parameter from the request.
     const belongsto = res.locals.user
     // Console logging for debug.
