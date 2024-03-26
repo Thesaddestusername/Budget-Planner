@@ -1,37 +1,34 @@
 import React, {useState} from "react";
-import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
-import { GetMainContext } from "../../context/mainContext";
 import styled from "styled-components";
-import Button from "../button/button";
-import { addSign } from "../../utils/icons";
 import { InnerLayout } from "../../styles/pageLayouts";
+import Button from "../button/button";
+import { noSign, yesSign } from "../../utils/icons";
 
 function LogIn({setCurrent}){
+
     const[inputState, setInputState] = useState({
         username: '',
-        password: ''
+        password: '',
     })
 
     const {username, password} = inputState;
 
     const handleSubmit = e =>{
-        e.preventDefault();
-        console.log("submitted")
-        //This is where we would put the validate or login function from mainContext
+        console.log("clicked")
+        /// This will be login(inputState) or validate(inputState) something like that function
         setInputState({
-        username: '',
-        password: ''
+            username: '',
+            password: '',
         })
     }
     const handleInput = name => e =>{
+        console.log(e.target.value);
         setInputState({...inputState, [name]: e.target.value})
     }
 
-
     return(
-        <StyledLogin onSubmit={handleSubmit}>
-            <InnerLayout>
+        <StyledLogin>
+            <InnerLayout onSubmit={handleSubmit}>
                 <h1 className="Buget Buddy">Budget Buddy</h1>
                 <div className="logInField">
                     <div className="inputEffect">
@@ -45,50 +42,21 @@ function LogIn({setCurrent}){
                     </div>
                     <p onClick={() => setCurrent(3)}>Don't have an account? Sign up here</p>
                 </div>
-                </InnerLayout>   
+            </InnerLayout>
         </StyledLogin>
     )
 }
 
-const StyledLogin = styled.form`
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    input, textarea, select{
-        font-family: inherit;
-        font-size: inherit;
-        outline: none;
-        border: none;
-        padding: .5rem 1rem;
-        border-radius: 5px;
-        border: 1px solid #ffe863;
-        background: white;
-        resize: none;
-        box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
-        color: var(--primaryColor);
-        &::placeholder{
-            color: rgba(71,41,120, 0.8);
-        }
+const StyledLogin = styled.div`
+    margin: auto;
+    width: 400px;
+    padding-top: 25%;
+    text-align: center;
+    .buttons{
+        padding: 2rem;
+        display: flex;
+        gap: 5rem;
     }
-    .inputEffect{
-        input{
-            width: 100%;
-        }
-        select{
-            color: rgba(34,34,96, 1)
-        }
-    }
-    .confirmButton{
-        button{
-            &:hover{
-                background: #ffe863 !important;
-            }
-        }
-    }
-
-
-
-
-
 `;
+
 export default LogIn;

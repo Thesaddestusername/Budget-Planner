@@ -3,7 +3,6 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { GetMainContext } from "../../context/mainContext";
 import styled from "styled-components";
-import { MainTheme } from "../../styles/MainTheme";
 import Button from "../button/button";
 import { addSign } from "../../utils/icons";
 
