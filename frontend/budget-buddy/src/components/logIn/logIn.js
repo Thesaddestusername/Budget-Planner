@@ -6,23 +6,38 @@ import styled from "styled-components";
 import Button from "../button/button";
 import { addSign } from "../../utils/icons";
 import { InnerLayout } from "../../styles/pageLayouts";
+import axios from 'axios';
 
 function LogIn({setCurrent}){
+
+    const{getLoggedIn, setLoggedIn} = GetMainContext();
+
     const[inputState, setInputState] = useState({
-        username: '',
+        email: '',
         password: ''
     })
 
-    const {username, password} = inputState;
+    const {email, password} = inputState;
 
-    const handleSubmit = e =>{
+    const handleSubmit = async e =>{
         e.preventDefault();
         console.log("submitted")
         //This is where we would put the validate or login function from mainContext
+        try{
+            const response = await axios.post("http://localhost:3003/login", inputState)
+            setLoggedIn(true);
+        }
+        catch(err){
+            setLoggedIn(false);
+        }  
+        if(getLoggedIn()){
+            setCurrent(3);
+        }
         setInputState({
-        username: '',
+        email: '',
         password: ''
         })
+
     }
     const handleInput = name => e =>{
         setInputState({...inputState, [name]: e.target.value})
@@ -33,9 +48,10 @@ function LogIn({setCurrent}){
         <StyledLogin onSubmit={handleSubmit}>
             <InnerLayout>
                 <h1 className="Buget Buddy">Budget Buddy</h1>
+                <h1 style={{color: 'red'}}></h1>
                 <div className="logInField">
                     <div className="inputEffect">
-                        <input type="text" required value={username} name={'username'} placeholder="Username" onChange={handleInput('username')}/>
+                        <input type="text" required value={email} name={'email'} placeholder="Username" onChange={handleInput('email')}/>
                     </div>
                     <div className="inputEffect">
                         <input type="password" required value={password} name={'password'} placeholder="Password" onChange={handleInput('password')}/>
@@ -43,7 +59,7 @@ function LogIn({setCurrent}){
                     <div>
                     <Button name={"Login"} icon={''} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'white'} color={'var(--primaryColor)'} iColor={'white'}/>
                     </div>
-                    <p onClick={() => setCurrent(3)}>Don't have an account? Sign up here</p>
+                    <p onClick={() => setCurrent(6)}>Don't have an account? Sign up here</p>
                 </div>
                 </InnerLayout>   
         </StyledLogin>

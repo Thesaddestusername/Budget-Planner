@@ -11,6 +11,7 @@ export const MainSource = ({children}) => {
     const[incomes, setIncomes] = useState([]);
     const[expenses, setExpenses] = useState([]);
     const[error, setError] = useState(null);
+    let isLoggedIn = false;
 
     const addIncome = async(income) => {
         const response = await axios.post(`${BASE_URL}addIncome`, income)
@@ -54,7 +55,6 @@ export const MainSource = ({children}) => {
     } 
 
     const deleteExpense = async(id) =>{
-        console.log('Before');
         const resolution = await axios.delete(`${BASE_URL}deleteExpense/${id}`)
         getExpenses();
     }
@@ -80,9 +80,24 @@ export const MainSource = ({children}) => {
         return recentHistory.slice(0, 6);
     }
 
+    const signUp = async(user) => {
+        console.log("signedUp");
+        const response = await axios.post("http://localhost:3003/signup", user)
+        .catch((err) =>{
+            setError(err.response.data.message)
+        })
+    }
+
+    const setLoggedIn = (loggedInvalue) =>{
+        isLoggedIn = loggedInvalue;
+    }
+
+    const getLoggedIn = () =>{
+        return isLoggedIn;
+    }
 
     return(
-        <mainContext.Provider value={{addIncome, getIncomes, incomes, deleteIncome, calcTotalIncome, addExpense, getExpenses, deleteExpense, calcTotalExpense, expenses, calcTotalBalance, recentTransactionHistory}}>
+        <mainContext.Provider value={{addIncome, getIncomes, incomes, deleteIncome, calcTotalIncome, addExpense, getExpenses, deleteExpense, calcTotalExpense, expenses, calcTotalBalance, recentTransactionHistory, signUp, error, getLoggedIn, setLoggedIn}}>
             {children}
         </mainContext.Provider>
     )

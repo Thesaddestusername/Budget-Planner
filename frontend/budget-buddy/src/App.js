@@ -9,9 +9,10 @@ import Expenses from "./components/expenses/expenses";
 import { MainTheme } from "./styles/MainTheme";
 import LogOut from "./components/logOut/logOut";
 import LogIn from "./components/logIn/logIn";
+import SignUp from "./components/signup/signup";
 
 function App() {
-  const [current, setCurrent] = useState(3);
+  const [current, setCurrent] = useState(5);
 
   const showInfo = () =>{
     if(current === 1){
@@ -27,21 +28,25 @@ function App() {
       return <LogOut setCurrent={setCurrent}/>;
     }
     else if(current === 5){
-      return <LogIn setCurrent={setCurrent}/>;
+      return <LogIn setCurrent={setCurrent}/>
+    }
+    else if(current === 6){
+      return <SignUp setCurrent={setCurrent}/>;
     }
   }
 
   return (
-    <StyledDiv className="App">
-      <MainTheme/>
-      <Gradient></Gradient>
-      <OutterLayout>
-      {current != 5 ? <Navigation current={current} setCurrent={setCurrent}/> : ''}  
-          <main>
-            {showInfo()}
-          </main>
-      </OutterLayout>
-    </StyledDiv>
+      <StyledDiv className="App">
+
+        <MainTheme/>
+        <Gradient></Gradient>
+        <OutterLayout>
+        {(current != 5 && current != 6) ? <Navigation current={current} setCurrent={setCurrent}/> : ''}  
+            <main>
+              {showInfo()}
+            </main>
+        </OutterLayout>
+      </StyledDiv>
   );
 }
 
