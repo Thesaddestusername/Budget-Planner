@@ -1,11 +1,14 @@
 import React, {useEffect} from "react";
-import {Chart as ChartJS, LinearScale, CategoryScale, LineElement, PointElement, Title, Tooltip, ArcElement, Legend} from 'chart.js';
+//import {Chart as ChartJS, LinearScale, CategoryScale, LineElement, PointElement, Title, Tooltip, ArcElement, Legend} from 'chart.js';
+import {Chart,  registerables } from 'chart.js/auto'
+import { Bar } from "react-chartjs-2";
 import {Line} from 'react-chartjs-2';
 import styled from "styled-components";
 import { GetMainContext } from "../../context/mainContext";
 import { DateFormatting } from "../../utils/dateFormatting";
 
-ChartJS.register(LinearScale, CategoryScale, LineElement, PointElement, Title, Tooltip, ArcElement, Legend);
+//ChartJS.register(LinearScale, CategoryScale, LineElement, PointElement, Title, Tooltip, ArcElement, Legend);
+Chart.register(...registerables)
 
 function LineGraph(){
 
@@ -32,7 +35,7 @@ function LineGraph(){
     return(
         <StyledGraph>
             <h1>All Transactions</h1>
-            <Line data={info}/>
+            <Bar data={info}/>
         </StyledGraph>
     )
 }

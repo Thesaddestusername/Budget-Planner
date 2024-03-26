@@ -13,7 +13,7 @@ const requireAuth = (req, res, next) => {
     // Check if the token exists
     if(token){
         jwt.verify(token, secret, (err, decodedToken) => {
-            if(!err){
+            if(err){
                 console.log(err.message)
                 res.redirect('/login')
             } else {
