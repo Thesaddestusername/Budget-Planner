@@ -1,24 +1,29 @@
-import { singout } from "./icons";
-import { calender } from "./icons";
+import { downArrowSign, logOutSign, upArrowSign } from "./icons";
 import { chart } from "./icons";
 
 export const dropDownItems = [
     {
         id: 1,
-        title: 'Sign Out',
-        icon: singout,
+        title: 'Income',
+        icon: upArrowSign,
         link: 'linkToNextPage'
     },
     {
         id: 2,
-        title: 'Calender View',
-        icon: calender,
+        title: 'Expenses',
+        icon: downArrowSign,
         link: ''
     },
     {
         id: 3,
         title: 'Graph View',
         icon: chart,
+        link: ''
+    },
+    {
+        id: 4,
+        title: 'Log Out',
+        icon: logOutSign,
         link: ''
     }
 

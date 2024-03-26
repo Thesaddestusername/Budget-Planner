@@ -19,7 +19,7 @@ const ExpenseSchema = new mongoose.Schema({
     amount: {
         type: Number,
         required: true,
-        maxLength: 20,
+        maxLength: 1000000,
         trim: true,
     },
     // Type of the expense (where it's from)

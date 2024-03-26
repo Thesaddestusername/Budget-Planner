@@ -1,16 +1,19 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 import profilePic from "../../images/blankProfilePic.png"
 import { dropDownItems } from "../../utils/dropDownItems";
+import { GetMainContext } from "../../context/mainContext";
 
 function Navigation({current, setCurrent}){
+    const{calcTotalBalance, getIncomes, getExpenses} = GetMainContext();
+    useEffect(() =>{calcTotalBalance(); getIncomes(); getExpenses()}, [])
     return(
         <StyledNav>
             <div className="userDiv">
                 <img src={profilePic} alt=""/>
                 <div className="username">
                     <h2>USERNAME</h2>
-                    <p>BALANCE</p>
+                    <p>${calcTotalBalance().toFixed(2)}</p>
                 </div>
                 <ul className="dropDownItems">
                     {dropDownItems.map((item)=>{
@@ -18,10 +21,6 @@ function Navigation({current, setCurrent}){
                     }
                     )}
                 </ul>
-                <div className="bottomNav">
-                    <li>
-                    </li>
-                </div>    
             </div>
         </StyledNav>
     )
@@ -80,6 +79,10 @@ const StyledNav = styled.nav`
             background: rgba(255,217,61, 0.9);
             border-radius: 10px 10px 10px 10px;
         }
+    }
+
+    .bottomNav{
+
     }
 `;
 

@@ -6,37 +6,37 @@ import React, {useState} from "react";
 import Dashboard from "./components/dashboard/dashboard";
 import Incomes from "./components/incomes/incomes";
 import Expenses from "./components/expenses/expenses";
-import { GetMainContext } from "./context/mainContext";
+import { MainTheme } from "./styles/MainTheme";
+import LogOut from "./components/logOut/logOut";
+import LogIn from "./components/logIn/logIn";
 
 function App() {
-  const [current, setCurrent] = useState(1);
-
-  const mainCont = GetMainContext();
-  console.log(mainCont);
+  const [current, setCurrent] = useState(3);
 
   const showInfo = () =>{
     if(current === 1){
-      return <Dashboard/>;
+      return <Incomes/>;
     }
     else if(current === 2){
-      return <Dashboard/>;
-    }
-    else if(current === 3){
-      return <Incomes/>
-    }
-    else if(current === 4){
       return <Expenses/>;
     }
-    else{
-      return <Dashboard/>;
+    else if(current === 3){
+      return <Dashboard/>
+    }
+    else if(current === 4){
+      return <LogOut setCurrent={setCurrent}/>;
+    }
+    else if(current === 5){
+      return <LogIn setCurrent={setCurrent}/>;
     }
   }
 
   return (
     <StyledDiv className="App">
+      <MainTheme/>
       <Gradient></Gradient>
       <OutterLayout>
-        <Navigation current={current} setCurrent={setCurrent}/>
+      {current != 5 ? <Navigation current={current} setCurrent={setCurrent}/> : ''}  
           <main>
             {showInfo()}
           </main>
@@ -55,7 +55,6 @@ const StyledDiv = styled.div`
     border: 2px solid #ffe863;
     backdrop-filter: blur(3px);
     border-radius: 32px;
-    overflow: auto;
     overflow-x: hidden;
     &::-webkit-scrollbar{
       width: 0;
