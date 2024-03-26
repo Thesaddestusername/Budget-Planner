@@ -7,16 +7,16 @@ const router = require('express').Router();
 
 router
     // Routes for adding getting and deleting incomes and expenses.
-    .post('/add-income', addIncome)
-    .get('/get-incomes', getIncome)
-    .delete('/delete-income/:id', deleteIncome)
-    .post('/add-expense', addExpense)
-    .get('/get-expenses', getExpense)
-    .delete('/delete-expense/:id', deleteExpense)
+    .post('/addIncome', addIncome)
+    .get('/getIncomes', getIncome)
+    .delete('/deleteIncome/:id', deleteIncome)
+    .post('/addExpense', addExpense)
+    .get('/getExpenses', getExpense)
+    .delete('/deleteExpense/:id', deleteExpense)
     
     // Routes for authentication
-    .post('/signup', signup)
-    .post('/login', login)
+    //.post('/signup', signup)
+    //.post('/login', login)
     .get('/logout', logout)
 
 module.exports = router
