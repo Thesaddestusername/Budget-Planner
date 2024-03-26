@@ -43,14 +43,18 @@ const errHandler = (err) => {
 
 
 
-
+// Signup controller function
 module.exports.signup = async (req, res) => {
     //res.send('Signup page')
     const {email, password} = req.body
 
     try{
+        if (!email || !password){
+            return res.status(400).json({message: "No email or password detected."})
+        }
+        // Creating a user and saving it to the database
         const user = await User.create(({email, password}))
-        // Creating a token
+        // Creating a unique JWT token for the user
         const token = createToken(user._id)
         res.cookie('jwt', token, {maxAge: 3 * 24 * 60 * 60 * 1000})
         console.log("User Created: ", user)
@@ -64,10 +68,16 @@ module.exports.signup = async (req, res) => {
 
 }
 
+// Login controller function
 module.exports.login = async (req, res) => {   
+    // Grabbing the email and password from the request body
     const {email, password} = req.body
-    
+
     try{
+        if (!email || !password){
+            return res.status(400).json({message: "No email or password detected."})
+        }
+        // If user is found, create a token and send it to the user
         const user = await User.login(email, password)
         const token = createToken(user._id)
         res.cookie('jwt', token, {maxAge: 3 * 24 * 60 * 60 * 1000})
@@ -75,12 +85,15 @@ module.exports.login = async (req, res) => {
     }
 
     catch(err){
+        // Catch errors and send them to the user
         console.log(err)
         return res.status(500).json({message: err.message})
     }
 }
 
+/// Logout controller function
 module.exports.logout = (req, res) => {
+    // Basically clears the cookie and redirects to whatever the home page is.
     res.cookie('jwt', '', {maxAge: 1})
-    res.redirect('/')
+    return res.status(200).json({message: "User logged out successfully"});
 }

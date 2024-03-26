@@ -98,6 +98,7 @@ List of reused algorithms and small programs with references
 > .
 
 List of software tools and environmets. Provide briefly their benefits specifically for your application.
+<<<<<<< Updated upstream
 > Node.js
 > Express
 > Mongodb 
@@ -108,6 +109,9 @@ List of software tools and environmets. Provide briefly their benefits specifica
 > Validator
 > bcrypt
 > cookie-parser
+=======
+> Node.js, MongoDB, Mongoose, Dotenv.
+>>>>>>> Stashed changes
 
 ### Acceptance Testing
 Correctness testing using four test cases only (sc of both inputs and outputs).
