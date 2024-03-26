@@ -118,16 +118,17 @@ module.exports.addChild = async (req, res) => {
         const parentUser = userSchema.findById(res.locals.user.id)
         // If they don't have any children
         if (parentUser.child1 == null){
-            parentUser.child1 = child
+            await User.updateOne({ _id: res.locals.user.id }, { child1: child })
         }
         // If they already have one child but not a second
         else if (parentUser.child2 == null){
-            parentUser.child2 = (child)
+            await User.updateOne({ _id: res.locals.user.id }, { child2: child })
         }
         // If they have the maximum numebr of chilren
         else{
             return res.status(400).json({message: "You have the maximum number of children."})
         }
+        // Save the changes made to parentUser
         return res.status(200).json({message: "Child added successfully: "})
     }
 
