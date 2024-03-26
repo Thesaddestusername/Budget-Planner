@@ -1,6 +1,8 @@
 const jwt = require('jsonwebtoken');
 const User = require('../Models/UserModel');
 require("dotenv").config()
+const userSchema = require('../Models/UserModel');
+const { default: mongoose } = require('mongoose');
 
 
 const secret = process.env.SECRET
@@ -63,7 +65,7 @@ module.exports.signup = async (req, res) => {
 
     catch(err){
         console.log(err)
-        return res.status(500).json({message: err.message})
+        return res.status(500).json({message: "Please provide a valid email and password (6 characters minimum)."})
     }
 
 }
@@ -87,7 +89,7 @@ module.exports.login = async (req, res) => {
     catch(err){
         // Catch errors and send them to the user
         console.log(err)
-        return res.status(500).json({message: err.message})
+        return res.status(500).json({message: "Incorrect email or password."})
     }
 }
 
@@ -95,5 +97,43 @@ module.exports.login = async (req, res) => {
 module.exports.logout = (req, res) => {
     // Basically clears the cookie and redirects to whatever the home page is.
     res.cookie('jwt', '', {maxAge: 1})
-    res.redirect('/')
+    return res.status(200).json({message: "User logged out successfully"})
+    // Not using a redirect
+    //res.redirect('/')
+}
+
+
+// Function to add a child to a parent account
+module.exports.addChild = async (req, res) => {
+    // Grabbing the email and password from the request body
+    const {email, password} = req.body
+
+    try{
+        if (!email || !password){
+            return res.status(400).json({message: "No email or password detected."})
+        }
+        // If user is found, create a token and send it to the user
+        const child = await User.login(email, password)
+        // Finding the parent user (currently logged in user)
+        const parentUser = userSchema.findById(res.locals.user.id)
+        // If they don't have any children
+        if (parentUser.child1 == null){
+            parentUser.child1 = child
+        }
+        // If they already have one child but not a second
+        else if (parentUser.child2 == null){
+            parentUser.child2 = (child)
+        }
+        // If they have the maximum numebr of chilren
+        else{
+            return res.status(400).json({message: "You have the maximum number of children."})
+        }
+        return res.status(200).json({message: "Child added successfully: "})
+    }
+
+    catch(err){
+        // Catch errors and send them to the user
+        console.log(err)
+        return res.status(500).json({message: "Incorrect email or password."})
+    }
 }

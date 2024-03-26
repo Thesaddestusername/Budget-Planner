@@ -1,6 +1,6 @@
 const {addIncome, getIncome, deleteIncome,} = require('../controllers/Income')
 const {addExpense, getExpense, deleteExpense} = require('../controllers/Expenses') // VScode is mad at this too but it works so...
-const {signup, login, logout} = require('../controllers/auth')
+const {signup, login, logout, addChild} = require('../controllers/auth')
 
 const router = require('express').Router();
 
@@ -14,9 +14,7 @@ router
     .get('/getExpenses', getExpense)
     .delete('/deleteExpense/:id', deleteExpense)
     
-    // Routes for authentication
-    //.post('/signup', signup)
-    //.post('/login', login)
-    .get('/logout', logout)
+    // Route for adding a child user to a parent account
+    .post('/addChild', addChild)
 
 module.exports = router

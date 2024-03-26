@@ -1,4 +1,4 @@
-const IncomeSchema = require('../models/IncomeModel') // Despite this throwing an error in VSCode, it is actually needed for the app to work.
+const IncomeSchema = require('../Models/IncomeModel') // Despite this throwing an error in VSCode, it is actually needed for the app to work.
 
 exports.addIncome = async (req, res) => {
     const { label, amount, date, type, notes} = req.body
