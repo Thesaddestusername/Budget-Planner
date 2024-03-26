@@ -9,8 +9,6 @@ exports.addExpense = async (req, res) => {
         notes,
         date
     })
-    
-
     // Grabbing belongsto parameter from the request.
     const belongsto = res.locals.user
     // Console logging for debug.
@@ -50,7 +48,8 @@ exports.addExpense = async (req, res) => {
 // Get all expenses
 exports.getExpense = async (req, res) => {
     try{
-        const expense = await ExpenseSchema.find().sort({createdAt: -1})
+        // Get all expenses belonging to the user
+        const expense = await ExpenseSchema.find({belongsto: res.locals.user.id}).sort({createdAt: -1})
         res.status(200).json(expense)
     }
     catch(error){

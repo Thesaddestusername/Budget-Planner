@@ -6,7 +6,7 @@ const {readdirSync} = require('fs')
 const { router } = require('./routes/Transactions')
 const cookieParser = require('cookie-parser')
 const { requireAuth, checkUser } = require('./middleware/auth')
-const {login, signup} = require('./controllers/auth')
+const {login, signup, logout} = require('./controllers/auth')
 
 const application = express();
 
@@ -24,12 +24,11 @@ application.use(express.json())
 application.use(cors())
 // Cookie parser middleware to parse incoming cookies
 application.use(cookieParser())
-// Each page from the backend behind API will requireAuth. This will check if the user is authenticated or not. If they are not, they will be redirected to the login page.
-application.use('api/', requireAuth)
+
+// Each page that is not /signup and login will require the user to be authenticated.
+application.use('/api', requireAuth)
 // This is simply used to check if a user is logged in and storing their information in res.locals.user for the database queries.
 application.use(checkUser)
-
-
 
         // Routes //
 
@@ -39,6 +38,7 @@ application.use('/api', require('./routes/Transactions'))
 // Creating unprotected routes for signup and login
 application.post('/signup', signup)
 application.post('/login', login)
+application.get('/logout', logout)
 
 
         // Server function. It will start the server and listen on the port specified in the .env //
