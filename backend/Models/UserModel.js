@@ -16,8 +16,15 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please provide a password'],
         minLength: [6, 'Password must be at least 6 characters long']
+    },
+
+    child:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Child',
+        required: false
     }
 
+}, {timestamps: true
 })
 
 // static method to login users.
