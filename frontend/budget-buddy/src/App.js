@@ -10,6 +10,7 @@ import { MainTheme } from "./styles/MainTheme";
 import LogOut from "./components/logOut/logOut";
 import LogIn from "./components/logIn/logIn";
 import SignUp from "./components/signup/signup";
+import AddChild from "./components/addChild/addChild";
 
 function App() {
   const [current, setCurrent] = useState(5);
@@ -33,11 +34,13 @@ function App() {
     else if(current === 6){
       return <SignUp setCurrent={setCurrent}/>;
     }
+    else if(current === 7){
+      return <AddChild/>;
+    }
   }
 
   return (
       <StyledDiv className="App">
-
         <MainTheme/>
         <Gradient></Gradient>
         <OutterLayout>

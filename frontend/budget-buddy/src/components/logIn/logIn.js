@@ -10,6 +10,8 @@ import axios from 'axios';
 
 function LogIn({setCurrent}){
 
+    const[error, setError] = useState(null);
+
     const{getLoggedIn, setLoggedIn} = GetMainContext();
 
     const[inputState, setInputState] = useState({
@@ -28,6 +30,7 @@ function LogIn({setCurrent}){
             setLoggedIn(true);
         }
         catch(err){
+            setError(err.response.data.message);
             setLoggedIn(false);
         }  
         if(getLoggedIn()){
@@ -48,7 +51,7 @@ function LogIn({setCurrent}){
         <StyledLogin onSubmit={handleSubmit}>
             <InnerLayout>
                 <h1 className="Buget Buddy">Budget Buddy</h1>
-                <h1 style={{color: 'red'}}></h1>
+                <h2 style={{color: 'red'}}>{error}</h2>
                 <div className="logInField">
                     <div className="inputEffect">
                         <input type="text" required value={email} name={'email'} placeholder="Username" onChange={handleInput('email')}/>
@@ -59,7 +62,7 @@ function LogIn({setCurrent}){
                     <div>
                     <Button name={"Login"} icon={''} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'white'} color={'var(--primaryColor)'} iColor={'white'}/>
                     </div>
-                    <p onClick={() => setCurrent(6)}>Don't have an account? Sign up here</p>
+                    <p className="redirectLink" onClick={() => setCurrent(6)}>Don't have an account? Sign up here</p>
                 </div>
                 </InnerLayout>   
         </StyledLogin>
@@ -99,6 +102,11 @@ const StyledLogin = styled.form`
             &:hover{
                 background: #ffe863 !important;
             }
+        }
+    }
+    .redirectLink{
+        &:hover {
+            text-decoration: underline;
         }
     }
 

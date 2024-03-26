@@ -21,7 +21,11 @@ const PORT = process.env.PORT
 //Express middleware to parse incoming requests with JSON payloads        
 application.use(express.json())
 // Cors middleware to allow for cross-origin requests
-application.use(cors())
+application.use(cors({
+        credentials: true,
+        origin: "http://localhost:3000",
+    })
+)
 // Cookie parser middleware to parse incoming cookies
 application.use(cookieParser())
 

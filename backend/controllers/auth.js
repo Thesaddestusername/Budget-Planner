@@ -95,5 +95,5 @@ module.exports.login = async (req, res) => {
 module.exports.logout = (req, res) => {
     // Basically clears the cookie and redirects to whatever the home page is.
     res.cookie('jwt', '', {maxAge: 1})
-    res.redirect('/')
+    return res.status(200).json({message: "User logged out successfully"});
 }
