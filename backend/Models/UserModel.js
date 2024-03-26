@@ -29,14 +29,12 @@ const userSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Child1',
         required: false,
-        default: null
     },
 
     child2: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Child2',
         required: false,
-        default: null
     }
 
 }, {timestamps: true

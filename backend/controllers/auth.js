@@ -107,22 +107,56 @@ module.exports.logout = (req, res) => {
 module.exports.addChild = async (req, res) => {
     // Grabbing the email and password from the request body
     const {email, password} = req.body
-
+    if (!res.locals.user){
+        return res.status(400).json({message: "Please ensure that you are logged in."})
+    }
+    if (res.locals.user.isChild){
+        return res.status(400).json({message: "A child account cannot have a child."})
+    }
     try{
+        // If the email or password is missing, return an error
         if (!email || !password){
             return res.status(400).json({message: "No email or password detected."})
         }
-        // If user is found, create a token and send it to the user
+        // Getting child account
         const child = await User.login(email, password)
-        // Finding the parent user (currently logged in user)
-        const parentUser = userSchema.findById(res.locals.user.id)
-        // If they don't have any children
-        if (parentUser.child1 == null){
+        // If the child is the same as the parent
+        console.log("User ID: ", res.locals.user.id)
+        console.log("Child ID: ", child._id)
+        if (res.locals.userID == child._id){
+            return res.status(400).json({message: "A user cannot add themselves as a child."})
+        }
+        // Grabbing the two children that the parent has and checking if they exist.
+        const userHasChild1 = await User.findOne({_id: res.locals.user.id, child1: { $exists: true}})
+        const userHasChild2 = await User.findOne({_id: res.locals.user.id, child2: { $exists: true}})
+
+        if (userHasChild1){
+            if (userHasChild1._id == child._id)
+                return res.status(400).json({message: "User already has this child."})
+            if (userHasChild1.isChild)
+                return res.status(400).json({message: "A child account cannot have a child"})
+            if (userHasChild1._id == child._id)
+                return res.status(400).json({message: "User already has this child."})
+        }
+        if (userHasChild2){
+            if (userHasChild2._id == child._id)
+            return res.status(400).json({message: "User already has this child."})
+            if (userHasChild2.isChild)
+                return res.status(400).json({message: "A child account cannot have a child"})
+            if (userHasChild2._id == child._id)
+                return res.status(400).json({message: "User already has this child."})
+        }
+        // If the userhasChild is null, then the child does not exist yet.
+        if (!userHasChild1){
+            console.log ("Adding child to child1")
             await User.updateOne({ _id: res.locals.user.id }, { child1: child })
+            await User.updateOne({_id: child._id}, {isChild: true})
         }
         // If they already have one child but not a second
-        else if (parentUser.child2 == null){
+        else if (!userHasChild2){
+            console.log ("adding child to child2")
             await User.updateOne({ _id: res.locals.user.id }, { child2: child })
+            await User.updateOne({_id: child._id}, {isChild: true})
         }
         // If they have the maximum numebr of chilren
         else{
@@ -136,5 +170,97 @@ module.exports.addChild = async (req, res) => {
         // Catch errors and send them to the user
         console.log(err)
         return res.status(500).json({message: "Incorrect email or password."})
+    }
+}
+
+// Function to get user information
+module.exports.getUser = async (req, res) => {
+    try {
+        // Finding the user by id
+        const user = await User.findById(res.locals.user.id)
+        if (!user) {
+            return res.status(404).json({ message: "User not found." })
+        }
+        // Send back the user information
+        return res.status(200).json(user)
+    } catch (err) {
+        // Catch errors and send them to the user
+        console.log(err)
+        return res.status(500).json({ message: "An error occurred." })
+    }
+}
+
+module.exports.getChildren = async (req, res) => {
+    try {
+        // Finding the user by id
+        const user = await User.findById(res.locals.user.id)
+        if (!user) {
+            return res.status(404).json({ message: "User not found." })
+        }
+
+        // Check if the user has children
+        if (user.child1 || user.child2) {
+            // Create a children object
+            let children = {}
+
+            // If child1 exists, add it to the children object
+            if (user.child1) {
+                children.child1 = await User.findById(user.child1)
+            }
+
+            // If child2 exists, add it to the children object
+            if (user.child2) {
+                children.child2 = await User.findById(user.child2)
+            }
+
+            // Send back the children information
+            return res.status(200).json(children)
+        } else {
+            return res.status(200).json({ message: "No children found." })
+        }
+    }
+    catch (err) {
+        // Catch errors and send them to the user
+        console.log(err)
+        return res.status(500).json({ message: "An error occurred." })
+    }
+}
+
+// Function to delete a child from a parent account
+module.exports.deleteChild = async (req, res) => {
+    // Grabbing the childId from the request body
+    const {id} = req.params
+    console.log ("ID: ", id)
+    try{
+        if (!id){
+            return res.status(400).json({message: "No child ID detected."})
+        }
+        // Finding the parent user (currently logged in user)
+        const parentUser = await User.findById(res.locals.user.id)
+        // If the child to delete is child1
+        if (parentUser.child1){
+            if (parentUser.child1.toString() === id){
+                await User.updateOne({ _id: res.locals.user.id }, { $unset: { child1: "" }})
+                await User.updateOne({ _id: id }, { $set: {isChild : false}})
+            }
+        }
+        // If the child to delete is child2
+        else if (parentUser.child2){
+            if (parentUser.child2.toString() === id){
+                await User.updateOne({ _id: res.locals.user.id }, { $unset: { child2: "" }})
+                await User.updateOne({ _id: id }, { $set: {isChild : false}})
+            }
+        }
+        // If the child to delete is not found
+        else{
+            return res.status(400).json({message: "Child not found."})
+        }
+        return res.status(200).json({message: "Child deleted successfully: "})
+    }
+
+    catch(err){
+        // Catch errors and send them to the user
+        console.log(err)
+        return res.status(500).json({message: "An error occurred."})
     }
 }
