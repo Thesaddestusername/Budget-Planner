@@ -98,30 +98,31 @@ List of reused algorithms and small programs with references
 > .
 
 List of software tools and environmets. Provide briefly their benefits specifically for your application.
------backend--------
-> Node.js
-> Express
-> Mongodb 
-> dotenv 
-> Mongoose
-> JWT 
-> Postman 
-> Validator
-> bcrypt
-> cookie-parser
-> nodemon
-> cors
+-----backend-------- <br/>
+
+> Node.js <br/>
+> Express <br/>
+> Mongodb <br/>
+> dotenv <br/>
+> Mongoose <br/>
+> JWT <br/>
+> Postman <br/>
+> Validator <br/>
+> bcrypt <br/>
+> cookie-parser <br/>
+> nodemon <br/>
+> cors <br/>
 -----frontend--------
-> axios
-> chart.js
-> moment
-> react
-> react-charsjs-2
-> react-datepicker
-> react-dom
-> react-scripts
-> styled-components
-> web-vitals
+> axios <br/>
+> chart.js <br/>
+> moment <br/>
+> react <br/>
+> react-charsjs-2 <br/>
+> react-datepicker <br/>
+> react-dom <br/>
+> react-scripts <br/>
+> styled-components <br/>
+> web-vitals <br/>
 ### Acceptance Testing
 Correctness testing using four test cases only (sc of both inputs and outputs).
 > .
