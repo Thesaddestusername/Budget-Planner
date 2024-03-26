@@ -21,7 +21,8 @@ const userSchema = new mongoose.Schema({
     isChild:
     {
         type: Boolean,
-        required: false
+        required: false,
+        default: false
     },
 
     child1: {
