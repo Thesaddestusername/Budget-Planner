@@ -10,12 +10,26 @@ exports.addExpense = async (req, res) => {
         date
     })
     
-    console.log(newExpense)
+
+    // Grabbing belongsto parameter from the request.
+    const belongsto = res.locals.user
+    // Console logging for debug.
+    //console.log(belongsto + " is the user")
+
+    // Assigning the belongsto parameter to the newIncome object.
+    newExpense.belongsto = belongsto
+
+    // For debugging
+    //console.log(newExpense)
 
     try {
         // Validation of the incoming data
-        if (!label || !type || !notes || !date) {
+        if (!label || !type || !notes || !date || !amount) {
             return res.status(400).json({ message: "Please ensure that all fields are filled in!" })
+        }
+        // Ensuring a user is logged in before adding an expense
+        if (belongsto == null || !belongsto){
+            return res.status(400).json({ message: "Please ensure that you are logged in!" })
         }
         // Amount must be above 0
         if (amount <= 0) {
@@ -47,7 +61,8 @@ exports.getExpense = async (req, res) => {
 // Used to delete an expense from the database
 exports.deleteExpense = async (req, res) => {
     const {id} = req.params
-    ExpenseSchema.findByIdAndDelete(id)
+    // Make sure it's using the lowercase Id, not ID. This caused me lots of pain.
+    ExpenseSchema.findbyIdAndDelete(id)
     .then((expense) => res.status(200).json({message: "Expense deleted successfully"}))
     .catch((error) => res.status(500).json({message: error.message}))
 }
