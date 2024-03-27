@@ -24,8 +24,7 @@ application.use(express.json())
 application.use(cors({
         credentials: true,
         origin: "http://localhost:3000",
-    })
-)
+}))
 // Cookie parser middleware to parse incoming cookies
 application.use(cookieParser())
 
