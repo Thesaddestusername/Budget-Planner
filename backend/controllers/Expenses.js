@@ -55,12 +55,14 @@ exports.getExpense = async (req, res) => {
         // Getting expenses for child 1
         if (res.locals.user.child1){
             const child1Expenses = await ExpenseSchema.find({belongsto: res.locals.user.child1}).sort({createdAt: -1})
-            expense.push(child1Expenses)
+            if (child1Expenses.length > 0)
+                expense.push(child1Expenses)
         }
         // Getting expenses for child 2
         if (res.locals.user.child2){
             const child2Expenses = await ExpenseSchema.find({belongsto: res.locals.user.child2}).sort({createdAt: -1})
-            expense.push(child2Expenses)
+            if (child2Expenses.length > 0)
+                expense.push(child2Expenses)
         }
         // Returning the expenses
         res.status(200).json(expense)
