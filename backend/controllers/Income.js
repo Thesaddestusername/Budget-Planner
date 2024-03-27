@@ -53,17 +53,15 @@ exports.getIncome = async (req, res) => {
         const incomes = await IncomeSchema.find({belongsto: res.locals.user.id}).sort({createdAt: -1})
  
         // If the user is not a child, get the incomes for the children as well.
-        if (!isChild){
-            // Getting incomes for child 1
-            if (res.locals.user.child1){
-                const child1Incomes = await IncomeSchema.find({belongsto: res.locals.user.child1}).sort({createdAt: -1})
-                incomes.push(child1Incomes)
-            }
-            // Getting incomes for child 2
-            if (res.locals.user.child2){
-                const child2Incomes = await IncomeSchema.find({belongsto: res.locals.user.child2}).sort({createdAt: -1})
-                incomes.push(child2Incomes)
-            }
+        // Getting incomes for child 1
+        if (res.locals.user.child1){
+            const child1Incomes = await IncomeSchema.find({belongsto: res.locals.user.child1}).sort({createdAt: -1})
+            incomes.push(child1Incomes)
+        }
+        // Getting incomes for child 2
+        if (res.locals.user.child2){
+            const child2Incomes = await IncomeSchema.find({belongsto: res.locals.user.child2}).sort({createdAt: -1})
+            incomes.push(child2Incomes)
         }
         // Return the incomes
         res.status(200).json(incomes)       
