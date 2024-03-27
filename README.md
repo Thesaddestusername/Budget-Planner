@@ -5,7 +5,7 @@
 - Hunter Bayliss (Thesaddestusername)   *baylissh@uregina.ca*
 - Levi Brown (Lebbl)           *lsb360@uregina.ca*
 - Braden Breit (Bradenzee)     *bbb560@uregina.ca*
-- Reanne Daviduk - (reannedaviduk)   *rcd714@uregina.ca*
+- Reanne Daviduk (reannedaviduk)   *rcd714@uregina.ca*
 ---
 ### Problem Definition: outline the problem requirements and include the application domain and motivations of your project. 
 >  1. Problem Description
@@ -78,8 +78,25 @@ Functional Requirements list (only the ones that you have implemented) for each 
 For each user role, provide the use case diagram with all the use cases and actors.
 > ![useCaseBudgetBuddy](https://github.com/Thesaddestusername/Budget-Planner/assets/72892765/2f6093d9-23fa-426a-ba92-f4a5bd512f55)
 
-Describe in detail two use cases using the activity diagram. Choose the most complex use cases.
-> .
+Describe in detail two use cases using the activity diagram. Choose the most complex use cases.<br/>
+> <img width="613" alt="ParentActivityDiagram" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/67f165cc-d624-465e-a320-9e8c9ce1022b"><br/>
+> Use Case One: Adding A New Child Using the Parent Role<br/>
+> Step 1: Login or create an account, enter a valid email and password to pass authentication.<br/>
+> Step 2: From the Graph View page, select Add Child in the navigation bar to view and add new children.<br/>
+> Step 4: Enter a valid username and password of a child to pass authentication.<br/>
+> Step 5: Submit form and new child will be listed under "My Children".<br/>
+> Step 6: Log out.<br/>
+
+> <img width="519" alt="ChildActivityDiagram" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/12a41a16-82eb-4721-8827-383fa8446428"><br/>
+> Use Case Two: Add A New Income Source Using the Child Role<br/>
+> Step 1: Login or create an account, enter a valid email and password to pass authentication.<br/>
+> Step 2: From the Graph View page, select Income in the navigation bar.<br/>
+> Step 3: Define income name, amount, date, type, and optional notes on left hand side of income page.<br/>
+> Step 4: Save changes to new income, it will appear on the right hand side of the income page.<br/>
+> Step 5: Log out.<br/>
+
+
+
 
 Software qualities. Include at least two concrete examples for each quality for each user role. 
 > 1. Correctness<br/>
