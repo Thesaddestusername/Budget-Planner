@@ -12,8 +12,8 @@ function LogOut({setCurrent}){
             <InnerLayout>
                 <h1 className="logOut">Log Out?</h1>
                 <div className="buttons">
-                    <Button name={"No"} icon={noSign} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'#CDEAC0'} color={'var(--primaryColor)'} iColor={'white'} onClick={() => setCurrent(3)}/>
-                    <Button name={"Yes"} icon={yesSign} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'#FF928B'} color={'var(--primaryColor)'} iColor={'white'} onClick={() => {setLoggedIn(false); logOut(); setCurrent(5)}}/>
+                    <Button name={"No"} icon={noSign} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'#FF928B'} color={'var(--primaryColor)'} iColor={'white'} onClick={() => setCurrent(3)}/>
+                    <Button name={"Yes"} icon={yesSign} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'#CDEAC0'} color={'var(--primaryColor)'} iColor={'white'} onClick={() => {setLoggedIn(false); logOut(); setCurrent(5)}}/>
                 </div>
             </InnerLayout>
         </StyledLogOut>

@@ -20,10 +20,10 @@ function Dashboard(){
                     </div>
                     <div className="totals">
                         <div className="totalIncome">
-                            <h2>Total Income: +${calcTotalIncome().toFixed(2)}</h2>
+                            <h2>Total Income: + ${calcTotalIncome().toFixed(2)}</h2>
                         </div>
                         <div className="totalExpenses">
-                            <h2 className="total" >Total Expenses: -${calcTotalExpense().toFixed(2)} </h2>
+                            <h2 className="total" >Total Expenses: - ${calcTotalExpense().toFixed(2)} </h2>
                         </div>
                         <div className="totalBalance">
                             <h2 className="total">Current Balance: ${calcTotalBalance().toFixed(2)}</h2>

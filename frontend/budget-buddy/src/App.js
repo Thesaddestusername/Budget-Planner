@@ -63,10 +63,12 @@ const StyledDiv = styled.div`
     background: #A7C7E7;
     border: 2px solid #EFE9AE;
     backdrop-filter: blur(3px);
-    border-radius: 32px;
+    border-radius: 64px;
     overflow-x: hidden;
+    scrollbar-width: none; 
     &::-webkit-scrollbar{
       width: 0;
+      background: transparent;
     }
   }
 `;

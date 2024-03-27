@@ -44,7 +44,7 @@ const StyledNav = styled.nav`
     background-color: #A7C7E7;
     border: 2px solid #EFE9AE;
     backdrop-filter: blur(3px);
-    border-radius: 32px;
+    border-radius: 64px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
