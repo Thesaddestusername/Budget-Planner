@@ -91,7 +91,7 @@ Software qualities. Include at least two concrete examples for each quality for 
 > Use Case: Parent adds a second child (stephanie@gmail.com) to their account.<br/>
 > Expected Outcome: The child should display accurately under child 2 with the correct email. The parent should now be able to correctly view and manage stephanie's finances percisely.<br/>
 > ---------------------------------<br/>
-> 2. Time-Efficiency
+> 2. Time-Efficiency<br/>
 > Child Role:<br/>
 > Use Case: Adding an income of 300$ with accompanying fields. (label, type, etc) <br/>
 > Expected Outcome: The income should be added to the database and show on the same page immediately. The total balance and graphs should also update quickly/in real time based on this change.<br/>
@@ -101,15 +101,18 @@ Software qualities. Include at least two concrete examples for each quality for 
 > ---------------------------------<br/>
 > 3. Robustness <br/>
 > Child Role:<br/>
-> Use Case: Creating an account<br/>
+> Use Case: Creating an account.<br/>
 > Expected Outcome: An error message will appear displaying the correspoding issue in any of theses cases: any of the required fields are empty, the account already exists, the email is not valid, the password does not match the re-typed password. Otherwise it will sign up and log the user in. <br/>
 > Parent Role:<br/>
-> Use Case: Adding a child<br/>
+> Use Case: Adding a child.<br/>
 > Expected Outcome:  An error message will appear displaying the correspoding issue in any of theses cases: any of the required fields are empty, the child has already been added, adding the currently logged-in account as a child of itself. Otherwise it will add and display the child.<br/>
 
 ### Top-level and low-level Software Design
-Provide the MVC arcitecture according to the selected Web framework. Also, describe at least three benefits of using MVC for your application.
-> .
+Provide the MVC architecture according to the selected Web framework. Also, describe at least three benefits of using MVC for your application.
+> Our team decided to use React to create our web based application, and it is important to note that React itself is not a framework. However, for this project we did end up using its dedicated framework called "Create React App".<br/>
+>The MODEL for this architecture is represented in our code as React's built-in state management system that provides us with useful hooks such as "useState". We also make use of more advanced state manegment systems such as React's Context API, where we create a MainContext to be a provider of crucial information across our system.<br/>
+> The VIEW in terms of the "Create React App" framework is simply the components that display our data and change based on user interaction. These components found throughout our project, often as UI components, that we decided to create with javascript and React's component syntax.
+> A characteristic that makes React so useful is that The CONTROLLER aspect can also be handle by user defined components. To explain, the components themselves can contain the logic that we need to handle user input and changing states. However, we also use specific controllers, middleware, and axios for our backend queries.
 
 Observer and Factory design patterns. Explain in detail the usability of these two patterns for your specific application. Include the complete class diagram for each pattern. For each class, provide the data types of the attributes and prototypes of the methods. 
 > .
