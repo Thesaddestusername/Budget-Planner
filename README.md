@@ -5,7 +5,7 @@
 - Hunter Bayliss (Thesaddestusername)   *baylissh@uregina.ca*
 - Levi Brown (Lebbl)           *lsb360@uregina.ca*
 - Braden Breit (Bradenzee)     *bbb560@uregina.ca*
-- Reanne Daviduk - @reannedaviduk   *rcd714@uregina.ca*
+- Reanne Daviduk - (reannedaviduk)   *rcd714@uregina.ca*
 ---
 ### Problem Definition: outline the problem requirements and include the application domain and motivations of your project. 
 >  1. Problem Description
@@ -98,21 +98,30 @@ List of reused algorithms and small programs with references
 > .
 
 List of software tools and environmets. Provide briefly their benefits specifically for your application.
-<<<<<<< Updated upstream
-> Node.js
-> Express
-> Mongodb 
-> dotenv 
-> Mongoose
-> JWT 
-> Postman 
-> Validator
-> bcrypt
-> cookie-parser
-=======
-> Node.js, MongoDB, Mongoose, Dotenv.
->>>>>>> Stashed changes
-
+> -----backend-------- <br/>
+> Node.js <br/>
+> Express <br/>
+> Mongodb <br/>
+> dotenv <br/>
+> Mongoose <br/>
+> JWT <br/>
+> Postman <br/>
+> Validator <br/>
+> bcrypt <br/>
+> cookie-parser <br/>
+> nodemon <br/>
+> cors <br/>
+-----frontend-------- <br/>
+> axios <br/>
+> chart.js <br/>
+> moment <br/>
+> react <br/>
+> react-charsjs-2 <br/>
+> react-datepicker <br/>
+> react-dom <br/>
+> react-scripts <br/>
+> styled-components <br/>
+> web-vitals <br/>
 ### Acceptance Testing
 Correctness testing using four test cases only (sc of both inputs and outputs).
 > .
