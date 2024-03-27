@@ -60,6 +60,7 @@ function Form2(){
                         <option value="membership">membership</option>
                         <option value="school/education">School/Education</option>
                         <option value="travel">Travel</option>
+                        <option value="misc.">Misc.</option>
                     </select>
                 </div>
             </div>
@@ -67,7 +68,7 @@ function Form2(){
                     <textarea type="text" required value={notes} name={'notes'} placeholder="- Notes" id = "notes" cols="15" rows="3" onChange={handleInput('notes')}/> 
                 </div>
                 <div className="confirmButton">
-                    <Button name={"Add This Expense"} icon={addSign} buttonPad={'0.9 1.9rem'} buttonRadius={'10px'} buttonBackground={'#FFE863'} textColor={'white'}/>
+                    <Button name={"Add This Expense"} icon={addSign} buttonPad={'0.9 1.9rem'} buttonRadius={'10px'} buttonBackground={'#FF928B'} textColor={'white'}/>
                 </div>
         </StyledFrm2>
     )
@@ -84,7 +85,8 @@ const StyledFrm2 = styled.form`
         border: none;
         padding: .5rem 1rem;
         border-radius: 5px;
-        border: 1px solid #ffe863;
+        //border: 1px solid #ffe863;
+        border: 2px solid #FF928B;
         background: white;
         resize: none;
         box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);

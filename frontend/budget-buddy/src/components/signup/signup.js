@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Button from "../button/button";
 import { InnerLayout } from "../../styles/pageLayouts";
 import axios from 'axios';
+import profilePic from "../../images/budgetBuddyIcon.png"
 
 function SignUp({setCurrent}){
 
@@ -49,8 +50,9 @@ function SignUp({setCurrent}){
     return(
         <StyledLogin onSubmit={handleSubmit}>
             <InnerLayout>
-                <h1 className="Buget Buddy">Budget Buddy SignUp</h1>
-                <h2 style={{color: 'red'}}>{error}</h2>
+                <h1 className="title">Budget Buddy SignUp</h1>
+                <img className="icon" src={profilePic} alt=""/>
+                <h2 className="errorMsg" style={{color: '#FF928B'}}>{error}</h2>
                 <div className="logInField">
                     <div className="inputEffect">
                         <input type="text" required value={email} name={'email'} placeholder="Enter a Valid Email Address" onChange={handleInput('email')}/>
@@ -58,10 +60,10 @@ function SignUp({setCurrent}){
                     <div className="inputEffect">
                         <input type="password" required value={password} name={'password'} placeholder="Password" onChange={handleInput('password')}/>
                     </div>
-                    <div>
-                    <Button name={"Sign Up"} icon={''} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'white'} color={'var(--primaryColor)'} iColor={'white'}/>
+                    <div className="button">
+                        <Button name={"Sign Up"} icon={''} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'white'} color={'var(--primaryColor)'} iColor={'white'}/>
                     </div>
-                    <p className="redirectLink" onClick={() => setCurrent(5)}>Already Have an Account? Go back to login page</p>
+                    <p className="redirectLink" onClick={() => setCurrent(5)}>Already have an account? Go back to login page</p>
                 </div>
                 </InnerLayout>   
         </StyledLogin>
@@ -83,18 +85,46 @@ const StyledLogin = styled.form`
         background: white;
         resize: none;
         box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
-        color: var(--primaryColor);
+        color: var(-primaryColor);
         &::placeholder{
             color: rgba(71,41,120, 0.8);
         }
     }
+    .errorMsg {
+        text-align: center;
+    }
+    .title {
+        text-align: center;
+    }
+    .icon {
+        max-width: 15%;
+        height: auto;
+        border-radius: 10px;
+        display: block;
+        margin-left:auto;
+        margin-right: auto;
+        top: 50px;
+    }
+    .logInField {
+        text-align: center;
+    }
     .inputEffect{
         input{
-            width: 100%;
+            width: 50%;
+            margin: 8px 0;
+            text-align: center;
         }
         select{
             color: rgba(34,34,96, 1)
         }
+    }
+    .button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin: 50px auto;
+        width: 10%;
+
     }
     .confirmButton{
         button{

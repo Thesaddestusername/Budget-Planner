@@ -60,6 +60,7 @@ function Form(){
                         <option value="nft">NFT</option>
                         <option value="sale">Item Sold</option>
                         <option value="liquidation">Liquidation</option>
+                        <option value="misc">Other</option>
                     </select>
                 </div>
             </div>
@@ -67,7 +68,7 @@ function Form(){
                     <textarea type="text" required value={notes} name={'notes'} placeholder="- Notes" id = "notes" cols="15" rows="3" onChange={handleInput('notes')}/> 
                 </div>
                 <div className="confirmButton">
-                    <Button name={"Add This Income"} icon={addSign} buttonPad={'0.9 1.9rem'} buttonRadius={'10px'} buttonBackground={'#FFE863'} textColor={'white'}/>
+                    <Button name={"Add This Income"} icon={addSign} buttonPad={'0.9 1.9rem'} buttonRadius={'10px'} buttonBackground={'#CDEAC0'} textColor={'white'}/>
                 </div>
         </StyledFrm>
     )
@@ -84,7 +85,7 @@ const StyledFrm = styled.form`
         border: none;
         padding: .5rem 1rem;
         border-radius: 5px;
-        border: 1px solid #ffe863;
+        border: 2px solid #CDEAC0;
         background: white;
         resize: none;
         box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);

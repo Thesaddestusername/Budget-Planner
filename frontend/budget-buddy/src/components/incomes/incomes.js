@@ -38,8 +38,9 @@ const StyledIncomes= styled.div`
         display:flex;
         justify-content: center;
         align-items: center;
-        background: white;
-        border: 2px solid #ffe863; 
+        background: #A7C7E7;
+        //border: 2px solid #ffe863;
+        border: 2px solid #CDEAC0; 
         box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
         padding: 1rem;
@@ -49,7 +50,7 @@ const StyledIncomes= styled.div`
         span{
             font-size: 3rem;
             font-weight: 900;
-            color: lightgreen;
+            color: #CDEAC0;
         }
 
     }
