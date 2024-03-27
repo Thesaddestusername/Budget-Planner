@@ -22,7 +22,7 @@ function Incomes(){
                     <div className="incomes">
                         {incomes.map((income => {
                             const{_id, label, amount, date, type,  notes} = income;
-                            return<IncomeComponent key={_id} id={_id} label={label} amount={amount} date={date} type={type} notes={notes} pipColor="#ffd93d" deleteMe={deleteIncome}/>
+                            return<IncomeComponent key={_id} id={_id} label={label} amount={amount} date={date} type={type} notes={notes} pipColor="green" deleteMe={deleteIncome}/>
                         }))}
                     </div>
                 </div>
