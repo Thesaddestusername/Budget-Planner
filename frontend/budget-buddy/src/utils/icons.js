@@ -14,3 +14,10 @@ export const noSign = <i className="fa-solid fa-xmark"></i>
 export const yesSign = <i className="fa-solid fa-check"></i>
 export const childSign = <i className="fa-solid fa-children"></i>
 export const newChildSign = <i className="fa-solid fa-child-reaching"></i>
+export const salarySign = <i class="fa-solid fa-sack-dollar"></i>
+export const giftSign = <i class="fa-solid fa-gift"></i>
+export const refundSign = <i class="fa-solid fa-file-invoice-dollar"></i>
+export const stockSign = <i class="fa-solid fa-arrow-trend-up"></i>
+export const cryptoSign = <i class="fa-brands fa-bitcoin"></i>
+export const soldSign = <i class="fa-solid fa-hand-holding-dollar"></i>
+export const liquidationSign = <i class="fa-solid fa-house"></i>
