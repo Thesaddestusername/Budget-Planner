@@ -53,7 +53,7 @@ function ExpenseComponent({id, label, amount, date, type, notes, deleteMe, pipCo
                             <p>{typeSign} {type}</p>
                             <p>{noteSign} {notes}</p>
                         </div>
-                        <div className="deleteButtonContainer">
+                        <div className="confirmButton">
                         <Button name={"Delete"} icon={trashBin} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'#FF928B'} color={'white'} iColor={'white'} onClick={() => deleteMe(id)}/>
                         </div>
                     </div>    
@@ -63,7 +63,7 @@ function ExpenseComponent({id, label, amount, date, type, notes, deleteMe, pipCo
 }
 
 const StyledExpense = styled.div`
-    border: 3px solid #FF928B;
+border: 3px solid #FF928B;
     border-radius: 25px;
     padding: 1rem;
     background: #EFE9AE;
@@ -83,13 +83,11 @@ const StyledExpense = styled.div`
         justify-content: center;
         border:  1px solid #FF928B;
         i{
-            font-size: 4.0rem;
+            font-size: 3.5rem;
         }
     }
 
-
     .information{
-        background: transparent;
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -114,9 +112,7 @@ const StyledExpense = styled.div`
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #EFE9AE
             .text{
-                background:#EFE9AE;
                 display: flex;
                 align-items: center;
                 gap: 1.6rem;
@@ -126,6 +122,13 @@ const StyledExpense = styled.div`
                     gap: 0.5rem;
                     opacity: 0.9;
                 }
+            }
+        }
+    }
+    .confirmButton{
+        button{
+            &:hover{
+                background: red !important;
             }
         }
     }

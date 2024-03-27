@@ -9,20 +9,19 @@ import { InnerLayout } from "../../styles/pageLayouts";
 import axios from 'axios';
 import profilePic from "../../images/budgetBuddyIcon.png"
 
-function LogIn({setCurrent}){
+function LogIn({ setCurrent }) {
+    const [error, setError] = useState(null);
 
-    const[error, setError] = useState(null);
+    const { getLoggedIn, setLoggedIn } = GetMainContext();
 
-    const{getLoggedIn, setLoggedIn} = GetMainContext();
-
-    const[inputState, setInputState] = useState({
+    const [inputState, setInputState] = useState({
         email: '',
         password: ''
-    })
+    });
 
-    const {email, password} = inputState;
+    const { email, password } = inputState;
 
-    const handleSubmit = async e =>{
+    const handleSubmit = async e => {
         e.preventDefault();
         console.log("submitted")
         //This is where we would put the validate or login function from mainContext
@@ -59,23 +58,23 @@ function LogIn({setCurrent}){
                         <input type="text" required value={email} name={'email'} placeholder="Username" onChange={handleInput('email')}/>
                     </div>
                     <div className="inputEffect">
-                        <input type="password" required value={password} name={'password'} placeholder="Password" onChange={handleInput('password')}/>
+                        <input type="password" required value={password} name={'password'} placeholder="Password" onChange={handleInput('password')} />
                     </div>
                     <div className="button">
-                        <Button name={"Login"} icon={''} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'white'} color={'var(--primaryColor)'} iColor={'white'}/>
+                        <Button name={"Login"} icon={''} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'white'} color={'var(--primaryColor)'} iColor={'white'} />
                     </div>
                     <p className="redirectLink" onClick={() => setCurrent(6)}>Don't have an account? Sign up here</p>
                 </div>
-                </InnerLayout>   
+            </InnerLayout>
         </StyledLogin>
-    )
+    );
 }
 
 const StyledLogin = styled.form`
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    input, textarea, select{
+    input, textarea, select {
         font-family: inherit;
         font-size: inherit;
         outline: none;
@@ -87,8 +86,8 @@ const StyledLogin = styled.form`
         resize: none;
         box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
         color: var(--primaryColor);
-        &::placeholder{
-            color: rgba(71,41,120, 0.8);
+        &::placeholder {
+            color: rgba(71, 41, 120, 0.8);
         }
     }
     .errorMsg {
@@ -109,35 +108,33 @@ const StyledLogin = styled.form`
     .logInField {
         text-align: center;
     }
-    .inputEffect{
-        input{
+    .inputEffect {
+        input {
             width: 50%;
             margin: 8px 0;
             text-align: center;
         }
-        select{
-            color: rgba(34,34,96, 1)
+        select {
+            color: rgba(34, 34, 96, 1);
         }
     }
     .button {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin: 50px auto;
-        width: 10%;
+        display: flex;
+        justify-content: center; /* Align button center horizontally */
+        margin-top: 85px; /* Adjust top margin as needed */
     }
-    .confirmButton{
-        button{
-            &:hover{
+    .confirmButton {
+        button {
+            &:hover {
                 background: #ffe863 !important;
             }
         }
     }
-    .redirectLink{
+    .redirectLink {
         &:hover {
             text-decoration: underline;
         }
     }
-
 `;
+
 export default LogIn;

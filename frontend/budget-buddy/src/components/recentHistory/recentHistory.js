@@ -28,7 +28,7 @@ function RecentHistory() {
 const StyledHist = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: .5rem;
     .recentTransaction{
         background: rgb(34,34,96);
         border: none;
