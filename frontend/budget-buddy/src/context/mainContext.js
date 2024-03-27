@@ -13,6 +13,9 @@ export const MainSource = ({children}) => {
     const[incomes, setIncomes] = useState([]);
     const[expenses, setExpenses] = useState([]);
     const[error, setError] = useState(null);
+    const[userInfo, setUserInfo] = useState([]);
+    const[userChildren, setChildren] = useState([]);
+
     let isLoggedIn = false;
 
     const addIncome = async(income) => {
@@ -101,8 +104,31 @@ export const MainSource = ({children}) => {
         const response = await axios.get("http://localhost:3003/logout")
     }
 
+    const getUserInfo = async() => {
+        const response = await axios.get(`${BASE_URL}getUser`);
+        setUserInfo(response.data);
+    }
+
+    const getChildren = async() => {
+        const response = await axios.get(`${BASE_URL}getChildren`);
+        setChildren(response.data);
+    }
+
+    const deleteChild = async(id) =>{
+        const resolution = await axios.delete(`${BASE_URL}deleteChild/${id}`)
+        getChildren();
+    }
+
+    const addChild = async(addedChild) =>{
+        const resolution = await axios.post(`${BASE_URL}addChild/`, addedChild)
+        .catch((err) =>{
+            setError(err.response.data.message)
+        })
+        getChildren();
+    }
+
     return(
-        <mainContext.Provider value={{addIncome, getIncomes, incomes, deleteIncome, calcTotalIncome, addExpense, getExpenses, deleteExpense, calcTotalExpense, expenses, calcTotalBalance, recentTransactionHistory, signUp, error, getLoggedIn, setLoggedIn, logOut}}>
+        <mainContext.Provider value={{addIncome, getIncomes, incomes, deleteIncome, calcTotalIncome, addExpense, getExpenses, deleteExpense, calcTotalExpense, expenses, calcTotalBalance, recentTransactionHistory, signUp, error, getLoggedIn, setLoggedIn, logOut, getChildren, userChildren, deleteChild, getUserInfo, userInfo, addChild, setError}}>
             {children}
         </mainContext.Provider>
     )

@@ -14,3 +14,5 @@ export const noSign = <i className="fa-solid fa-xmark"></i>
 export const yesSign = <i className="fa-solid fa-check"></i>
 export const childSign = <i className="fa-solid fa-children"></i>
 export const newChildSign = <i className="fa-solid fa-child-reaching"></i>
+export const stockSign = <i className="fa-solid fa-arrow-trend-up"></i>
+export const babySign= <i className="fa-solid fa-baby"></i>

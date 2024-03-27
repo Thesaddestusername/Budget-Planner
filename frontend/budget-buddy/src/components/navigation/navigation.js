@@ -1,12 +1,12 @@
 import React, {useEffect} from "react";
 import styled from "styled-components";
 import profilePic from "../../images/budgetBuddyIcon.png"
-import { dropDownItems } from "../../utils/dropDownItems";
+import { dropDownItems, dropDownItemsChild } from "../../utils/dropDownItems";
 import { GetMainContext } from "../../context/mainContext";
 
 function Navigation({current, setCurrent}){
-    const{calcTotalBalance, getIncomes, getExpenses} = GetMainContext();
-    useEffect(() =>{calcTotalBalance(); getIncomes(); getExpenses()}, [])
+    const{calcTotalBalance, getIncomes, getExpenses, getUserInfo, userInfo} = GetMainContext();
+    useEffect(() =>{calcTotalBalance(); getIncomes(); getExpenses(); getUserInfo();}, [])
     return(
         <StyledNav>
             <div className="userDiv">
@@ -16,11 +16,14 @@ function Navigation({current, setCurrent}){
                     <p>${calcTotalBalance().toFixed(2)}</p>
                 </div>
                 <ul className="dropDownItems">
-                    {dropDownItems.map((item)=>{
-                        return <li key = {item.id} onClick={() => setCurrent(item.id)} className={current === item.id ? 'current': ''}>{item.icon}<span>{item.title}</span></li>
+                    {(userInfo.isChild) ?
+                    dropDownItemsChild.map((item)=>{return <li key = {item.id} onClick={() => setCurrent(item.id)} className={current === item.id ? 'current': ''}>{item.icon}<span>{item.title}</span></li>})
+                    : dropDownItems.map((item)=>{return <li key = {item.id} onClick={() => setCurrent(item.id)} className={current === item.id ? 'current': ''}>{item.icon}<span>{item.title}</span></li>})
                     }
-                    )}
                 </ul>
+                <div className="lowerNav">
+                    Signed In As: {userInfo.email}
+                </div>
             </div>
         </StyledNav>
     )

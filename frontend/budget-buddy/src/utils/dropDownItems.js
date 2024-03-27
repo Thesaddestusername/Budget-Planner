@@ -34,3 +34,31 @@ export const dropDownItems = [
     }
 
 ]
+
+export const dropDownItemsChild = [
+    {
+        id: 1,
+        title: 'Income',
+        icon: upArrowSign,
+        link: 'linkToNextPage'
+    },
+    {
+        id: 2,
+        title: 'Expenses',
+        icon: downArrowSign,
+        link: ''
+    },
+    {
+        id: 3,
+        title: 'Graph View',
+        icon: chart,
+        link: ''
+    },
+    {
+        id: 4,
+        title: 'Log Out',
+        icon: logOutSign,
+        link: ''
+    }
+
+]

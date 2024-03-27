@@ -44,8 +44,6 @@ function SignUp({setCurrent}){
         setInputState({...inputState, [name]: e.target.value})
     }
 
-    console.log(error);
-
     return(
         <StyledLogin onSubmit={handleSubmit}>
             <InnerLayout>

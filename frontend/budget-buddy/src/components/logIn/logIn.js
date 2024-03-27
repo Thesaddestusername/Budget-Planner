@@ -84,14 +84,14 @@ const StyledLogin = styled.form`
         background: white;
         resize: none;
         box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
-        color: var(--primaryColor);
+        color: var(--primaryColor2);
         &::placeholder{
             color: rgba(71,41,120, 0.8);
         }
     }
     .inputEffect{
         input{
-            width: 100%;
+            width: 50%;
         }
         select{
             color: rgba(34,34,96, 1)

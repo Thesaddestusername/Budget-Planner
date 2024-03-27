@@ -1,5 +1,5 @@
 import React from "react";
-import { dollarSign, dateSign, trashBin, typeSign, noteSign } from "../../utils/icons";
+import { dollarSign, dateSign, trashBin, typeSign, noteSign, stockSign } from "../../utils/icons";
 import styled from "styled-components";
 import Button from "../button/button";
 import { DateFormatting } from "../../utils/dateFormatting";
@@ -23,7 +23,7 @@ function IncomeComponent({id, label, amount, date, type, notes, deleteMe, pipCol
             return 'refundSign';
         }
         else if(type === 'stocks'){
-            return 'stockSign';
+            return stockSign;
         }
         else if(type === 'crypto'){
             return 'cryptoSign';

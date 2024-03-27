@@ -10,7 +10,7 @@ import { MainTheme } from "./styles/MainTheme";
 import LogOut from "./components/logOut/logOut";
 import LogIn from "./components/logIn/logIn";
 import SignUp from "./components/signup/signup";
-import AddChild from "./components/addChild/addChild";
+import AddMyChild from "./components/addChild/addChild";
 
 function App() {
   const [current, setCurrent] = useState(5);
@@ -35,7 +35,7 @@ function App() {
       return <SignUp setCurrent={setCurrent}/>;
     }
     else if(current === 7){
-      return <AddChild/>;
+      return <AddMyChild/>;
     }
   }
 
