@@ -152,7 +152,6 @@ Submit the entire code for observer and factory patterns.
 >frontend/budget-buddy/src/components/navigation <br/>
 >frontend/budget-buddy/src/components/recentHistory <br/>
 >frontend/budget-buddy/src/components/signup <br/>
-<br/>
 >The publisher/provider/subject of the observer pattern is the pertenant data that needs observed. This includes {addIncome(function), getIncomes(function), incomes(array), deleteIncome(function), calcTotalIncome(function), addExpense(function), getExpenses(function), deleteExpense(function), calcTotalExpense(function), expenses(array), calcTotalBalance(function), recentTransactionHistory(array), signUp(function), error(string), getLoggedIn(function), setLoggedIn(function), logOut(function), getChildren(function), userChildren(list of objects), deleteChild(function), getUserInfo(function), userInfo(array), addChild(function), setError(function).}<br/>
 >This can be found within:<br/>
 >frontend/budget-buddy/src/context/mainContext.js <br/>
