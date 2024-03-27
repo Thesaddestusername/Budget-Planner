@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import styled from "styled-components";
-import profilePic from "../../images/blankProfilePic.png"
+import profilePic from "../../images/budgetBuddyIcon.png"
 import { dropDownItems } from "../../utils/dropDownItems";
 import { GetMainContext } from "../../context/mainContext";
 
@@ -10,9 +10,9 @@ function Navigation({current, setCurrent}){
     return(
         <StyledNav>
             <div className="userDiv">
-                <img src={profilePic} alt=""/>
+                <img className="icon" src={profilePic} alt=""/>
                 <div className="username">
-                    <h2>USERNAME</h2>
+                    <h2>Current Balance</h2>
                     <p>${calcTotalBalance().toFixed(2)}</p>
                 </div>
                 <ul className="dropDownItems">
@@ -27,6 +27,16 @@ function Navigation({current, setCurrent}){
 }
 
 const StyledNav = styled.nav`
+
+    img{
+        max-width: 100%;
+        height: auto;
+        border-radius: 80px;
+    }
+    h2{
+        text-decoration: underline;
+        font-size: 27px;
+    }
     padding: 2rem 1.5rem;
     width: 300px;
     height: 49dvw;
@@ -43,13 +53,8 @@ const StyledNav = styled.nav`
         //display: flex;
         //align-items: center;
         //gap: 0.5rem;
-        img{
 
-            object-fit: cover;
-            align-items: center;
-        }
     }
-
     .dropDownItems{
         flex: 1;
         display: flex;
@@ -79,10 +84,6 @@ const StyledNav = styled.nav`
             background: rgba(255,217,61, 0.9);
             border-radius: 10px 10px 10px 10px;
         }
-    }
-
-    .bottomNav{
-
     }
 `;
 

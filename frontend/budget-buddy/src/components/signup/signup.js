@@ -5,10 +5,13 @@ import { GetMainContext } from "../../context/mainContext";
 import styled from "styled-components";
 import Button from "../button/button";
 import { InnerLayout } from "../../styles/pageLayouts";
+import axios from 'axios';
 
 function SignUp({setCurrent}){
 
-    const{signUp} = GetMainContext();
+    const[error, setError] = useState(null);
+
+    const{setLoggedIn, getLoggedIn} = GetMainContext();
 
     const[inputState, setInputState] = useState({
         email: '',
@@ -17,25 +20,37 @@ function SignUp({setCurrent}){
 
     const {email, password} = inputState;
 
-    const handleSubmit = e =>{
+    const handleSubmit = async e =>{
         e.preventDefault();
+        console.log("submitted")
         //This is where we would put the validate or login function from mainContext
-        signUp(inputState);
+        try{
+            const response = await axios.post("http://localhost:3003/signup", inputState)
+            setLoggedIn(true);
+        }
+        catch(err){
+            setError(err.response.data.message);
+            setLoggedIn(false);
+        }  
+        if(getLoggedIn()){
+            setCurrent(3);
+        }
         setInputState({
         email: '',
         password: ''
         })
-        setCurrent(5);
     }
     const handleInput = name => e =>{
         setInputState({...inputState, [name]: e.target.value})
     }
 
+    console.log(error);
 
     return(
         <StyledLogin onSubmit={handleSubmit}>
             <InnerLayout>
                 <h1 className="Buget Buddy">Budget Buddy SignUp</h1>
+                <h2 style={{color: 'red'}}>{error}</h2>
                 <div className="logInField">
                     <div className="inputEffect">
                         <input type="text" required value={email} name={'email'} placeholder="Enter a Valid Email Address" onChange={handleInput('email')}/>
@@ -46,7 +61,7 @@ function SignUp({setCurrent}){
                     <div>
                     <Button name={"Sign Up"} icon={''} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'white'} color={'var(--primaryColor)'} iColor={'white'}/>
                     </div>
-                    <p onClick={() => setCurrent(3)}>Go to Dahsboard *testing*</p>
+                    <p className="redirectLink" onClick={() => setCurrent(5)}>Already Have an Account? Go back to login page</p>
                 </div>
                 </InnerLayout>   
         </StyledLogin>
@@ -86,6 +101,11 @@ const StyledLogin = styled.form`
             &:hover{
                 background: #ffe863 !important;
             }
+        }
+    }
+    .redirectLink{
+        &:hover {
+            text-decoration: underline;
         }
     }
 

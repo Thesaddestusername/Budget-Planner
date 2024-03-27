@@ -3,6 +3,7 @@ import { useContext } from "react";
 import axios from 'axios';
 
 axios.defaults.withCredentials = true;
+
 const BASE_URL = "http://localhost:3003/api/";
 
 const mainContext = React.createContext()
@@ -44,7 +45,6 @@ export const MainSource = ({children}) => {
     const getExpenses = async() => {
         const response = await axios.get(`${BASE_URL}getExpenses`);
         setExpenses(response.data);
-        console.log(response.data);
     }
 
     const addExpense = async(expense) => {
@@ -97,8 +97,12 @@ export const MainSource = ({children}) => {
         return isLoggedIn;
     }
 
+    const logOut = async() =>{
+        const response = await axios.get("http://localhost:3003/logout")
+    }
+
     return(
-        <mainContext.Provider value={{addIncome, getIncomes, incomes, deleteIncome, calcTotalIncome, addExpense, getExpenses, deleteExpense, calcTotalExpense, expenses, calcTotalBalance, recentTransactionHistory, signUp, error, getLoggedIn, setLoggedIn}}>
+        <mainContext.Provider value={{addIncome, getIncomes, incomes, deleteIncome, calcTotalIncome, addExpense, getExpenses, deleteExpense, calcTotalExpense, expenses, calcTotalBalance, recentTransactionHistory, signUp, error, getLoggedIn, setLoggedIn, logOut}}>
             {children}
         </mainContext.Provider>
     )
