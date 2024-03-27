@@ -172,7 +172,7 @@ Table of Contents of the System Data
 
 ### Technical Documentation
 List of Programming Languages
-> JavaScript, C++, CSS, HTML
+> JavaScript, CSS, HTML
 
 List of reused algorithms and small programs with references
 > .
