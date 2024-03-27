@@ -56,8 +56,8 @@ function IncomeComponent({id, label, amount, date, type, notes, deleteMe, pipCol
                             <p>{typeSign} {type}</p>
                             <p>{noteSign} {notes}</p>
                         </div>
-                        <div className="confirmButton">
-                        <Button name={"Delete"} icon={trashBin} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'#FF928B'} color={'white'} iColor={'white'} onClick={() => deleteMe(id)}/>
+                        <div className="deleteButtonContainer">
+                        <Button name={"Delete"} icon={trashBin} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'#FFE863'} color={'white'} iColor={'white'} onClick={() => deleteMe(id)}/>
                         </div>
                     </div>    
             </div>  
@@ -66,10 +66,10 @@ function IncomeComponent({id, label, amount, date, type, notes, deleteMe, pipCol
 }
 
 const StyledIncome = styled.div`
-    border: 3px solid #CDEAC0;
+    border: 3px solid #ffe863;
     border-radius: 25px;
-    padding: .1rem;
-    background: #EFE9AE;
+    padding: 1rem;
+    background: transparent;
     margin-bottom: 1rem;
     box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -107,7 +107,7 @@ const StyledIncome = styled.div`
                 transform: translateY(-50%);
                 width: .8rem;
                 height: .8rem;
-                border-radius: 50%;
+                border-radius: 225%;
                 background: ${props=> props.pip};
             }
         }
@@ -117,12 +117,13 @@ const StyledIncome = styled.div`
             align-items: center;
             .text{
                 display: flex;
+                margin: 5px;
                 align-items: center;
                 gap: 1.6rem;
                 p{
                     display: flex;
                     align-items: center;
-                    gap: 0.5rem;
+                    gap: .5rem;
                     opacity: 0.9;
                 }
             }

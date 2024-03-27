@@ -54,10 +54,29 @@
 
 ### Requirements Elicitation and Specification
 Functional Requirements list (only the ones that you have implemented) for each user role. Name each requirement and explain it briefly. 
-> .
+> In order for both parents and children can properly use their finance app, we have implemented these requirements: <br/>
+> PARENT ROLE ----------------------------------- <br/>
+> Sign up: Parents should be able to sign up with their email.<br/>
+> Log in: Parents should be able to login using the same credentials used to sign up.<br/>
+> Add Child: Parents should be able to add children to their accounts. <br/>
+> Viewing Transactions: Parents should be able to view their transactions. <br/>
+> Viewing Childs transactions: Parents should be able to view the transactions of the children they have added included in all transactions. <br/>
+> Adding income: Parents should be able to add their own incomes. <br/>
+> Deleteing income: Parents should be able to delete incomes from themselves and their children. <br/>
+> Adding expenses: Parents should be able to add their own expenses. <br/>
+> Deleting expenses: Parens should be able to delete expenses from themselves and their children. <br/>
+> CHILD ROLE ----------------------------------- <br/>
+> Sign up: children should be able to sign up with their email.<br/>
+> Log in: children should be able to login using the same credentials used to sign up.<br/>
+> Viewing Transactions: Children should be able to view ONLY THEIR OWN transactions. <br/>
+> Adding income: Children should be able to add their own incomes. <br/>
+> Deleteing income: Children should be able to delete ONLY THEIR OWN incomes. <br/>
+> Adding expenses: Children should be able to add their own expenses. <br/>
+> Deleting expenses: Children should be able to delete ONLY THEIR OWN expenses. <br/>
+
 
 For each user role, provide the use case diagram with all the use cases and actors.
-> .
+> ![useCaseBudgetBuddy](https://github.com/Thesaddestusername/Budget-Planner/assets/72892765/2f6093d9-23fa-426a-ba92-f4a5bd512f55)
 
 Describe in detail two use cases using the activity diagram. Choose the most complex use cases.
 > .

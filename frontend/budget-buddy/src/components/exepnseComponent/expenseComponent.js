@@ -104,7 +104,7 @@ border: 3px solid #FF928B;
                 transform: translateY(-50%);
                 width: .8rem;
                 height: .8rem;
-                border-radius: 50%;
+                border-radius: 150%;
                 background: ${props=> props.pip};
             }
         }
