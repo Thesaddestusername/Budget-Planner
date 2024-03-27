@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import styled from "styled-components";
 import profilePic from "../../images/budgetBuddyIconFixedUp.png"
-import { dropDownItems } from "../../utils/dropDownItems";
+import { dropDownItems, dropDownItemsChild } from "../../utils/dropDownItems";
 import { GetMainContext } from "../../context/mainContext";
 
 
