@@ -30,3 +30,4 @@ export const membershipSign = <i className="fa-solid fa-award"></i>
 export const schoolSign = <i className="fa-solid fa-school"></i>
 export const travelSign = <i className="fa-solid fa-plane"></i>
 export const miscSign = <i className="fa-solid fa-dollar-sign"></i>
+export const babySign = <i className="fa-solid fa-school"></i>
