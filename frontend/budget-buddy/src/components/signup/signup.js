@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Button from "../button/button";
 import { InnerLayout } from "../../styles/pageLayouts";
 import axios from 'axios';
-import profilePic from "../../images/budgetBuddyIcon.png"
+import profilePic from "../../images/budgetBuddyIconFixedUp.png"
 
 function SignUp({setCurrent}){
 

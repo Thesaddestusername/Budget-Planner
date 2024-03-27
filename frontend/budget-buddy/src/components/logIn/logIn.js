@@ -7,7 +7,7 @@ import Button from "../button/button";
 import { addSign } from "../../utils/icons";
 import { InnerLayout } from "../../styles/pageLayouts";
 import axios from 'axios';
-import profilePic from "../../images/budgetBuddyIcon.png"
+import profilePic from "../../images/budgetBuddyIconFixedUp.png"
 
 function LogIn({ setCurrent }) {
     const [error, setError] = useState(null);
