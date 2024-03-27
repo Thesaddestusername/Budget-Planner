@@ -55,17 +55,20 @@ function App() {
 
 const StyledDiv = styled.div`
   height: 100vw;
-  background-color: purple;
+  background-color: #FEC3A6;
   main{
     height: 49vw;
     flex: 1;
-    background: rgba(135, 54, 170, 0.8);
-    border: 2px solid #ffe863;
+    //background: rgba(135, 54, 170, 0.8);
+    background: #A7C7E7;
+    border: 2px solid #EFE9AE;
     backdrop-filter: blur(3px);
-    border-radius: 32px;
+    border-radius: 64px;
     overflow-x: hidden;
+    scrollbar-width: none; 
     &::-webkit-scrollbar{
       width: 0;
+      background: transparent;
     }
   }
 `;

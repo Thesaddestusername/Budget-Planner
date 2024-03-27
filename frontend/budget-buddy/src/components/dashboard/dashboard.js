@@ -20,10 +20,10 @@ function Dashboard(){
                     </div>
                     <div className="totals">
                         <div className="totalIncome">
-                            <h2>Total Income: +${calcTotalIncome().toFixed(2)}</h2>
+                            <h2>Total Income: + ${calcTotalIncome().toFixed(2)}</h2>
                         </div>
                         <div className="totalExpenses">
-                            <h2 className="total" >Total Expenses: -${calcTotalExpense().toFixed(2)} </h2>
+                            <h2 className="total" >Total Expenses: - ${calcTotalExpense().toFixed(2)} </h2>
                         </div>
                         <div className="totalBalance">
                             <h2 className="total">Current Balance: ${calcTotalBalance().toFixed(2)}</h2>
@@ -40,10 +40,14 @@ const StyledDash = styled.div`
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 2rem;
+        background: #A7C7E7
+    }
+    .graphContainer {
+        background: #A7C7E7
     }
     .recentHistory{
         box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
-        background: white;
+        background: #EFE9AE;
         border: 1px solid #ffe863;
         padding: 1rem;
         border-radius: 25px;
@@ -59,7 +63,7 @@ const StyledDash = styled.div`
         grid-column: 1/6;
         .totalIncome, .totalExpenses, .totalBalance{
             box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
-            background: white;
+            background: #EFE9AE;
             border: 1px solid #ffe863;
             padding: 1rem;
             border-radius: 25px;

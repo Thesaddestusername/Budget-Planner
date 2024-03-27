@@ -4,7 +4,7 @@ import profilePic from "../../images/budgetBuddyIcon.png"
 import { dropDownItems } from "../../utils/dropDownItems";
 import { GetMainContext } from "../../context/mainContext";
 
-function Navigation({current, setCurrent}){
+function Navigation({current, setCurrent}) {
     const{calcTotalBalance, getIncomes, getExpenses} = GetMainContext();
     useEffect(() =>{calcTotalBalance(); getIncomes(); getExpenses()}, [])
     return(
@@ -40,10 +40,11 @@ const StyledNav = styled.nav`
     padding: 2rem 1.5rem;
     width: 300px;
     height: 49dvw;
-    background-color: rgba(135, 54, 170, 0.8);
-    border: 2px solid #ffe863;
+    //background-color: rgba(135, 54, 170, 0.8);
+    background-color: #A7C7E7;
+    border: 2px solid #EFE9AE;
     backdrop-filter: blur(3px);
-    border-radius: 32px;
+    border-radius: 64px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -70,9 +71,11 @@ const StyledNav = styled.nav`
     }
 
     .current{
-        color: rgba(255,217,61, 0.9) !important;
+        //color: rgba(255,217,61, 0.9) !important;
+        color: white;
         i{
-            color: rgba(255,217,61, 0.9) !important; 
+            //color: rgba(255,217,61, 0.9) !important; 
+            color: white;
         }
         &::before{
             content: "";
@@ -81,7 +84,8 @@ const StyledNav = styled.nav`
             top: 0;
             width: 10px;
             height: 25%;
-            background: rgba(255,217,61, 0.9);
+            //background: rgba(255,217,61, 0.9);
+            background: white;
             border-radius: 10px 10px 10px 10px;
         }
     }

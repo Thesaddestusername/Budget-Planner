@@ -15,18 +15,18 @@ function LineGraph(){
     const {incomes, expenses, getExpenses, getIncomes} = GetMainContext();
 
     const info = {
-        labels: incomes.map((income) =>{const {date} = income; return DateFormatting(date)}).sort(),
+        labels: incomes.map((income)=>{const {date} = income; return DateFormatting(date)}).sort(),
         datasets: [
             {
                 label: 'Income',
                 data: [ ...incomes.map((income) => { const {amount} = income; return amount})],
-                backgroundColor: 'green',
+                backgroundColor: '#CDEAC0',
                 tension: .15
             },
             {
                 label: 'Expenses',
                 data: [...expenses.map((expense) => {const {amount} = expense; return amount})],
-                backgroundColor: 'red',
+                backgroundColor: '#FF928B',
                 tension: 0.15
             },
         ]
@@ -42,8 +42,8 @@ function LineGraph(){
 
 const StyledGraph = styled.div`
     box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
-    background: white;
-    border: 1px solid #ffe863;
+    background: #D3D3D3;
+    border: 1px solid #EFE9AE;
     padding: 1rem;
     border-radius: 25px;
     height: 100%;

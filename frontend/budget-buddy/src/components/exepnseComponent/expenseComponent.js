@@ -1,5 +1,5 @@
 import React from "react";
-import { dollarSign, dateSign, trashBin, typeSign, noteSign } from "../../utils/icons";
+import { dollarSign, dateSign, trashBin, typeSign, noteSign, fastfoodSign, groceriesSign, gasSign, healthSign, onlinePurchaseSign, membershipSign, schoolSign, travelSign, miscSign } from "../../utils/icons";
 import styled from "styled-components";
 import Button from "../button/button";
 import { DateFormatting } from "../../utils/dateFormatting";
@@ -10,32 +10,32 @@ import { DateFormatting } from "../../utils/dateFormatting";
 function ExpenseComponent({id, label, amount, date, type, notes, deleteMe, pipColor}){
 
     const getCategoryIcon =() =>{
-        if(type === 'fastfood'){
-            return 'fastfoodSign';
+        if(type === 'fast food'){
+            return fastfoodSign;
         }
         else if(type === 'groceries'){
-            return 'groceriesSign';
+            return groceriesSign;
         }
         else if(type === 'gas'){
-            return 'gasSign';
+            return gasSign;
         }
         else if(type === 'health'){
-            return 'healthSign';
+            return healthSign;
         }
-        else if(type === 'online Purchase'){
-            return 'onlinePurchaseSign'
+        else if(type === 'online purchase'){
+            return onlinePurchaseSign;
         }
         else if(type === 'membership'){
-            return 'membershipSign';
+            return membershipSign;
         }
         else if(type === 'school/education'){
-            return 'schoolSign';
+            return schoolSign;
         }
         else if(type === 'travel'){
-            return 'travelSign';
+            return travelSign;
         }
         else{
-            return '';
+            return miscSign;
         }
     }
 
@@ -53,8 +53,8 @@ function ExpenseComponent({id, label, amount, date, type, notes, deleteMe, pipCo
                             <p>{typeSign} {type}</p>
                             <p>{noteSign} {notes}</p>
                         </div>
-                        <div className="deleteButtonContainer">
-                        <Button name={"Delete"} icon={trashBin} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'#FFE863'} color={'white'} iColor={'white'} onClick={() => deleteMe(id)}/>
+                        <div className="confirmButton">
+                        <Button name={"Delete"} icon={trashBin} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'#FF928B'} color={'white'} iColor={'white'} onClick={() => deleteMe(id)}/>
                         </div>
                     </div>    
             </div>  
@@ -63,10 +63,10 @@ function ExpenseComponent({id, label, amount, date, type, notes, deleteMe, pipCo
 }
 
 const StyledExpense = styled.div`
-    border: 3px solid #ffe863;
+border: 3px solid #FF928B;
     border-radius: 25px;
     padding: 1rem;
-    background: transparent;
+    background: #EFE9AE;
     margin-bottom: 1rem;
     box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -77,13 +77,13 @@ const StyledExpense = styled.div`
         width: 90px;
         height: 90px;
         border-radius: 20%;
-        background: purple;
+        background: #A7C7E7;
         display: flex;
         align-items: center;
         justify-content: center;
-        border:  1px solid #ffe863;
+        border:  1px solid #FF928B;
         i{
-            font-size: 5.0rem;
+            font-size: 3.5rem;
         }
     }
 
@@ -122,6 +122,13 @@ const StyledExpense = styled.div`
                     gap: 0.5rem;
                     opacity: 0.9;
                 }
+            }
+        }
+    }
+    .confirmButton{
+        button{
+            &:hover{
+                background: red !important;
             }
         }
     }
