@@ -7,7 +7,6 @@ const { router } = require('./routes/Transactions')
 const cookieParser = require('cookie-parser')
 const { requireAuth, checkUser } = require('./middleware/auth')
 const {login, signup, logout} = require('./controllers/auth')
-
 const application = express();
 
 // Pulling .env file
@@ -20,7 +19,7 @@ const PORT = process.env.PORT
 
 //Express middleware to parse incoming requests with JSON payloads        
 application.use(express.json())
-// Cors middleware to allow for cross-origin requests
+// Cors middleware to allow for cross-origin requests. Credentials set to true to ensure that cookies are sent.
 application.use(cors({
         credentials: true,
         origin: process.env.CLIENT_URL
@@ -52,5 +51,5 @@ const server = () => {
         console.log(`Server is running and listening on port ${PORT}`)
     })
 }
-
+// Starting the server
 server()

@@ -1,7 +1,7 @@
+// Initiate the express router and require the controllers for the transactions
 const {addIncome, getIncome, deleteIncome,} = require('../controllers/Income')
 const {addExpense, getExpense, deleteExpense} = require('../controllers/Expenses') // VScode is mad at this too but it works so...
 const {addChild, getUser, deleteChild, getChildren} = require('../controllers/auth')
-
 const router = require('express').Router();
 
 
@@ -22,4 +22,5 @@ router
     .post('/addChild', addChild)
     .delete('/deleteChild/:id', deleteChild)
 
+// Export the router
 module.exports = router
