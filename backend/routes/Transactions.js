@@ -14,6 +14,8 @@ router
     .get('/getExpenses', getExpense)
     .delete('/deleteExpense/:id', deleteExpense)
     
+    //.delete('/deleteAccount/:id, deleteAccount) might be possible
+    
     // Routes for authentication
     //.post('/signup', signup)
     //.post('/login', login)
