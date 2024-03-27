@@ -76,7 +76,7 @@ Functional Requirements list (only the ones that you have implemented) for each 
 
 
 For each user role, provide the use case diagram with all the use cases and actors.
-> .
+> ![useCaseBudgetBuddy](https://github.com/Thesaddestusername/Budget-Planner/assets/72892765/2f6093d9-23fa-426a-ba92-f4a5bd512f55)
 
 Describe in detail two use cases using the activity diagram. Choose the most complex use cases.
 > .
