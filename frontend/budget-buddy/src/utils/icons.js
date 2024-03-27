@@ -30,10 +30,3 @@ export const membershipSign = <i className="fa-solid fa-award"></i>
 export const schoolSign = <i className="fa-solid fa-school"></i>
 export const travelSign = <i className="fa-solid fa-plane"></i>
 export const miscSign = <i className="fa-solid fa-dollar-sign"></i>
-export const salarySign = <i class="fa-solid fa-sack-dollar"></i>
-export const giftSign = <i class="fa-solid fa-gift"></i>
-export const refundSign = <i class="fa-solid fa-file-invoice-dollar"></i>
-export const stockSign = <i class="fa-solid fa-arrow-trend-up"></i>
-export const cryptoSign = <i class="fa-brands fa-bitcoin"></i>
-export const soldSign = <i class="fa-solid fa-hand-holding-dollar"></i>
-export const liquidationSign = <i class="fa-solid fa-house"></i>
