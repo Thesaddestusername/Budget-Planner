@@ -139,7 +139,7 @@ Provide the class diagram of the whole system by incorporating the two design pa
 
 ### Software Construction
 Submit the entire code for observer and factory patterns.
-> The code is already submitted above. However the observers, and more specifically subsrcibers, within our code are the components that need to be notified of changes in the data or state. This would include many of our components, epspecially ones related to UI. A comprehensive list based on file path are as follows:<br/>
+> The code is already submitted above. However the observers, and more specifically subsrcibers, within our code are the components that need to be notified of changes in the data or state. This would include many of our components, epspecially ones related to UI.<br/> A comprehensive list based on file path are as follows:<br/>
 >frontend/budget-buddy/src/components/addChild <br/>
 >frontend/budget-buddy/src/components/dashboard <br/>
 >frontend/budget-buddy/src/components/expenses <br/>
@@ -153,8 +153,8 @@ Submit the entire code for observer and factory patterns.
 >frontend/budget-buddy/src/components/recentHistory <br/>
 >frontend/budget-buddy/src/components/signup <br/>
 <br/>
-> The publisher/provider/subject of the observer pattern is the pertenant data that needs observed. This includes {addIncome(function), getIncomes(function), incomes(array), deleteIncome(function), calcTotalIncome(function), addExpense(function), getExpenses(function), deleteExpense(function), calcTotalExpense(function), expenses(array), calcTotalBalance(function), recentTransactionHistory(array), signUp(function), error(string), getLoggedIn(function), setLoggedIn(function), logOut(function), getChildren(function), userChildren(list of objects), deleteChild(function), getUserInfo(function), userInfo(array), addChild(function), setError(function).}<br/>
-> This can be found within:<br/>
+>The publisher/provider/subject of the observer pattern is the pertenant data that needs observed. This includes {addIncome(function), getIncomes(function), incomes(array), deleteIncome(function), calcTotalIncome(function), addExpense(function), getExpenses(function), deleteExpense(function), calcTotalExpense(function), expenses(array), calcTotalBalance(function), recentTransactionHistory(array), signUp(function), error(string), getLoggedIn(function), setLoggedIn(function), logOut(function), getChildren(function), userChildren(list of objects), deleteChild(function), getUserInfo(function), userInfo(array), addChild(function), setError(function).}<br/>
+>This can be found within:<br/>
 >frontend/budget-buddy/src/context/mainContext.js <br/>
 
 > The factory within the factory design pattern is the component responsible for creating instances of objects based on certain criteria. This is best represented in our code, and project, as our database. This includes error-checking/criteria, data generation, and data deletion, which can be grabbed by mainContext for observer use. <br/>
