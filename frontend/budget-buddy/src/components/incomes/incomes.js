@@ -38,8 +38,15 @@ const StyledIncomes= styled.div`
         display:flex;
         justify-content: center;
         align-items: center;
+<<<<<<< Updated upstream
         background: white;
         border: 2px solid black; 
+=======
+        background: #A7C7E7;
+        //border: 2px solid #ffe863;
+        border: 2px solid #CDEAC0;
+        background: white;
+>>>>>>> Stashed changes
         box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
         padding: 1rem;

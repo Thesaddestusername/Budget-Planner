@@ -94,7 +94,7 @@ const StyledFrm = styled.form`
     }
     .inputEffect{
         input{
-            width: 100%;
+            width: auto;
         }
         select{
             color: rgba(34,34,96, 1)

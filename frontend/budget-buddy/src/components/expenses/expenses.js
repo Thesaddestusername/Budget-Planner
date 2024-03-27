@@ -38,8 +38,14 @@ const StyledExpense= styled.div`
         display:flex;
         justify-content: center;
         align-items: center;
+<<<<<<< Updated upstream
         background: white;
         border: 2px solid black; 
+=======
+        background: ;
+        background: white;
+        border: 2px solid #FF928B; 
+>>>>>>> Stashed changes
         box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
         padding: 1rem;

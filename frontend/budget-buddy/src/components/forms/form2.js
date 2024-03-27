@@ -74,6 +74,7 @@ function Form2(){
 }
 
 const StyledFrm2 = styled.form`
+<<<<<<< Updated upstream
 display: flex;
 flex-direction: column;
 gap: 1rem;
@@ -105,6 +106,41 @@ input, textarea, select{
     button{
         &:hover{
             background: #ffe863 !important;
+=======
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    input, textarea, select{
+        font-family: inherit;
+        font-size: inherit;
+        outline: none;
+        border: none;
+        padding: .5rem 1rem;
+        border-radius: 5px;
+        //border: 1px solid #ffe863;
+        border: 2px solid #FF928B;
+        background: white;
+        resize: none;
+        box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
+        color: var(--primaryColor);
+        &::placeholder{
+            color: rgba(71,41,120, 0.8);
+        }
+    }
+    .inputEffect{
+        input{
+            width: auto;
+        }
+        select{
+            color: rgba(34,34,96, 1)
+        }
+    }
+    .confirmButton{
+        button{
+            &:hover{
+                background: #ffe863 !important;
+            }
+>>>>>>> Stashed changes
         }
     }
 }
