@@ -82,9 +82,19 @@ Describe in detail two use cases using the activity diagram. Choose the most com
 > .
 
 Software qualities. Include at least two concrete examples for each quality for each user role. 
-> 1. Correctness
+> 1. Correctness<br/>
+> ---------------------------------<br/>
+> Child Role:<br/>
+> Use Case: A child adds a 20$ fast-food expense on 02-04-2024 name "mcdonalds"<br/>
+> Expected Outcome: The dollar ammount(20$) will be correctly displayed with up to 2 points of precision for the parent and child as well as be reflected in their total balances. The type (fast-food) should display correctly via graphic icon along with the correct name (mcdonalds) and date with correct formatting (DD/MM/YYYY).<br/>
+>Parent Role:<br/>
+> Use Case: Parent adds a second child (stephanie@gmail.com) to their account.<br/>
+> Expected Outcome: The child should display accurately under child 2 with the correct email. The parent should now be able to correctly view and manage stephanie's finances percisely.<br/>
+> ---------------------------------<br/>
 > 2. Time-Efficiency
-> 3. Robustness
+> 
+> ---------------------------------<br/>
+> 5. Robustness
 
 ### Top-level and low-level Software Design
 Provide the MVC arcitecture according to the selected Web framework. Also, describe at least three benefits of using MVC for your application.
