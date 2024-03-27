@@ -1,10 +1,11 @@
+// Requires
 const jwt = require('jsonwebtoken');
 const User = require('../Models/UserModel');
 require("dotenv").config()
 const userSchema = require('../Models/UserModel');
 const { default: mongoose } = require('mongoose');
 
-
+// Grabbing secret from .env
 const secret = process.env.SECRET
 // Create token
 const createToken = (id) => {
@@ -12,8 +13,9 @@ const createToken = (id) => {
 }
 
 
-// Error handler
+// Error handler (isn't being used anymore, but I made it so it stays)
 const errHandler = (err) => {
+    // 
     console.log(err.message, err.code)
     let errors = {email: '', password: ''}
 
@@ -39,7 +41,7 @@ const errHandler = (err) => {
             errors[properties.path] = properties.message
         })
     }
-
+    // Return errors   
     return errors
 }
 
@@ -245,8 +247,8 @@ module.exports.getChildren = async (req, res) => {
 module.exports.deleteChild = async (req, res) => {
     // Grabbing the childId from the request body
     const {id} = req.params
-    console.log ("ID: ", id)
     try{
+        // If there is no ID, return an error
         if (!id){
             return res.status(400).json({message: "No child ID detected."})
         }
