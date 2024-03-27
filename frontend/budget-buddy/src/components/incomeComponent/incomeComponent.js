@@ -56,8 +56,8 @@ function IncomeComponent({id, label, amount, date, type, notes, deleteMe, pipCol
                             <p>{typeSign} {type}</p>
                             <p>{noteSign} {notes}</p>
                         </div>
-                        <div className="deleteButtonContainer">
-                        <Button name={"Delete"} icon={trashBin} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'#FFE863'} color={'white'} iColor={'white'} onClick={() => deleteMe(id)}/>
+                        <div className="confirmButton">
+                        <Button name={"Delete"} icon={trashBin} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'#FF928B'} color={'white'} iColor={'white'} onClick={() => deleteMe(id)}/>
                         </div>
                     </div>    
             </div>  
@@ -66,10 +66,10 @@ function IncomeComponent({id, label, amount, date, type, notes, deleteMe, pipCol
 }
 
 const StyledIncome = styled.div`
-    border: 3px solid #ffe863;
+    border: 3px solid #CDEAC0;
     border-radius: 25px;
     padding: 1rem;
-    background: transparent;
+    background: #EFE9AE;
     margin-bottom: 1rem;
     box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
     display: flex;
