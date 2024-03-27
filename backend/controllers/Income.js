@@ -50,20 +50,18 @@ exports.addIncome = async (req, res) => {
 exports.getIncome = async (req, res) => {
     try{
         // Get all incomes belonging to the user
-        const incomes = await IncomeSchema.find({belongsto: res.locals.user.id}).sort({createdAt: -1})
- 
-        // If the user is not a child, get the incomes for the children as well.
+        incomes = await IncomeSchema.find({belongsto: res.locals.user.id}).sort({createdAt: -1})
         // Getting incomes for child 1
         if (res.locals.user.child1){
             const child1Incomes = await IncomeSchema.find({belongsto: res.locals.user.child1}).sort({createdAt: -1})
             if (child1Incomes.length > 0)
-                incomes.push(child1Incomes)
+                incomes = incomes.concat(child1Incomes) // If there are incomes for child 1, add them to the incomes array
         }
         // Getting incomes for child 2
         if (res.locals.user.child2){
             const child2Incomes = await IncomeSchema.find({belongsto: res.locals.user.child2}).sort({createdAt: -1})
             if (child2Incomes.length > 0)
-                incomes.push(child2Incomes)
+                incomes = incomes.concat(child2Incomes) // If there are incomes for child 2, add them to the incomes array
         }
         // Return the incomes
         res.status(200).json(incomes)       
