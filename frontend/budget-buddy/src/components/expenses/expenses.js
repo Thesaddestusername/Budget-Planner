@@ -22,7 +22,7 @@ function Expenses(){
                     <div className="expenses">
                     {expenses.map((expense=> {
                             const{_id, label, amount, date, type,  notes} = expense;
-                            return<ExpenseComponent key={_id} id={_id} label={label} amount={amount} date={date} type={type} notes={notes} pipColor="red" deleteMe={deleteExpense}/>
+                            return<ExpenseComponent key={_id} id={_id} label={label} amount={amount} date={date} type={type} notes={notes} pipColor="#FF928B" deleteMe={deleteExpense}/>
                         }))}
                     </div>
                 </div>
@@ -39,7 +39,7 @@ const StyledExpense= styled.div`
         justify-content: center;
         align-items: center;
         background: white;
-        border: 2px solid #ffe863; 
+        border: 2px solid #FF928B; 
         box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
         padding: 1rem;
@@ -49,7 +49,7 @@ const StyledExpense= styled.div`
         span{
             font-size: 3rem;
             font-weight: 900;
-            color: red;
+            color: #FF928B;
         }
 
     }

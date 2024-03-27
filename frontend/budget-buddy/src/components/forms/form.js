@@ -41,7 +41,7 @@ function Form(){
                 <input type="text" required value={label} name={'label'} placeholder="Income Name" onChange={handleInput('label')}/>
             </div>
             <div className="inputEffect">
-                <input type="number" required value={amount} name={'amount'} placeholder="Income Amount" onChange={handleInput('amount')}/>
+                <input type="number" required value={amount} name={'amount'} min ="0.00" step = "0.01" placeholder="Income Amount" onChange={handleInput('amount')}/>
             </div>
             <div className="inputEffect">
                 <DatePicker id='date' placeholderText = 'Choose Date' required selected={date} dateFormat="dd/MM/yyyy"  onChange={(date) => {
@@ -60,6 +60,7 @@ function Form(){
                         <option value="nft">NFT</option>
                         <option value="sale">Item Sold</option>
                         <option value="liquidation">Liquidation</option>
+                        <option value="misc">Other</option>
                     </select>
                 </div>
             </div>
@@ -67,7 +68,7 @@ function Form(){
                     <textarea type="text" required value={notes} name={'notes'} placeholder="- Notes" id = "notes" cols="15" rows="3" onChange={handleInput('notes')}/> 
                 </div>
                 <div className="confirmButton">
-                    <Button name={"Add This Income"} icon={addSign} buttonPad={'0.9 1.9rem'} buttonRadius={'10px'} buttonBackground={'#FFE863'} textColor={'white'}/>
+                    <Button name={"Add This Income"} icon={addSign} buttonPad={'0.9 1.9rem'} buttonRadius={'10px'} buttonBackground={'#CDEAC0'} textColor={'white'}/>
                 </div>
         </StyledFrm>
     )
@@ -76,7 +77,7 @@ function Form(){
 const StyledFrm = styled.form`
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: .5rem;
     input, textarea, select{
         font-family: inherit;
         font-size: inherit;
@@ -84,7 +85,7 @@ const StyledFrm = styled.form`
         border: none;
         padding: .5rem 1rem;
         border-radius: 5px;
-        border: 1px solid #ffe863;
+        border: 2px solid #CDEAC0;
         background: white;
         resize: none;
         box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
@@ -95,7 +96,7 @@ const StyledFrm = styled.form`
     }
     .inputEffect{
         input{
-            width: 100%;
+            width: auto;
         }
         select{
             color: rgba(34,34,96, 1)
@@ -104,7 +105,7 @@ const StyledFrm = styled.form`
     .confirmButton{
         button{
             &:hover{
-                background: #ffe863 !important;
+                background: green !important;
             }
         }
     }

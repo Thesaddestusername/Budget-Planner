@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { GetMainContext } from "../../context/mainContext";
 
-function RecentHistory(){
+function RecentHistory() {
     const{recentTransactionHistory} = GetMainContext();
     const [...recentHistory] = recentTransactionHistory();
     //Sketchy way to check if it is an expense or income; Especially because you can no longer have same category in both expense and income plus have to add each time you add or change form
@@ -15,8 +15,8 @@ function RecentHistory(){
                 const{_id, label, amount, type} = transaction;
                 return(
                     <div key={_id} className="recentTransaction">
-                        <p style={{color: incomeCategories.indexOf(type) != -1 ? 'lightgreen' : 'red' }}>{label}</p>
-                        <p style={{color: incomeCategories.indexOf(type) != -1 ? 'lightgreen' : 'red' }}>{incomeCategories.indexOf(type) != -1 ? `+${amount}`: `-${amount}`}</p>
+                        <p style={{color: incomeCategories.indexOf(type) != -1 ? '#CDEAC0' : '#FF928B' }}>{label}</p>
+                        <p style={{color: incomeCategories.indexOf(type) != -1 ? '#CDEAC0' : '#FF928B' }}>{incomeCategories.indexOf(type) != -1 ? `+${amount}`: `-${amount}`}</p>
                     </div>
                 )
             })}
@@ -28,10 +28,10 @@ function RecentHistory(){
 const StyledHist = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: .5rem;
     .recentTransaction{
-        background: white;
-        border: 2px solid #ffe863;
+        background: rgb(34,34,96);
+        border: none;
         box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
         padding: 2rem;
         border-radius: 25px;
@@ -39,7 +39,6 @@ const StyledHist = styled.div`
         justify-content: space-between;
         align-items: center;
     }
-
 `;
 
 export default RecentHistory;

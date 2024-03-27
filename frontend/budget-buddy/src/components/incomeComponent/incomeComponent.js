@@ -1,5 +1,5 @@
 import React from "react";
-import { dollarSign, dateSign, trashBin, typeSign, noteSign } from "../../utils/icons";
+import { dollarSign, dateSign, trashBin, typeSign, noteSign, salarySign, giftSign, refundSign, stockSign, cryptoSign, soldSign, liquidationSign, miscSign } from "../../utils/icons";
 import styled from "styled-components";
 import Button from "../button/button";
 import { DateFormatting } from "../../utils/dateFormatting";
@@ -11,34 +11,34 @@ function IncomeComponent({id, label, amount, date, type, notes, deleteMe, pipCol
 
     const getCategoryIcon =() =>{
         if(type === 'salary'){
-            return 'salarySign';
+            return salarySign;
         }
         else if(type === 'bank'){
             return dollarSign;
         }
         else if(type === 'gift'){
-            return 'giftSign';
+            return giftSign;
         }
         else if(type === 'refund'){
-            return 'refundSign';
+            return refundSign;
         }
         else if(type === 'stocks'){
-            return 'stockSign';
+            return stockSign;
         }
         else if(type === 'crypto'){
-            return 'cryptoSign';
+            return cryptoSign;
         }
         else if(type === 'nft'){
-            return 'cryptoSign';
+            return cryptoSign;
         }
         else if(type === 'sale'){
-            return 'soldSign';
+            return soldSign;
         }
         else if(type === 'liquidation'){
-            return 'liquidationSign';
+            return liquidationSign;
         }
         else{
-            return '';
+            return miscSign;
         }
     }
 
@@ -56,13 +56,8 @@ function IncomeComponent({id, label, amount, date, type, notes, deleteMe, pipCol
                             <p>{typeSign} {type}</p>
                             <p>{noteSign} {notes}</p>
                         </div>
-<<<<<<< Updated upstream
                         <div className="deleteButtonContainer">
                         <Button name={"Delete"} icon={trashBin} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'#FFE863'} color={'white'} iColor={'white'} onClick={() => deleteMe(id)}/>
-=======
-                        <div className="confirmButton">
-                        <Button name={"Delete"} icon={trashBin} buttonPad={'1rem'} buttonRadius={'100px'} buttonBackground={'#FF928B'} color={'white'} iColor={'white'} onClick={() => deleteMe(id)}/>
->>>>>>> Stashed changes
                         </div>
                     </div>    
             </div>  
@@ -71,32 +66,25 @@ function IncomeComponent({id, label, amount, date, type, notes, deleteMe, pipCol
 }
 
 const StyledIncome = styled.div`
-<<<<<<< Updated upstream
     border: 3px solid #ffe863;
     border-radius: 25px;
     padding: 1rem;
     background: transparent;
-=======
-    border: 3px solid #CDEAC0;
-    border-radius: 12px;
-    padding: .1rem;
-    background: #EFE9AE;
->>>>>>> Stashed changes
     margin-bottom: 1rem;
     box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: center;
     gap: 1rem;
-    width: 100%;
+    width: auto%;
     .icon{
         width: 90px;
         height: 90px;
         border-radius: 20%;
-        background: purple;
+        background: #A7C7E7;
         display: flex;
         align-items: center;
         justify-content: center;
-        border:  1px solid #ffe863;
+        border:  1px solid #CDEAC0;
         i{
             font-size: 3.5rem;
         }
@@ -138,6 +126,13 @@ const StyledIncome = styled.div`
                     gap: .5rem;
                     opacity: 0.9;
                 }
+            }
+        }
+    }
+    .confirmButton{
+        button{
+            &:hover{
+                background: red !important;
             }
         }
     }

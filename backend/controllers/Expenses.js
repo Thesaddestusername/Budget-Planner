@@ -1,4 +1,4 @@
-const ExpenseSchema = require('../models/ExpenseModel') // Despite this throwing an error in VSCode, it is actually needed for the app to work.
+const ExpenseSchema = require('../Models/ExpenseModel') // Despite this throwing an error in VSCode, it is actually needed for the app to work.
 
 exports.addExpense = async (req, res) => {
     const { label, amount, type, notes, date } = req.body
