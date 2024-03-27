@@ -80,7 +80,7 @@ const StyledLogin = styled.form`
         border: none;
         padding: .5rem 1rem;
         border-radius: 5px;
-        border: 1px solid #ffe863;
+        border: 1px solid black;
         background: white;
         resize: none;
         box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);

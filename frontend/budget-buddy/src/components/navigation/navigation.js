@@ -40,10 +40,10 @@ const StyledNav = styled.nav`
     padding: 2rem 1.5rem;
     width: 300px;
     height: 49dvw;
-    background-color: rgba(135, 54, 170, 0.8);
-    border: 2px solid #ffe863;
+    background-color: grey;
+    border: 2px solid black;
     backdrop-filter: blur(3px);
-    border-radius: 32px;
+    border-radius: 64px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -70,9 +70,9 @@ const StyledNav = styled.nav`
     }
 
     .current{
-        color: rgba(255,217,61, 0.9) !important;
+        color: #ffff00 !important;
         i{
-            color: rgba(255,217,61, 0.9) !important; 
+            color: #ffff00 !important; 
         }
         &::before{
             content: "";
@@ -81,7 +81,7 @@ const StyledNav = styled.nav`
             top: 0;
             width: 10px;
             height: 25%;
-            background: rgba(255,217,61, 0.9);
+            background: #ffff00;
             border-radius: 10px 10px 10px 10px;
         }
     }

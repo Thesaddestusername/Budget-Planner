@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { OutterLayout } from "./styles/pageLayouts";
-import Gradient from "./components/gradients/grandient"
 import Navigation from "./components/navigation/navigation";
 import React, {useState} from "react";
 import Dashboard from "./components/dashboard/dashboard";
@@ -42,7 +41,6 @@ function App() {
   return (
       <StyledDiv className="App">
         <MainTheme/>
-        <Gradient></Gradient>
         <OutterLayout>
         {(current != 5 && current != 6) ? <Navigation current={current} setCurrent={setCurrent}/> : ''}  
             <main>
@@ -55,17 +53,18 @@ function App() {
 
 const StyledDiv = styled.div`
   height: 100vw;
-  background-color: purple;
+  background-color: #AEC6CF; /*dear god this is background color for back page*/
   main{
     height: 49vw;
     flex: 1;
-    background: rgba(135, 54, 170, 0.8);
-    border: 2px solid #ffe863;
+    background: pink; /*background color for the tab*/
+    border: 2px solid black;
     backdrop-filter: blur(3px);
-    border-radius: 32px;
-    overflow-x: hidden;
+    border-radius: 64px;
+    overflow: scroll;
+    scrollbar-width: none;
     &::-webkit-scrollbar{
-      width: 0;
+      width: 0px;
     }
   }
 `;

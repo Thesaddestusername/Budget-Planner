@@ -54,7 +54,7 @@ function ExpenseComponent({id, label, amount, date, type, notes, deleteMe, pipCo
                             <p>{noteSign} {notes}</p>
                         </div>
                         <div className="deleteButtonContainer">
-                        <Button name={"Delete"} icon={trashBin} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'#FFE863'} color={'white'} iColor={'white'} onClick={() => deleteMe(id)}/>
+                        <Button name={"Delete"} icon={trashBin} buttonPad={'.09rem'} buttonRadius={'10px'} buttonBackground={'#FFE863'} color={'white'} iColor={'white'} onClick={() => deleteMe(id)}/>
                         </div>
                     </div>    
             </div>  
@@ -63,68 +63,68 @@ function ExpenseComponent({id, label, amount, date, type, notes, deleteMe, pipCo
 }
 
 const StyledExpense = styled.div`
-    border: 3px solid #ffe863;
-    border-radius: 25px;
-    padding: 1rem;
-    background: transparent;
-    margin-bottom: 1rem;
-    box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
+border: 3px solid black;
+background: #D9E6F3;
+border-radius: 25px;
+padding: 0rem;
+margin-bottom: 0.5rem;
+box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
+display: flex;
+align-items: center;
+gap: 1rem;
+width: 100%;
+.icon{
+    width: 90px;
+    height: 90px;
+    border-radius: 20%;
+    background: green;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    width: 100%;
-    .icon{
-        width: 90px;
-        height: 90px;
-        border-radius: 20%;
-        background: purple;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border:  1px solid #ffe863;
-        i{
-            font-size: 5.0rem;
+    justify-content: center;
+    border:  1px solid black;
+    i{
+        font-size: 3.5rem;
+    }
+}
+
+.information{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    h5{
+        font-size: 1.3rem;
+        padding-left: 2rem;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: .8rem;
+            height: .8rem;
+            border-radius: 50%;
+            background: ${props=> props.pip};
         }
     }
-
-    .information{
-        flex: 1;
+    .insideInformation{
         display: flex;
-        flex-direction: column;
-        gap: .3rem;
-        h5{
-            font-size: 1.3rem;
-            padding-left: 2rem;
-            position: relative;
-            &::before{
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                width: .8rem;
-                height: .8rem;
-                border-radius: 50%;
-                background: ${props=> props.pip};
-            }
-        }
-        .insideInformation{
+        justify-content: space-between;
+        align-items: center;
+        .text{
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            .text{
+            gap: 1.6rem;
+            p{
                 display: flex;
                 align-items: center;
-                gap: 1.6rem;
-                p{
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    opacity: 0.9;
-                }
+                gap: 0.5rem;
+                opacity: 0.9;
             }
         }
     }
+}
 
 `;
 
