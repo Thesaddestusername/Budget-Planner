@@ -51,18 +51,18 @@ exports.addExpense = async (req, res) => {
 exports.getExpense = async (req, res) => {
     try{
         // Get all expenses belonging to the user
-        const expense = await ExpenseSchema.find({belongsto: res.locals.user.id}).sort({createdAt: -1})
+        expense = await ExpenseSchema.find({belongsto: res.locals.user.id}).sort({createdAt: -1})
         // Getting expenses for child 1
         if (res.locals.user.child1){
             const child1Expenses = await ExpenseSchema.find({belongsto: res.locals.user.child1}).sort({createdAt: -1})
             if (child1Expenses.length > 0)
-                expense.push(child1Expenses)
+                expense = expense.concat(child1Expenses) // If there are expenses for child 1, add them to the expenses array
         }
         // Getting expenses for child 2
         if (res.locals.user.child2){
             const child2Expenses = await ExpenseSchema.find({belongsto: res.locals.user.child2}).sort({createdAt: -1})
             if (child2Expenses.length > 0)
-                expense.push(child2Expenses)
+                expense = expense.concat(child2Expenses) // If there are expenses for child 2, add them to the expenses array
         }
         // Returning the expenses
         res.status(200).json(expense)
