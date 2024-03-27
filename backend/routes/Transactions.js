@@ -1,6 +1,6 @@
 const {addIncome, getIncome, deleteIncome,} = require('../controllers/Income')
 const {addExpense, getExpense, deleteExpense} = require('../controllers/Expenses') // VScode is mad at this too but it works so...
-const {signup, login, logout, addChild, getUser, deleteChild, getChildren} = require('../controllers/auth')
+const {addChild, getUser, deleteChild, getChildren} = require('../controllers/auth')
 
 const router = require('express').Router();
 
