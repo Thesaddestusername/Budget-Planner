@@ -22,7 +22,7 @@ application.use(express.json())
 // Cors middleware to allow for cross-origin requests. Credentials set to true to ensure that cookies are sent.
 application.use(cors({
         credentials: true,
-        origin: process.env.CLIENT_URL
+        origin: "http://localhost:3000"
 }))
 // Cookie parser middleware to parse incoming cookies
 application.use(cookieParser())

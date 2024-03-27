@@ -23,7 +23,7 @@ function AddMyChild(){
         if(userInfo.email === inputState.email.toLowerCase()){
             setError("You cannot add yourself as a child");
         }
-        else if(userChildren.child1.email){
+        else if(userChildren.child1){
             if(inputState.email === userChildren.child1.email){
                 setError("This child is already added");
             }
@@ -36,7 +36,7 @@ function AddMyChild(){
                 })
             }
         }
-        else if(userChildren.child2.email){
+        else if(userChildren.child2){
             if(inputState.email === userChildren.child2.email){
                 setError("This child is already added");
             }
