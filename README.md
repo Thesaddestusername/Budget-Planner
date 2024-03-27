@@ -92,9 +92,20 @@ Software qualities. Include at least two concrete examples for each quality for 
 > Expected Outcome: The child should display accurately under child 2 with the correct email. The parent should now be able to correctly view and manage stephanie's finances percisely.<br/>
 > ---------------------------------<br/>
 > 2. Time-Efficiency
-> 
+> Child Role:<br/>
+> Use Case: Adding an income of 300$ with accompanying fields. (label, type, etc) <br/>
+> Expected Outcome: The income should be added to the database and show on the same page immediately. The total balance and graphs should also update quickly/in real time based on this change.<br/>
+> Parent Role:<br/>
+> Use Case: Deleting a childs income<br/>
+> Expected Outcome: The income should be removed from database and be removed from the same page immediately. The total balance and graphs should also update quickly/in real time based on this change.<br/>
 > ---------------------------------<br/>
-> 5. Robustness
+> 3. Robustness <br/>
+> Child Role:<br/>
+> Use Case: Creating an account<br/>
+> Expected Outcome: An error message will appear displaying the correspoding issue in any of theses cases: any of the required fields are empty, the account already exists, the email is not valid, the password does not match the re-typed password. Otherwise it will sign up and log the user in. <br/>
+> Parent Role:<br/>
+> Use Case: Adding a child<br/>
+> Expected Outcome:  An error message will appear displaying the correspoding issue in any of theses cases: any of the required fields are empty, the child has already been added, adding the currently logged-in account as a child of itself. Otherwise it will add and display the child.<br/>
 
 ### Top-level and low-level Software Design
 Provide the MVC arcitecture according to the selected Web framework. Also, describe at least three benefits of using MVC for your application.
