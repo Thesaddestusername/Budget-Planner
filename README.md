@@ -178,7 +178,7 @@ List of reused algorithms and small programs with references
 
 List of software tools and environmets. Provide briefly their benefits specifically for your application.
 > -----backend-------- <br/>
-> Node.js -  <br/>
+> Node.js - Node.js is the backbone of the backend software for our project, making it vital to the opreation of the application. <br/>
 > Express - Express is a helpful Node web framework that allows for the use of middleware functions. Express was particularly helpful for this application because middleware functions are a vital part of ensuring users are properly authenticated before they can access sensitive information. <br/>
 > Mongodb - Mongodb is described as a widely known and available document oriented database program, classifying as a NoSQL database. Mongo utilises JSON-link documents to store information, making it significantly easier to push and pull information from a web application. For that reason alone, Mongodb was a great fit for our application. <br/>
 > dotenv - Dotenv is a node module that allows for the loading of environmental variables from a single .env file. This was beneficial to our application since we could store sensitive information such as Database connection information, JWT Token keys, and port numbers hidden from the public domain. <br/>
