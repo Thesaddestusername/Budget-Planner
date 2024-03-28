@@ -1,30 +1,35 @@
 import React, {useState} from "react";
-import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { GetMainContext } from "../../context/mainContext";
 import styled from "styled-components";
 import Button from "../button/button";
-import { addSign } from "../../utils/icons";
 import { InnerLayout } from "../../styles/pageLayouts";
 import axios from 'axios';
 import profilePic from "../../images/budgetBuddyIconFixedUp.png"
 
+// Log in page that is passed in setCurrent so that once the user has been validated it can change the view of the current page;
 function LogIn({ setCurrent }) {
+
+    // creates a setter for an error using a react hook;
     const [error, setError] = useState(null);
 
+    // gets all required functions from the mainProvider;
     const { getLoggedIn, setLoggedIn } = GetMainContext();
 
+    // Uses the useState hooks to keep track of an input state that will store all of the info required to validate and log in a user;
     const [inputState, setInputState] = useState({
         email: '',
         password: ''
     });
 
+    // Specifies inputState fields;
     const { email, password } = inputState;
 
+    // Handles the final submission of login data when my button component is pressed. Does some error checking and logs in the user if it can;
     const handleSubmit = async e => {
         e.preventDefault();
         console.log("submitted")
-        //This is where we would put the validate or login function from mainContext
+        // does a database query for user and sets login to true or false depending on the reponse;
         try{
             const response = await axios.post("http://localhost:3003/login", inputState)
             setLoggedIn(true);
@@ -33,6 +38,7 @@ function LogIn({ setCurrent }) {
             setError(err.response.data.message);
             setLoggedIn(false);
         }  
+        //Set Current changes the page;
         if(getLoggedIn()){
             setCurrent(3);
         }
@@ -42,11 +48,12 @@ function LogIn({ setCurrent }) {
         })
 
     }
+    // Handle input is called when the fields onChange is triggered. This sets the input from the input field into a flattened input state using the setInputState hook;
     const handleInput = name => e =>{
         setInputState({...inputState, [name]: e.target.value})
     }
 
-
+    // HTML that includes a user made button component; It is what will be displayed/rendered;
     return(
         <StyledLogin onSubmit={handleSubmit}>
             <InnerLayout>
@@ -70,6 +77,7 @@ function LogIn({ setCurrent }) {
     );
 }
 
+// Created a styled login component;
 const StyledLogin = styled.form`
     display: flex;
     flex-direction: column;

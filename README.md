@@ -14,18 +14,24 @@
 >     - 2.1 User Roles
 >         - Parent
 >         - Child
->     - 2.2 Functionality for Parent
->         - Input income streams.
->         - Input expected expenses.
->         - Add accounts (eg. Chequing, savings, credit cards, loans, retirement savings).
->         - Create savings/debt reduction goals.
->         - Synch with partners accounts and share common expenses.
->         - Track and compare actual spending to spending goals, and highlight differences.
->         - Oversee financial information of entire family.
->     - 2.3 Functionality for Child
->         - Input income streams.
->         - Input expenses.
->         - Add savings goals.
+>     - 2.2 Functionality for Parent<br/>
+>       Sign up: Parents should be able to sign up with their email.<br/>
+>       Log in: Parents should be able to login using the same credentials used to sign up.<br/>
+>       Add Child: Parents should be able to add children to their accounts. <br/>
+>       Viewing Transactions: Parents should be able to view their transactions. <br/>
+>       Viewing Childs transactions: Parents should be able to view the transactions of the children they have added included in all transactions. <br/>
+>       Adding income: Parents should be able to add their own incomes. <br/>
+>       Deleteing income: Parents should be able to delete incomes from themselves and their children. <br/>
+>       Adding expenses: Parents should be able to add their own expenses. <br/>
+>       Deleting expenses: Parens should be able to delete expenses from themselves and their children. <br/>
+>     - 2.3 Functionality for Child<br/>
+>     Sign up: children should be able to sign up with their email.<br/>
+>     Log in: children should be able to login using the same credentials used to sign up.<br/>
+>     Viewing Transactions: Children should be able to view ONLY THEIR OWN transactions. <br/>
+>     Adding income: Children should be able to add their own incomes. <br/>
+>     Deleteing income: Children should be able to delete ONLY THEIR OWN incomes. <br/>
+>     Adding expenses: Children should be able to add their own expenses. <br/>
+>     Deleting expenses: Children should be able to delete ONLY THEIR OWN expenses. <br/>
 >     - 2.4 Qualities Requirements
 >         - **User-Friendliness:**  displays information in an aestetically pleasing manner, highlighting important information, easy and intuitive navigation through the application and its functions.
 >         - **Customizability:**  provide a well-rounded template for the user to tailor the system to their needs.
@@ -132,10 +138,19 @@ Provide the MVC architecture according to the selected Web framework. Also, desc
 > A characteristic that makes React so useful is that The CONTROLLER aspect can also be handle by user defined components. To explain, the components themselves can contain the logic that we need to handle user input and changing states. However, we also use specific controllers, middleware, and axios for our backend queries.
 
 Observer and Factory design patterns. Explain in detail the usability of these two patterns for your specific application. Include the complete class diagram for each pattern. For each class, provide the data types of the attributes and prototypes of the methods. 
-> Both of the Observer and Factory pattern are very usable in our application. For example, the observer pattern can be used to pass around data from one provider so our components are as loosely coupled as possible. Our mainContext acts as the provider/publisher/subject in the observer pattern. It passes useful information from the database like income, expense, and user info, as well as states like isLoggedIn to our UI components. These UI components acts as the observer and are loosely coupled as they do not have to rely on each other, just react based on the information they receive from mainContext. <br/> The factory pattern is also extremely useful as We can have cohesive and accurate criteria/data-checking for our information, as well as provide a structured way to create/delete data for our observers. The database is responsible for creating instances based on certain criteria which can be passed to mainContext for observer use. 
+> Both of the Observer and Factory pattern are very usable in our application. For example, the observer pattern can be used to pass around data from one provider so our components are as loosely coupled as possible. Our mainContext acts as the provider/publisher/subject in the observer pattern. It passes useful information from the database like income, expense, and user info, as well as states like isLoggedIn to our UI components. These UI components acts as the observer and are loosely coupled as they do not have to rely on each other, just react based on the information they receive from mainContext. <br/> The factory pattern is also extremely useful as We can have cohesive and accurate criteria/data-checking for our information, as well as provide a structured way to create/delete data for our observers. The database is responsible for creating instances based on certain criteria which can be passed to mainContext for observer use.
+
+observer pattern
+
+> ![firefox_G6hGu5R4Lp](https://github.com/Thesaddestusername/Budget-Planner/assets/30159056/dbcf998d-0843-4f09-8339-6f57a94b7636)
+
+factory pattern
+
+> ![firefox_Rj4sXQbKqr](https://github.com/Thesaddestusername/Budget-Planner/assets/30159056/016069df-51a8-4d9c-adcf-d772fe3edf5b)
 
 Provide the class diagram of the whole system by incorporating the two design patterns. 
-> .
+
+> ![firefox_UcOLexB1Da](https://github.com/Thesaddestusername/Budget-Planner/assets/30159056/9365c635-03e5-45c3-8d3d-9227f708435a)
 
 ### Software Construction
 Submit the entire code for observer and factory patterns.
@@ -167,14 +182,21 @@ Deployment diagram regarding hardware configuration of the code. Indication the 
 >![deploymentDiagram (1)](https://github.com/Thesaddestusername/Budget-Planner/assets/72892765/86632ced-bd02-4293-9082-4154549d0f0e)
 
 Table of Contents of the System Data
-> .
+> System data tables for user information:<br/>
+>![image](https://github.com/Thesaddestusername/Budget-Planner/assets/72892765/412f9fc0-2abe-41d8-938b-cef108d0e0b6) <br/>
+> System data tables for incomes:<br/>
+>![image](https://github.com/Thesaddestusername/Budget-Planner/assets/72892765/fb7c3708-65ed-4030-b581-a718ba55a997)<br/>
+> System data table for expenses:<br/>
+>![image](https://github.com/Thesaddestusername/Budget-Planner/assets/72892765/55872bc7-4111-456c-be55-4a7556b716a5)
 
 ### Technical Documentation
 List of Programming Languages
 > JavaScript, CSS, HTML
 
 List of reused algorithms and small programs with references
-> .
+> Inspiration and example for structure: https://github.com/Maclinz/expense-tracker_fullstack<br/>
+> Express JWT auth Example for backend purposes: https://github.com/iamshaunjp/node-express-jwt-auth <br/>
+> Frontend signup/login page reference and example: https://github.com/gitdagray/react_login_form <br/>
 
 List of software tools and environmets. Provide briefly their benefits specifically for your application.
 > -----backend-------- <br/><br/>
@@ -190,31 +212,31 @@ List of software tools and environmets. Provide briefly their benefits specifica
 > cookie-parser - Cookie-parser was used as a part of our application to parse through the user cookie for authentication purposes. <br/><br/>
 > nodemon - Nodemon is a tool that helps with the development of Node.js applications by restarting the application when a file change is detected. While not important for the final product of our application, nodemon was monumental for quickly applying changes to the backend without having to manually restart the node application. <br/><br/>
 > cors - Cors serves as a tool for ensuring that requests are only sent by known hosts. This being installed on the backend, it only allows requests from the application to access the database. While not entirely helpful to the functionality of the application, it is an important security measure. <br/><br/>
------frontend-------- <br/><br/>
-> axios <br/>
-> chart.js <br/>
-> moment <br/>
-> react <br/>
-> react-charsjs-2 <br/>
-> react-datepicker <br/>
-> react-dom <br/>
-> react-scripts <br/>
-> styled-components <br/>
-> web-vitals <br/>
+-----frontend-------- <br/>
+> axios - Axios makes communicating with the server via .post, .get, and other commands simple for the frontend.<br/><br/>
+> chart.js - Gives the frontend many simple to use tools to display many different kinds of graphs.<br/><br/>
+> moment - Moment was only used to create a global date formatting component.<br/><br/>
+> React - React makes frotend development easy to manage with is component based architecture and focus on an easy to read type script. <br/><br/>
+> react-charsjs-2 - Basically an add on to chartjs for more features and graphs.<br/><br/>
+> react-datepicker - was one of the simpliest tools to add datepickers to our forms.<br/><br/>
+> react-dom - The react-dom dependency is responsible for rendering React components into the DOM (Document Object Model) and provides additional functionality for working with the DOM in React applications, such as event handling and DOM manipulation <br/><br/>
+> react-scripts - The react-scripts dependency is a set of scripts and configuration used by Create React App to streamline the development process it allows for  pre-configured build setup, hot reloading, etc.<br/><br/>
+> styled-components The styled-components dependency allows you to write CSS in javascript. This lets you style React components with scoped styles that are easier to read and that can dynamically change based on props. <br/><br/>
+> web-vitals - The web-vitals dependency provides a way to measure and track essential user-centric performance metrics, such as Core Web Vitals (LCP, FID, CLS), helping us monitor and improve the overall performance of our application. Even during debugging we did not take full advantage of this dependancy. <br/><br/>
 ### Acceptance Testing
 Correctness testing using four test cases only (sc of both inputs and outputs).
 > Correctness Test Case 1: Login<br/>
-> <img width="1128" alt="Screenshot 2024-03-27 175410" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/8fbef8d3-2244-4d60-94c6-645703ce9945"><br/>
-> <img width="1128" alt="Screenshot 2024-03-27 175422" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/e5ca5ea1-04ae-46b4-9340-0dc68504ae4a"><br/>
+> <img width="1128" alt="Screenshot 2024-03-27 191609" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/fbfd3f63-f8d4-4b59-a3dd-e5fda8be7d86"><br/>
+> <img width="1128" alt="Screenshot 2024-03-27 191628" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/aae1002d-0440-4517-ab26-41022ceaadd7"><br/>
 > Correctness Test Case 2: Add Income<br/>
-> <img width="1128" alt="Screenshot 2024-03-27 175501" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/f7da5013-f77a-47ff-b98f-c0288c81003d"><br/>
-><img width="1128" alt="Screenshot 2024-03-27 175510" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/71872a56-7be7-477e-9b19-84ab7a432d4d"><br/>
+> <img width="1128" alt="Screenshot 2024-03-27 190637" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/ed485eb6-4a72-48bd-b3ef-4f6d6256d961"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 190646" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/56d76be1-89a6-42ff-b13b-45fff4c0476c"><br/>
 >Correctness Test Case 3: Add Expense<br/>
-><img width="1128" alt="Screenshot 2024-03-27 175537" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/e281451d-651b-43ba-a247-324de8232ed0"><br/>
-><img width="1126" alt="Screenshot 2024-03-27 175545" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/113d754d-cc4a-4624-897d-13bce0a6ed0d"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 191020" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/3c20fb58-2257-4fd3-bc83-82a26b945cf9"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 191027" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/30344ba8-62ca-4135-be7e-a89adbdde1aa"><br/>
 >Correctness Test Case 4: Add Child<br/>
-><img width="1128" alt="Screenshot 2024-03-27 175628" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/b6489b5d-d954-4222-947d-f66ffbcd8643"><br/>
-><img width="1128" alt="Screenshot 2024-03-27 175636" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/557027cf-edae-48e0-a5ab-ee7711abc58b"><br/>
+><img width="1125" alt="Screenshot 2024-03-27 212249" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/95499af8-cbdb-4728-89d7-4141b7d0326e"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 191256" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/8e4fc6ad-9e44-4f5f-9b8e-819fbb6c3a73"><br/>
 
 Robustness testing
 > Robustness Test Case 1: Failed Log In - Incorrect Email or Password<br/>
@@ -227,16 +249,17 @@ Robustness testing
 > <img width="1128" alt="Screenshot 2024-03-27 180320" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/a8914396-354f-4003-bdad-19cf25b0eb88"><br/>
 ><img width="1128" alt="Screenshot 2024-03-27 180401" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/72fb2ee6-792f-489f-a8aa-a26784d4447e"><br/>
 Robustness Test Case 4: Add Child - Cannot Add Yourself As A Child<br/>
-><img width="1128" alt="Screenshot 2024-03-27 180957" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/af6733ec-5e8e-4461-a896-6d7635924d10"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 191503" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/c7dbb5d8-1389-4b82-87d4-f7ffec683fd2"><br/>
 
 Time-efficiency testing of two functions only. Indicate the method you used to measure the time. 
+> We used the postman event timer to compare time efficiency between 2 functions: Adding an income vs adding a child. The income adds much faster at 143.67ms while the add child is 367.57ms. <br/>
 > Function 1: Adding an Income<br/>
-><img width="1128" alt="Screenshot 2024-03-27 175501" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/1c4c020b-520c-4097-ad28-c5aee2fc49f3"><br/>
-><img width="1128" alt="Screenshot 2024-03-27 175510" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/4ea55fc5-0cbe-4960-8dcd-beaf8d377772"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 190637" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/1108691c-e584-4071-8597-91fc193ff2f9"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 190646" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/422ecaa2-a521-4e72-af4e-cafa54e70ec2"><br/>
+>![image](https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/d0533d83-2916-436d-87af-3736cfe7190e)
+
+
 > Function 2: Adding a Child<br/>
-><img width="1128" alt="Screenshot 2024-03-27 175628" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/15a5eec6-7c2e-400b-96ba-573cc0523e8c"><br/>
-><img width="1128" alt="Screenshot 2024-03-27 175636" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/f697c946-1ad9-4d4e-8e21-8b5043f3ed12"><br/>
-
-
-
-
+><img width="1125" alt="Screenshot 2024-03-27 212249" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/6ecc9f91-1502-4155-9fd9-20f69037fffb"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 191256" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/ca468088-d822-4e35-9569-348f5907c18c"><br/>
+>![image](https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/57089ea5-86db-4b7b-ae90-5507dc30bc79)

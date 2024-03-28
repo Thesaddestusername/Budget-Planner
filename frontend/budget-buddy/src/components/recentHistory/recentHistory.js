@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { GetMainContext } from "../../context/mainContext";
 
+// Creates a container to show the most recent transactions;
 function RecentHistory() {
+    // Gets the neccessary data array from the mainProvider;
     const{recentTransactionHistory} = GetMainContext();
     const [...recentHistory] = recentTransactionHistory();
     //Sketchy way to check if it is an expense or income; Especially because you can no longer have same category in both expense and income plus have to add each time you add or change form
@@ -13,6 +15,7 @@ function RecentHistory() {
             <h2>Recent Transactions</h2>
             {recentHistory.map((transaction)=>{
                 const{_id, label, amount, type} = transaction;
+                // HTML to render recent transactions; Does some conditional stylings based on sketchy method described above;
                 return(
                     <div key={_id} className="recentTransaction">
                         <p style={{color: incomeCategories.indexOf(type) != -1 ? '#CDEAC0' : '#FF928B' }}>{label}</p>
@@ -25,6 +28,7 @@ function RecentHistory() {
 
 }
 
+// Created a styled component for recent history;
 const StyledHist = styled.div`
     display: flex;
     flex-direction: column;

@@ -5,9 +5,13 @@ import LineGraph from "../graphs/lineGraph";
 import { GetMainContext } from "../../context/mainContext";
 import RecentHistory from "../recentHistory/recentHistory";
 
+//Dashboard is a page that displays the incomes and expenses in a readable way with a graph; Referenced commonly as "Graph View" in other places;
 function Dashboard(){
+    // gets all required functions from the mainProvider;
     const{calcTotalIncome, calcTotalExpense, getExpenses, getIncomes, calcTotalBalance} = GetMainContext();
+    //gets and refreshed incomes and expenses on render;
     useEffect(() =>{getIncomes(); getExpenses()}, [])
+    // HTML to render the dashboard/graph view page;
     return(
         <StyledDash>
             <InnerLayout>
@@ -35,6 +39,8 @@ function Dashboard(){
     )
 }
 
+
+//created a dashboard styled component; 
 const StyledDash = styled.div`
     .budgetInfo{
         display: grid;

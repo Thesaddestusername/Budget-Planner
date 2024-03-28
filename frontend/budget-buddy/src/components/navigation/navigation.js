@@ -4,10 +4,13 @@ import profilePic from "../../images/budgetBuddyIconFixedUp.png"
 import { dropDownItems, dropDownItemsChild } from "../../utils/dropDownItems";
 import { GetMainContext } from "../../context/mainContext";
 
-
+// Displays the sidebar navigation that is passed in both current so it know which page it is on, and setCurrent so it can change pages;
 function Navigation({current, setCurrent}){
+    // gets all required functions and data arrays from the mainProvider;
     const{calcTotalBalance, getIncomes, getExpenses, getUserInfo, userInfo} = GetMainContext();
+    // calculates total balance, get incomes, gets expenses, and user info on render;
     useEffect(() =>{calcTotalBalance(); getIncomes(); getExpenses(); getUserInfo();}, [])
+    // HTML to render dropdown menu;
     return(
         <StyledNav>
             <div className="userDiv">
@@ -17,6 +20,8 @@ function Navigation({current, setCurrent}){
                     <p>${calcTotalBalance().toFixed(2)}</p>
                 </div>
                 <ul className="dropDownItems">
+                    {/* if the user is a not a child it will map through the dropdown items display them based on their destructured parameters and set themselves to current onclick as well as change the page/current using setCurrent */}
+                    {/*If the user is a child it will do the same thing without showing the add a child page by accessing different dropdown item*/}
                     {(userInfo.isChild) ?
                     dropDownItemsChild.map((item)=>{return <li key = {item.id} onClick={() => setCurrent(item.id)} className={current === item.id ? 'current': ''}>{item.icon}<span>{item.title}</span></li>})
                     : dropDownItems.map((item)=>{return <li key = {item.id} onClick={() => setCurrent(item.id)} className={current === item.id ? 'current': ''}>{item.icon}<span>{item.title}</span></li>})
@@ -30,6 +35,7 @@ function Navigation({current, setCurrent}){
     )
 }
 
+// Created a styled component for the side bar navigation;
 const StyledNav = styled.nav`
 
     img{
