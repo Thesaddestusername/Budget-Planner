@@ -179,7 +179,7 @@ List of Programming Languages
 > JavaScript, CSS, HTML
 
 List of reused algorithms and small programs with references
-> .
+> Express JWT auth Example for backend purposes: https://github.com/iamshaunjp/node-express-jwt-auth.
 
 List of software tools and environmets. Provide briefly their benefits specifically for your application.
 > -----backend-------- <br/><br/>
