@@ -7,7 +7,7 @@ function RecentHistory() {
     const [...recentHistory] = recentTransactionHistory();
     //Sketchy way to check if it is an expense or income; Especially because you can no longer have same category in both expense and income plus have to add each time you add or change form
     // Once you add or remove anything from forms you have to change here and where icon is decided and displayed in expense component and income component;
-    const incomeCategories = ['salary','bank', 'refund', 'stocks','gift', 'crypto', 'nft', 'sale', 'liquidation'];
+    const incomeCategories = ['salary','bank', 'refund', 'stocks','gift', 'crypto', 'nft', 'sale', 'liquidation', 'misc'];
     return(
         <StyledHist>
             <h2>Recent Transactions</h2>
