@@ -167,7 +167,12 @@ Deployment diagram regarding hardware configuration of the code. Indication the 
 >![deploymentDiagram (1)](https://github.com/Thesaddestusername/Budget-Planner/assets/72892765/86632ced-bd02-4293-9082-4154549d0f0e)
 
 Table of Contents of the System Data
-> .
+> System data tables for user information:<br/>
+>![image](https://github.com/Thesaddestusername/Budget-Planner/assets/72892765/412f9fc0-2abe-41d8-938b-cef108d0e0b6) <br/>
+> System data tables for incomes:<br/>
+>![image](https://github.com/Thesaddestusername/Budget-Planner/assets/72892765/fb7c3708-65ed-4030-b581-a718ba55a997)<br/>
+> System data table for expenses:<br/>
+>![image](https://github.com/Thesaddestusername/Budget-Planner/assets/72892765/55872bc7-4111-456c-be55-4a7556b716a5)
 
 ### Technical Documentation
 List of Programming Languages
