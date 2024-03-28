@@ -194,7 +194,7 @@ List of Programming Languages
 > JavaScript, CSS, HTML
 
 List of reused algorithms and small programs with references
-> Inspiration and example for structure: https://github.com/Maclinz/expense-tracker_fullstack
+> Inspiration and example for structure: https://github.com/Maclinz/expense-tracker_fullstack<br/>
 > Express JWT auth Example for backend purposes: https://github.com/iamshaunjp/node-express-jwt-auth <br/>
 > Frontend signup/login page reference and example: https://github.com/gitdagray/react_login_form <br/>
 
