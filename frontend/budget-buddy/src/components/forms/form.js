@@ -6,8 +6,12 @@ import styled from "styled-components";
 import Button from "../button/button";
 import { addSign } from "../../utils/icons";
 
+// Displays the income form on the incomes page; It is the portion of the page that gets income input;
 function Form(){
+    // gets all required functions from the mainProvider;
     const {addIncome, getIncomes} = GetMainContext();
+
+    // Uses the useState hooks to keep track of an input state that will store all of the info required to add an income;
     const[inputState, setInputState] = useState({
         label: '',
         amount: '',
@@ -16,8 +20,10 @@ function Form(){
         notes: '',
     })
 
+    // Specifies inputState fields;
     const {label, amount, date, type, notes} = inputState;
 
+    // Handles the final submission of the income after the button component has been pressed;   
     const handleSubmit = e =>{
         e.preventDefault();
         addIncome(inputState);
@@ -30,11 +36,12 @@ function Form(){
             notes: '',
         })
     }
+    // Handle input is called when the fields onChange is triggered. This sets the input from the input field into a flattened input state using the setInputState hook;
     const handleInput = name => e =>{
         setInputState({...inputState, [name]: e.target.value})
     }
 
-
+    // HTML that renders form on incomes page; there are pseudo validaiton on the input fields that require them to have some form of input as well as some min max criteria for the number;
     return(
         <StyledFrm onSubmit={handleSubmit}>
             <div className="inputEffect">
@@ -49,6 +56,7 @@ function Form(){
             </div>
             <div className="inputEffect">
                 <div className="selectInputEffect">
+                    {/* this is a dropdown menu for the types of incomes you can choose; IMPORTANT: the values must be the same in income component to properly display correct icon; */}
                     <select required value={type} name="type" id="type" placeholder="Choose Type" onChange={handleInput('type')}>
                         <option value="" disabled>Choose Type</option>
                         <option value="salary">Salary</option>
@@ -74,6 +82,7 @@ function Form(){
     )
 }
 
+// Created a form styled component;
 const StyledFrm = styled.form`
     display: flex;
     flex-direction: column;

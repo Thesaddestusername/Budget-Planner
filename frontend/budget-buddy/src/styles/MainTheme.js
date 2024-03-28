@@ -1,5 +1,6 @@
 import {createGlobalStyle} from 'styled-components';
 
+//Created a mainThem global style which takes care of font PROVIDED BY FONT AWESOME and other global stylings; 
 export const MainTheme = createGlobalStyle`
     *{
         margin: 0;

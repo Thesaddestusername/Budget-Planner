@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { GetMainContext } from "../../context/mainContext";
 import styled from "styled-components";
@@ -8,22 +7,29 @@ import { InnerLayout } from "../../styles/pageLayouts";
 import axios from 'axios';
 import profilePic from "../../images/budgetBuddyIconFixedUp.png"
 
+// Log in page that is passed in setCurrent so that once the user has been validated it can change the view of the current page;
 function SignUp({setCurrent}){
 
+  // creates a setter for an error using a react hook;
   const[error, setError] = useState(null);
 
+  // creates a setter for an password mismatch Error using a react hook; Looking back on this I could just use the setError above;
   const [passwordMismatchError, setPasswordMismatchError] = useState(null);
 
-  const { setLoggedIn, getLoggedIn } = GetMainContext();
+  // gets all required functions from the mainProvider;
+  const { setLoggedIn } = GetMainContext();
 
+  // Uses the useState hooks to keep track of an input state that will store all of the info required to validate and sign up a user;
   const [inputState, setInputState] = useState({
     email: "",
     password: "",
     confirmPassword: "",
   });
 
+  // Specifies inputState fields;
   const { email, password, confirmPassword } = inputState;
 
+  // Handles the final submission of signup data when my button component is pressed. Does some error checking and logs in the user if it can;
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -50,12 +56,14 @@ function SignUp({setCurrent}){
     });
   };
 
+  // Handle input is called when the fields onChange is triggered. This sets the input from the input field into a flattened input state using the setInputState hook;
   const handleInput = (name) => (e) => {
     setInputState({ ...inputState, [name]: e.target.value });
   };
 
   console.log(error);
 
+  // HTML that includes a user made button component; It is what will be displayed/rendered;
   return (
     <StyledLogin onSubmit={handleSubmit}>
       <InnerLayout>
@@ -116,6 +124,7 @@ function SignUp({setCurrent}){
   );
 }
 
+// Made a styled component;
 const StyledLogin = styled.form`
   display: flex;
   flex-direction: column;
@@ -180,6 +189,7 @@ const StyledLogin = styled.form`
   .errorText {
     color: red;
     text-align: center;
+  }
   }
 `;
 

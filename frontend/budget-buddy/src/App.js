@@ -12,9 +12,12 @@ import LogIn from "./components/logIn/logIn";
 import SignUp from "./components/signup/signup";
 import AddMyChild from "./components/addChild/addChild";
 
+// Is the page that is technically always displayed deciding which component is being shown; Pages like Incomes are full pages made into components;
 function App() {
+  //creates a react hook for the current page and setsthe base to login page;
   const [current, setCurrent] = useState(5);
 
+  //Show info is a helper function that will decide which component to show depending on curret react hook;
   const showInfo = () =>{
     if(current === 1){
       return <Incomes/>;
@@ -39,11 +42,13 @@ function App() {
     }
   }
 
+  // Displays information with globalTheme main theme and outter layout, but the information within the inner layour is bases on the show info helper function;
   return (
       <StyledDiv className="App">
         <MainTheme/>
         <Gradient></Gradient>
         <OutterLayout>
+          {/* if the current page is login or signup do not show navigation sidebar */}
         {(current != 5 && current != 6) ? <Navigation current={current} setCurrent={setCurrent}/> : ''}  
             <main>
               {showInfo()}
@@ -53,6 +58,8 @@ function App() {
   );
 }
 
+
+// Created a style component for main;
 const StyledDiv = styled.div`
   height: 100vw;
   background-color: #FEC3A6;
