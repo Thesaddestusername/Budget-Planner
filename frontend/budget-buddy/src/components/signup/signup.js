@@ -181,6 +181,7 @@ const StyledLogin = styled.form`
     color: red;
     text-align: center;
   }
+}
 `;
 
 export default SignUp;

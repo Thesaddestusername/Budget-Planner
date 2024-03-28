@@ -75,7 +75,7 @@ const StyledIncome = styled.div`
     display: flex;
     align-items: center;
     gap: 1rem;
-    width: auto%;
+    width: auto;
     .icon{
         width: 90px;
         height: 90px;
