@@ -42,7 +42,7 @@ function LineGraph(){
 
 const StyledGraph = styled.div`
     box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.25);
-    background: #D3D3D3;
+    background: #ddecf0;
     border: 1px solid #EFE9AE;
     padding: 1rem;
     border-radius: 25px;

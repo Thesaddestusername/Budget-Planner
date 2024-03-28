@@ -16,7 +16,7 @@ function RecentHistory() {
                 return(
                     <div key={_id} className="recentTransaction">
                         <p style={{color: incomeCategories.indexOf(type) != -1 ? '#CDEAC0' : '#FF928B' }}>{label}</p>
-                        <p style={{color: incomeCategories.indexOf(type) != -1 ? '#CDEAC0' : '#FF928B' }}>{incomeCategories.indexOf(type) != -1 ? `+${amount}`: `-${amount}`}</p>
+                        <p style={{color: incomeCategories.indexOf(type) != -1 ? '#CDEAC0' : '#FF928B' }}>{incomeCategories.indexOf(type) != -1 ? `+$${amount}`: `-$${amount}`}</p>
                     </div>
                 )
             })}

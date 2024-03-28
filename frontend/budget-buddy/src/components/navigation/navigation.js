@@ -75,9 +75,9 @@ const StyledNav = styled.nav`
     }
     .lowerNav {
         font-size: 15px;
+        width: 250px;
         position: absolute;
-        bottom: 10px;
-        left: 50px;
+        bottom: 30px;
         text-align: left;
         
     
