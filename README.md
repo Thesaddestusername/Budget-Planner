@@ -210,17 +210,17 @@ List of software tools and environmets. Provide briefly their benefits specifica
 ### Acceptance Testing
 Correctness testing using four test cases only (sc of both inputs and outputs).
 > Correctness Test Case 1: Login<br/>
-> <img width="1128" alt="Screenshot 2024-03-27 175410" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/8fbef8d3-2244-4d60-94c6-645703ce9945"><br/>
-> <img width="1128" alt="Screenshot 2024-03-27 175422" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/e5ca5ea1-04ae-46b4-9340-0dc68504ae4a"><br/>
+> <img width="1128" alt="Screenshot 2024-03-27 191609" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/fbfd3f63-f8d4-4b59-a3dd-e5fda8be7d86"><br/>
+> <img width="1128" alt="Screenshot 2024-03-27 191628" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/aae1002d-0440-4517-ab26-41022ceaadd7"><br/>
 > Correctness Test Case 2: Add Income<br/>
-> <img width="1128" alt="Screenshot 2024-03-27 175501" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/f7da5013-f77a-47ff-b98f-c0288c81003d"><br/>
-><img width="1128" alt="Screenshot 2024-03-27 175510" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/71872a56-7be7-477e-9b19-84ab7a432d4d"><br/>
+> <img width="1128" alt="Screenshot 2024-03-27 190637" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/ed485eb6-4a72-48bd-b3ef-4f6d6256d961"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 190646" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/56d76be1-89a6-42ff-b13b-45fff4c0476c"><br/>
 >Correctness Test Case 3: Add Expense<br/>
-><img width="1128" alt="Screenshot 2024-03-27 175537" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/e281451d-651b-43ba-a247-324de8232ed0"><br/>
-><img width="1126" alt="Screenshot 2024-03-27 175545" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/113d754d-cc4a-4624-897d-13bce0a6ed0d"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 191020" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/3c20fb58-2257-4fd3-bc83-82a26b945cf9"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 191027" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/30344ba8-62ca-4135-be7e-a89adbdde1aa"><br/>
 >Correctness Test Case 4: Add Child<br/>
-><img width="1128" alt="Screenshot 2024-03-27 175628" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/b6489b5d-d954-4222-947d-f66ffbcd8643"><br/>
-><img width="1128" alt="Screenshot 2024-03-27 175636" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/557027cf-edae-48e0-a5ab-ee7711abc58b"><br/>
+><img width="1125" alt="Screenshot 2024-03-27 212249" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/95499af8-cbdb-4728-89d7-4141b7d0326e"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 191256" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/8e4fc6ad-9e44-4f5f-9b8e-819fbb6c3a73"><br/>
 
 Robustness testing
 > Robustness Test Case 1: Failed Log In - Incorrect Email or Password<br/>
@@ -233,16 +233,16 @@ Robustness testing
 > <img width="1128" alt="Screenshot 2024-03-27 180320" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/a8914396-354f-4003-bdad-19cf25b0eb88"><br/>
 ><img width="1128" alt="Screenshot 2024-03-27 180401" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/72fb2ee6-792f-489f-a8aa-a26784d4447e"><br/>
 Robustness Test Case 4: Add Child - Cannot Add Yourself As A Child<br/>
-><img width="1128" alt="Screenshot 2024-03-27 180957" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/af6733ec-5e8e-4461-a896-6d7635924d10"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 191503" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/c7dbb5d8-1389-4b82-87d4-f7ffec683fd2"><br/>
 
 Time-efficiency testing of two functions only. Indicate the method you used to measure the time. 
 > Function 1: Adding an Income<br/>
-><img width="1128" alt="Screenshot 2024-03-27 175501" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/1c4c020b-520c-4097-ad28-c5aee2fc49f3"><br/>
-><img width="1128" alt="Screenshot 2024-03-27 175510" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/4ea55fc5-0cbe-4960-8dcd-beaf8d377772"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 190637" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/1108691c-e584-4071-8597-91fc193ff2f9"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 190646" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/422ecaa2-a521-4e72-af4e-cafa54e70ec2"><br/>
+>![image](https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/d0533d83-2916-436d-87af-3736cfe7190e)
+
+
 > Function 2: Adding a Child<br/>
-><img width="1128" alt="Screenshot 2024-03-27 175628" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/15a5eec6-7c2e-400b-96ba-573cc0523e8c"><br/>
-><img width="1128" alt="Screenshot 2024-03-27 175636" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/f697c946-1ad9-4d4e-8e21-8b5043f3ed12"><br/>
-
-
-
-
+><img width="1125" alt="Screenshot 2024-03-27 212249" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/6ecc9f91-1502-4155-9fd9-20f69037fffb"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 191256" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/ca468088-d822-4e35-9569-348f5907c18c"><br/>
+>![image](https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/57089ea5-86db-4b7b-ae90-5507dc30bc79)
