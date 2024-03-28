@@ -5,7 +5,7 @@
 - Hunter Bayliss (Thesaddestusername)   *baylissh@uregina.ca*
 - Levi Brown (Lebbl)           *lsb360@uregina.ca*
 - Braden Breit (Bradenzee)     *bbb560@uregina.ca*
-- Reanne Daviduk - (reannedaviduk)   *rcd714@uregina.ca*
+- Reanne Daviduk (reannedaviduk)   *rcd714@uregina.ca*
 ---
 ### Problem Definition: outline the problem requirements and include the application domain and motivations of your project. 
 >  1. Problem Description
@@ -78,59 +78,119 @@ Functional Requirements list (only the ones that you have implemented) for each 
 For each user role, provide the use case diagram with all the use cases and actors.
 > ![useCaseBudgetBuddy](https://github.com/Thesaddestusername/Budget-Planner/assets/72892765/2f6093d9-23fa-426a-ba92-f4a5bd512f55)
 
-Describe in detail two use cases using the activity diagram. Choose the most complex use cases.
-> .
+Describe in detail two use cases using the activity diagram. Choose the most complex use cases.<br/>
+> <img width="613" alt="ParentActivityDiagram" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/67f165cc-d624-465e-a320-9e8c9ce1022b"><br/>
+> Use Case One: Adding A New Child Using the Parent Role<br/>
+> Step 1: Login or create an account, enter a valid email and password to pass authentication.<br/>
+> Step 2: From the Graph View page, select Add Child in the navigation bar to view and add new children.<br/>
+> Step 4: Enter a valid username and password of a child to pass authentication.<br/>
+> Step 5: Submit form and new child will be listed under "My Children".<br/>
+> Step 6: Log out.<br/>
+
+> <img width="519" alt="ChildActivityDiagram" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/12a41a16-82eb-4721-8827-383fa8446428"><br/>
+> Use Case Two: Add A New Income Source Using the Child Role<br/>
+> Step 1: Login or create an account, enter a valid email and password to pass authentication.<br/>
+> Step 2: From the Graph View page, select Income in the navigation bar.<br/>
+> Step 3: Define income name, amount, date, type, and optional notes on left hand side of income page.<br/>
+> Step 4: Save changes to new income, it will appear on the right hand side of the income page.<br/>
+> Step 5: Log out.<br/>
+
+
+
 
 Software qualities. Include at least two concrete examples for each quality for each user role. 
-> 1. Correctness
-> 2. Time-Efficiency
-> 3. Robustness
+> 1. Correctness<br/>
+> ---------------------------------<br/>
+> Child Role:<br/>
+> Use Case: A child adds a 20$ fast-food expense on 02-04-2024 name "mcdonalds"<br/>
+> Expected Outcome: The dollar ammount(20$) will be correctly displayed with up to 2 points of precision for the parent and child as well as be reflected in their total balances. The type (fast-food) should display correctly via graphic icon along with the correct name (mcdonalds) and date with correct formatting (DD/MM/YYYY).<br/>
+>Parent Role:<br/>
+> Use Case: Parent adds a second child (stephanie@gmail.com) to their account.<br/>
+> Expected Outcome: The child should display accurately under child 2 with the correct email. The parent should now be able to correctly view and manage stephanie's finances percisely.<br/>
+> ---------------------------------<br/>
+> 2. Time-Efficiency<br/>
+> Child Role:<br/>
+> Use Case: Adding an income of 300$ with accompanying fields. (label, type, etc) <br/>
+> Expected Outcome: The income should be added to the database and show on the same page immediately. The total balance and graphs should also update quickly/in real time based on this change.<br/>
+> Parent Role:<br/>
+> Use Case: Deleting a childs income<br/>
+> Expected Outcome: The income should be removed from database and be removed from the same page immediately. The total balance and graphs should also update quickly/in real time based on this change.<br/>
+> ---------------------------------<br/>
+> 3. Robustness <br/>
+> Child Role:<br/>
+> Use Case: Creating an account.<br/>
+> Expected Outcome: An error message will appear displaying the correspoding issue in any of theses cases: any of the required fields are empty, the account already exists, the email is not valid, the password does not match the re-typed password. Otherwise it will sign up and log the user in. <br/>
+> Parent Role:<br/>
+> Use Case: Adding a child.<br/>
+> Expected Outcome:  An error message will appear displaying the correspoding issue in any of theses cases: any of the required fields are empty, the child has already been added, adding the currently logged-in account as a child of itself. Otherwise it will add and display the child.<br/>
 
 ### Top-level and low-level Software Design
-Provide the MVC arcitecture according to the selected Web framework. Also, describe at least three benefits of using MVC for your application.
-> .
+Provide the MVC architecture according to the selected Web framework. Also, describe at least three benefits of using MVC for your application.
+> Our team decided to use React to create our web based application, and it is important to note that React itself is not a framework. However, for this project we did end up using its dedicated framework called "Create React App".<br/>
+>The MODEL for this architecture is represented in our code as React's built-in state management system that provides us with useful hooks such as "useState". We also make use of more advanced state manegment systems such as React's Context API, where we create a MainContext to be a provider of crucial information across our system.<br/>
+> The VIEW in terms of the "Create React App" framework is simply the components that display our data and change based on user interaction. These components found throughout our project, often as UI components, that we decided to create with javascript and React's component syntax.
+> A characteristic that makes React so useful is that The CONTROLLER aspect can also be handle by user defined components. To explain, the components themselves can contain the logic that we need to handle user input and changing states. However, we also use specific controllers, middleware, and axios for our backend queries.
 
 Observer and Factory design patterns. Explain in detail the usability of these two patterns for your specific application. Include the complete class diagram for each pattern. For each class, provide the data types of the attributes and prototypes of the methods. 
-> .
+> Both of the Observer and Factory pattern are very usable in our application. For example, the observer pattern can be used to pass around data from one provider so our components are as loosely coupled as possible. Our mainContext acts as the provider/publisher/subject in the observer pattern. It passes useful information from the database like income, expense, and user info, as well as states like isLoggedIn to our UI components. These UI components acts as the observer and are loosely coupled as they do not have to rely on each other, just react based on the information they receive from mainContext. <br/> The factory pattern is also extremely useful as We can have cohesive and accurate criteria/data-checking for our information, as well as provide a structured way to create/delete data for our observers. The database is responsible for creating instances based on certain criteria which can be passed to mainContext for observer use. 
 
 Provide the class diagram of the whole system by incorporating the two design patterns. 
 > .
 
 ### Software Construction
-Observer and Factory patterns.
-> .
+Submit the entire code for observer and factory patterns.
+> The code is already submitted above. However the observers, and more specifically subsrcibers, within our code are the components that need to be notified of changes in the data or state. This would include many of our components, epspecially ones related to UI.<br/> A comprehensive list based on file path are as follows:<br/>
+>frontend/budget-buddy/src/components/addChild <br/>
+>frontend/budget-buddy/src/components/dashboard <br/>
+>frontend/budget-buddy/src/components/expenses <br/>
+>frontend/budget-buddy/src/components/form <br/>
+>frontend/budget-buddy/src/components/form2 <br/>
+>frontend/budget-buddy/src/components/graphs <br/>
+>frontend/budget-buddy/src/components/incomes <br/>
+>frontend/budget-buddy/src/components/logIn <br/>
+>frontend/budget-buddy/src/components/logOut <br/>
+>frontend/budget-buddy/src/components/navigation <br/>
+>frontend/budget-buddy/src/components/recentHistory <br/>
+>frontend/budget-buddy/src/components/signup <br/>
+>The publisher/provider/subject of the observer pattern is the pertenant data that needs observed. This includes {addIncome(function), getIncomes(function), incomes(array), deleteIncome(function), calcTotalIncome(function), addExpense(function), getExpenses(function), deleteExpense(function), calcTotalExpense(function), expenses(array), calcTotalBalance(function), recentTransactionHistory(array), signUp(function), error(string), getLoggedIn(function), setLoggedIn(function), logOut(function), getChildren(function), userChildren(list of objects), deleteChild(function), getUserInfo(function), userInfo(array), addChild(function), setError(function).}<br/>
+>This can be found within:<br/>
+>frontend/budget-buddy/src/context/mainContext.js <br/>
+
+> The factory within the factory design pattern is the component responsible for creating instances of objects based on certain criteria. This is best represented in our code, and project, as our database. This includes error-checking/criteria, data generation, and data deletion, which can be grabbed by mainContext for observer use. <br/>
+>This can be found within:<br>
+>backend/objectmodels
 
 Structure of the code within the web framework.
-> .
+> ![image](https://github.com/Thesaddestusername/Budget-Planner/assets/72892765/7b3a0d3a-0273-4fbc-b5b0-e442292a87a3)
 
 Deployment diagram regarding hardware configuration of the code. Indication the supported Web browser, the application/Web servers and the database solution.
-> .
+>![deploymentDiagram (1)](https://github.com/Thesaddestusername/Budget-Planner/assets/72892765/86632ced-bd02-4293-9082-4154549d0f0e)
 
 Table of Contents of the System Data
 > .
 
 ### Technical Documentation
 List of Programming Languages
-> JavaScript, C++, CSS, HTML
+> JavaScript, CSS, HTML
 
 List of reused algorithms and small programs with references
 > .
 
 List of software tools and environmets. Provide briefly their benefits specifically for your application.
-> -----backend-------- <br/>
-> Node.js <br/>
-> Express <br/>
-> Mongodb <br/>
-> dotenv <br/>
-> Mongoose <br/>
-> JWT <br/>
-> Postman <br/>
-> Validator <br/>
-> bcrypt <br/>
-> cookie-parser <br/>
-> nodemon <br/>
-> cors <br/>
------frontend-------- <br/>
+> -----backend-------- <br/><br/>
+> Node.js - Node.js is the backbone of the backend software for our project, making it vital to the opreation of the application. <br/><br/>
+> Express - Express is a helpful Node web framework that allows for the use of middleware functions. Express was particularly helpful for this application because middleware functions are a vital part of ensuring users are properly authenticated before they can access sensitive information. <br/><br/>
+> Mongodb - Mongodb is described as a widely known and available document oriented database program, classifying as a NoSQL database. Mongo utilises JSON-link documents to store information, making it significantly easier to push and pull information from a web application. For that reason alone, Mongodb was a great fit for our application. <br/><br/>
+> dotenv - Dotenv is a node module that allows for the loading of environmental variables from a single .env file. This was beneficial to our application since we could store sensitive information such as Database connection information, JWT Token keys, and port numbers hidden from the public domain. <br/><br/>
+> Mongoose - Mongoose is a node extension that is designed to work in asyhcnronous environments for accessing and writing to a Mongodb database. Advantages include the asynchronous functionality, along with the integration with node for simpley database querying. <br/><br/>
+> JWT - JWT (JsonWebToken) is a node extension that is designed to generate a web token for user authentication. By generating a unique token for each user and storing it as a cookie, JWT allows our application to authenticate users via cookies. It's also important as a means for protecting the database from unauthorized requests, as the cookie is used to check is the user can query the database. <br/><br/>
+> Postman - Postman is a desktop application that is helpful for testing backed API's. While not used in our final product, Postman was monumental for building the backend and performing testing independently of the front-end to help isolate and better understand any issues while under development. <br/><br/>
+> Validator - Validator is a simple string verification extension for node. It is helpful for verifying information stored in a string, such as ensuring an email is of valid format. Validator was beneficial for our application since it allowed the verification of data before sending it off to the database. <br/><br/>
+> bcrypt - bcrypt is a node extension that was used for password hashing. To ensure that no data is leaked, user passwords are hashed with bcrypt before being stored to ensure better privacy and peace of mind for users. <br/><br/>
+> cookie-parser - Cookie-parser was used as a part of our application to parse through the user cookie for authentication purposes. <br/><br/>
+> nodemon - Nodemon is a tool that helps with the development of Node.js applications by restarting the application when a file change is detected. While not important for the final product of our application, nodemon was monumental for quickly applying changes to the backend without having to manually restart the node application. <br/><br/>
+> cors - Cors serves as a tool for ensuring that requests are only sent by known hosts. This being installed on the backend, it only allows requests from the application to access the database. While not entirely helpful to the functionality of the application, it is an important security measure. <br/><br/>
+-----frontend-------- <br/><br/>
 > axios <br/>
 > chart.js <br/>
 > moment <br/>
@@ -143,11 +203,40 @@ List of software tools and environmets. Provide briefly their benefits specifica
 > web-vitals <br/>
 ### Acceptance Testing
 Correctness testing using four test cases only (sc of both inputs and outputs).
-> .
+> Correctness Test Case 1: Login<br/>
+> <img width="1128" alt="Screenshot 2024-03-27 175410" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/8fbef8d3-2244-4d60-94c6-645703ce9945"><br/>
+> <img width="1128" alt="Screenshot 2024-03-27 175422" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/e5ca5ea1-04ae-46b4-9340-0dc68504ae4a"><br/>
+> Correctness Test Case 2: Add Income<br/>
+> <img width="1128" alt="Screenshot 2024-03-27 175501" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/f7da5013-f77a-47ff-b98f-c0288c81003d"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 175510" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/71872a56-7be7-477e-9b19-84ab7a432d4d"><br/>
+>Correctness Test Case 3: Add Expense<br/>
+><img width="1128" alt="Screenshot 2024-03-27 175537" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/e281451d-651b-43ba-a247-324de8232ed0"><br/>
+><img width="1126" alt="Screenshot 2024-03-27 175545" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/113d754d-cc4a-4624-897d-13bce0a6ed0d"><br/>
+>Correctness Test Case 4: Add Child<br/>
+><img width="1128" alt="Screenshot 2024-03-27 175628" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/b6489b5d-d954-4222-947d-f66ffbcd8643"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 175636" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/557027cf-edae-48e0-a5ab-ee7711abc58b"><br/>
 
 Robustness testing
-> .
+> Robustness Test Case 1: Failed Log In - Incorrect Email or Password<br/>
+><img width="1128" alt="Screenshot 2024-03-27 180239" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/ed0c9091-3e78-4fb1-9175-17f381a00e3e"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 180246" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/c7bb9492-a066-4651-b1a5-4478a4dec087"><br/>
+>Robustness Test Case 2: Failed Sign Up - Passwords Do Not Match<br/>
+> <img width="1128" alt="Screenshot 2024-03-27 180457" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/159c3f41-861d-41ae-9a41-a17e51aed1a4"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 180437" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/112012a7-870b-4a16-b3ac-374dfdafb919"><br/>
+>Robustness Test Case 3: Failed Sign up - Invalid Email and/or Password
+> <img width="1128" alt="Screenshot 2024-03-27 180320" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/a8914396-354f-4003-bdad-19cf25b0eb88"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 180401" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/72fb2ee6-792f-489f-a8aa-a26784d4447e"><br/>
+Robustness Test Case 4: Add Child - Cannot Add Yourself As A Child<br/>
+><img width="1128" alt="Screenshot 2024-03-27 180957" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/af6733ec-5e8e-4461-a896-6d7635924d10"><br/>
 
 Time-efficiency testing of two functions only. Indicate the method you used to measure the time. 
-> .
+> Function 1: Adding an Income<br/>
+><img width="1128" alt="Screenshot 2024-03-27 175501" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/1c4c020b-520c-4097-ad28-c5aee2fc49f3"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 175510" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/4ea55fc5-0cbe-4960-8dcd-beaf8d377772"><br/>
+> Function 2: Adding a Child<br/>
+><img width="1128" alt="Screenshot 2024-03-27 175628" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/15a5eec6-7c2e-400b-96ba-573cc0523e8c"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 175636" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/f697c946-1ad9-4d4e-8e21-8b5043f3ed12"><br/>
+
+
+
 

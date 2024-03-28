@@ -54,14 +54,26 @@ exports.getIncome = async (req, res) => {
         // Getting incomes for child 1
         if (res.locals.user.child1){
             const child1Incomes = await IncomeSchema.find({belongsto: res.locals.user.child1}).sort({createdAt: -1})
-            if (child1Incomes.length > 0)
+            if (child1Incomes.length > 0){
+                // Adding the child's name to the income to the label field
+                child1Incomes.forEach((income) => {
+                    // Add the child's name to the income to the label field
+                    income.label = income.label + " (Child 1)"
+                })
                 incomes = incomes.concat(child1Incomes) // If there are incomes for child 1, add them to the incomes array
+            }
         }
         // Getting incomes for child 2
         if (res.locals.user.child2){
             const child2Incomes = await IncomeSchema.find({belongsto: res.locals.user.child2}).sort({createdAt: -1})
-            if (child2Incomes.length > 0)
+            if (child2Incomes.length > 0){
+                // Adding the child's name to the income to the label field
+                child2Incomes.forEach((income) => {
+                    // Add the child's name to the income to the label field
+                    income.label = income.label + " (Child 2)"
+                })
                 incomes = incomes.concat(child2Incomes) // If there are incomes for child 2, add them to the incomes array
+            }
         }
         // Return the incomes
         res.status(200).json(incomes)       
