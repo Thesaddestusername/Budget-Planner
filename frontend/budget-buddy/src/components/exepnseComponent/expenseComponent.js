@@ -4,11 +4,11 @@ import styled from "styled-components";
 import Button from "../button/button";
 import { DateFormatting } from "../../utils/dateFormatting";
 
-/// MAKE SURE TO IMNPORT AND ADD ICONS
-
-
+// Is the container/component for expenses that have been added. Takes in parameters for information that wil be displayed EXCEPT for ID which will be useful when it needs to be deleted;
+// IMPORTANT this also takes in a deleteMe parameter ment to be a function that facilitates self delete;
 function ExpenseComponent({id, label, amount, date, type, notes, deleteMe, pipColor}){
 
+    // getter that displays proper icon based on the type passed in;
     const getCategoryIcon =() =>{
         if(type === 'fast food'){
             return fastfoodSign;
@@ -39,6 +39,7 @@ function ExpenseComponent({id, label, amount, date, type, notes, deleteMe, pipCo
         }
     }
 
+    //HTML for what will be rendered referencing many parameters of the expense component to display correct info;
     return(
         <StyledExpense pip={pipColor}>
             <div className="icon">
@@ -62,6 +63,7 @@ function ExpenseComponent({id, label, amount, date, type, notes, deleteMe, pipCo
     )
 }
 
+// Created an expense component styled div;
 const StyledExpense = styled.div`
 border: 3px solid #FF928B;
     border-radius: 25px;

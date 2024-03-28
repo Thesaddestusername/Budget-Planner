@@ -1,6 +1,7 @@
 import { childSign, downArrowSign, logOutSign, upArrowSign } from "./icons";
 import { chart } from "./icons";
 
+// List of dropdown items and their icons for the navigation of the parent;
 export const dropDownItems = [
     {
         id: 1,
