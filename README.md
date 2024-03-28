@@ -14,18 +14,24 @@
 >     - 2.1 User Roles
 >         - Parent
 >         - Child
->     - 2.2 Functionality for Parent
->         - Input income streams.
->         - Input expected expenses.
->         - Add accounts (eg. Chequing, savings, credit cards, loans, retirement savings).
->         - Create savings/debt reduction goals.
->         - Synch with partners accounts and share common expenses.
->         - Track and compare actual spending to spending goals, and highlight differences.
->         - Oversee financial information of entire family.
->     - 2.3 Functionality for Child
->         - Input income streams.
->         - Input expenses.
->         - Add savings goals.
+>     - 2.2 Functionality for Parent<br/>
+>       Sign up: Parents should be able to sign up with their email.<br/>
+>       Log in: Parents should be able to login using the same credentials used to sign up.<br/>
+>       Add Child: Parents should be able to add children to their accounts. <br/>
+>       Viewing Transactions: Parents should be able to view their transactions. <br/>
+>       Viewing Childs transactions: Parents should be able to view the transactions of the children they have added included in all transactions. <br/>
+>       Adding income: Parents should be able to add their own incomes. <br/>
+>       Deleteing income: Parents should be able to delete incomes from themselves and their children. <br/>
+>       Adding expenses: Parents should be able to add their own expenses. <br/>
+>       Deleting expenses: Parens should be able to delete expenses from themselves and their children. <br/>
+>     - 2.3 Functionality for Child<br/>
+>     Sign up: children should be able to sign up with their email.<br/>
+>     Log in: children should be able to login using the same credentials used to sign up.<br/>
+>     Viewing Transactions: Children should be able to view ONLY THEIR OWN transactions. <br/>
+>     Adding income: Children should be able to add their own incomes. <br/>
+>     Deleteing income: Children should be able to delete ONLY THEIR OWN incomes. <br/>
+>     Adding expenses: Children should be able to add their own expenses. <br/>
+>     Deleting expenses: Children should be able to delete ONLY THEIR OWN expenses. <br/>
 >     - 2.4 Qualities Requirements
 >         - **User-Friendliness:**  displays information in an aestetically pleasing manner, highlighting important information, easy and intuitive navigation through the application and its functions.
 >         - **Customizability:**  provide a well-rounded template for the user to tailor the system to their needs.
