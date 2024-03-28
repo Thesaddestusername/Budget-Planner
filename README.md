@@ -230,5 +230,13 @@ Robustness Test Case 4: Add Child - Cannot Add Yourself As A Child<br/>
 ><img width="1128" alt="Screenshot 2024-03-27 180957" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/af6733ec-5e8e-4461-a896-6d7635924d10"><br/>
 
 Time-efficiency testing of two functions only. Indicate the method you used to measure the time. 
-> .
+> Function 1: Adding an Income<br/>
+><img width="1128" alt="Screenshot 2024-03-27 175501" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/1c4c020b-520c-4097-ad28-c5aee2fc49f3"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 175510" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/4ea55fc5-0cbe-4960-8dcd-beaf8d377772"><br/>
+> Function 2: Adding a Child<br/>
+><img width="1128" alt="Screenshot 2024-03-27 175628" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/15a5eec6-7c2e-400b-96ba-573cc0523e8c"><br/>
+><img width="1128" alt="Screenshot 2024-03-27 175636" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/f697c946-1ad9-4d4e-8e21-8b5043f3ed12"><br/>
+
+
+
 
