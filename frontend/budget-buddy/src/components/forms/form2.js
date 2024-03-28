@@ -3,12 +3,15 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { GetMainContext } from "../../context/mainContext";
 import styled from "styled-components";
-import { MainTheme } from "../../styles/MainTheme";
 import Button from "../button/button";
 import { addSign } from "../../utils/icons";
 
+// Displays the expense form on the incomes page; It is the portion of the page that gets expense input;
 function Form2(){
+    // gets all required functions from the mainProvider;
     const {addExpense, getExpenses} = GetMainContext();
+
+    // Uses the useState hooks to keep track of an input state that will store all of the info required to add an expense;
     const[inputState, setInputState] = useState({
         label: '',
         amount: '',
@@ -17,8 +20,11 @@ function Form2(){
         notes: '',
     })
 
+    // Specifies inputState fields;
     const {label, amount, date, type, notes} = inputState;
 
+    
+    // Handles the final submission of the expense after the button component has been pressed;   
     const handleSubmit = e =>{
         e.preventDefault();
         addExpense(inputState);
@@ -31,11 +37,13 @@ function Form2(){
             notes: '',
         })
     }
+
+    // Handle input is called when the fields onChange is triggered. This sets the input from the input field into a flattened input state using the setInputState hook;
     const handleInput = name => e =>{
         setInputState({...inputState, [name]: e.target.value})
     }
 
-
+    // HTML that renders form on incomes page; there are pseudo validaiton on the input fields that require them to have some form of input as well as some min max criteria for the number;
     return(
         <StyledFrm2 onSubmit={handleSubmit}>
             <div className="inputEffect">
@@ -50,6 +58,7 @@ function Form2(){
             </div>
             <div className="inputEffect">
                 <div className="selectInputEffect">
+                    {/* this is a dropdown menu for the types of expenses you can choose; IMPORTANT: the values must be the same in expense component to properly display correct icon; */}
                     <select required value={type} name="type" id="type" placeholder="Choose Type" onChange={handleInput('type')}>
                         <option value="" disabled>Choose Type</option>
                         <option value="fast food">Fast Food</option>
@@ -74,6 +83,7 @@ function Form2(){
     )
 }
 
+// Created a styled form component;
 const StyledFrm2 = styled.form`
     display: flex;
     flex-direction: column;

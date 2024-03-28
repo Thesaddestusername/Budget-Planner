@@ -4,11 +4,12 @@ import styled from "styled-components";
 import Button from "../button/button";
 import { DateFormatting } from "../../utils/dateFormatting";
 
-/// MAKE SURE TO IMNPORT AND ADD ICONS
 
-
+// Is the container/component for incomes that have been added. Takes in parameters for information that wil be displayed EXCEPT for ID which will be useful when it needs to be deleted;
+// IMPORTANT this also takes in a deleteMe parameter ment to be a function that facilitates self delete;
 function IncomeComponent({id, label, amount, date, type, notes, deleteMe, pipColor}){
 
+    // getter that displays proper icon based on the type passed in;
     const getCategoryIcon =() =>{
         if(type === 'salary'){
             return salarySign;
@@ -42,6 +43,7 @@ function IncomeComponent({id, label, amount, date, type, notes, deleteMe, pipCol
         }
     }
 
+    //HTML for what will be rendered referencing many parameters of the income component to display correct info;
     return(
         <StyledIncome pip={pipColor}>
             <div className="icon">
@@ -65,6 +67,7 @@ function IncomeComponent({id, label, amount, date, type, notes, deleteMe, pipCol
     )
 }
 
+// Created an expense component styled div;
 const StyledIncome = styled.div`
     border: 3px solid #CDEAC0;
     border-radius: 25px;

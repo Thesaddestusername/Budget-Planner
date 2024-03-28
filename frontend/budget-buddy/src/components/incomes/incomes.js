@@ -5,9 +5,13 @@ import { GetMainContext } from "../../context/mainContext";
 import IncomeComponent from "../incomeComponent/incomeComponent";
 import Form from "../forms/form";
 
+//Incomes is the page that combines form and the income component to make a cohesive display;
 function Incomes(){
+    // gets all required functions and data arrays from the mainProvider;
     const {incomes, getIncomes, deleteIncome, calcTotalIncome} = GetMainContext()
+    //gets and refreshed incomes and expenses on render;
     useEffect(() =>{getIncomes()}, [])
+    //HTML to render expense page; As you can see it includes our form2 component as well as many expense components;
     return(
         <StyledIncomes>
             <InnerLayout>
@@ -20,6 +24,7 @@ function Incomes(){
                         <Form/>
                     </div>
                     <div className="incomes">
+                        {/* maps the expenses array we receive from the provider and destructures them so we can display their fields in the expense component */}
                         {incomes.map((income => {
                             const{_id, label, amount, date, type,  notes} = income;
                             return<IncomeComponent key={_id} id={_id} label={label} amount={amount} date={date} type={type} notes={notes} pipColor="green" deleteMe={deleteIncome}/>
@@ -31,6 +36,7 @@ function Incomes(){
     )
 }
 
+//Created and incomes page styled div;
 const StyledIncomes= styled.div`
     display: flex;
     overflow: auto;

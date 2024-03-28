@@ -7,22 +7,31 @@ import ChildComponent from "../childComponent/childComponent";
 import { newChildSign } from "../../utils/icons";
 import { InnerLayout } from "../../styles/pageLayouts";
 
+// Is the page that will allow the user to add children to an account if they are not children themselves;
 function AddMyChild(){
+    // gets all required functions and data arrays from the mainProvider;
     const {getChildren, userChildren, deleteChild, addChild, error, userInfo, getUserInfo, setError} = GetMainContext()
+
+    // Gets children, user info, and also set error to an empty string on load;
     useEffect(() =>{getChildren(); getUserInfo(); setError('')}, [])
 
+    // Uses the useState hooks to keep track of an input state that will store all of the info required to add a child;
     const[inputState, setInputState] = useState({
         email: '',
         password: ''
     })
-
+    // Specifies inputState fields;
     const {email, password} = inputState;
 
+    // Handles the final submission of the addChild data when my button component is pressed. Does some error checking and then adds the child if it can;   
     const handleSubmit = async e =>{
+        // prevents default submission event
         e.preventDefault();
+        // Checks if the user is trying to add himself;
         if(userInfo.email === inputState.email.toLowerCase()){
             setError("You cannot add yourself as a child");
         }
+        // Checks if child 1 exists and is trying to be added again;
         else if(userChildren.child1){
             if(inputState.email.toLowerCase() === userChildren.child1.email){
                 setError("This child is already added");
@@ -36,6 +45,7 @@ function AddMyChild(){
                 })
             }
         }
+        // Checks if child 2 exists and is trying to be added again;
         else if(userChildren.child2){
             if(inputState.email.toLowerCase() === userChildren.child2.email){
                 setError("This child is already added");
@@ -49,6 +59,7 @@ function AddMyChild(){
                 })
             }
         }
+        // Otherwise the child is added;
         else{
             addChild(inputState);
             setError('');
@@ -58,16 +69,20 @@ function AddMyChild(){
             })
         }
     }
+    
+    // Handle input is called when the fields onChange is triggered. This sets the input from the input field into a flattened input state using the setInputState hook;
     const handleInput = name => e =>{
         setInputState({...inputState, [name]: e.target.value})
     }
 
     //Should have made a addChildform and add that along with the child component to a addChildMainPage, but this lazy way works;
+    // HTML that includes a user made button component as well as child components; It is what will be displayed/rendered;
     return(
         <div>
         <InnerLayout>
             <StyledAddChild onSubmit={handleSubmit}>
                 <h1 className="AddChild">Add Child</h1>
+                    {/* displays error being passed in from main context; */}
                     <h2 style={{color: 'red'}}>{error}</h2>
                     <div className="addingField">
                         <div className="inputEffect">
@@ -86,6 +101,7 @@ function AddMyChild(){
         <StyledChildList>
             <InnerLayout>
                 <div className="childHistory">
+                    {/* Displays the child component if it exists and changes the color and '-' or '+' depending on if it is an income or expense; */}
                     <h2 classname="AddChild">My Children</h2>
                     <div className="child">
                         {(userChildren.child1) ? <ChildComponent key={userChildren.child1._id} id={userChildren.child1._id} email={userChildren.child1.email} label="Child 1:" pipColor="#ffd93d" deleteMe={deleteChild}/> : ''}
@@ -100,6 +116,7 @@ function AddMyChild(){
     )
 }
 
+// created a styled component for the addChild page;
 const StyledAddChild = styled.form`
     display: flex;
     flex-direction: column;
