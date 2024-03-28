@@ -205,17 +205,17 @@ List of software tools and environmets. Provide briefly their benefits specifica
 > cookie-parser - Cookie-parser was used as a part of our application to parse through the user cookie for authentication purposes. <br/><br/>
 > nodemon - Nodemon is a tool that helps with the development of Node.js applications by restarting the application when a file change is detected. While not important for the final product of our application, nodemon was monumental for quickly applying changes to the backend without having to manually restart the node application. <br/><br/>
 > cors - Cors serves as a tool for ensuring that requests are only sent by known hosts. This being installed on the backend, it only allows requests from the application to access the database. While not entirely helpful to the functionality of the application, it is an important security measure. <br/><br/>
------frontend-------- <br/><br/>
-> axios <br/>
-> chart.js <br/>
-> moment <br/>
-> react <br/>
-> react-charsjs-2 <br/>
-> react-datepicker <br/>
-> react-dom <br/>
-> react-scripts <br/>
-> styled-components <br/>
-> web-vitals <br/>
+-----frontend-------- <br/>
+> axios - Axios makes communicating with the server via .post, .get, and other commands simple for the frontend.<br/><br/>
+> chart.js - Gives the frontend many simple to use tools to display many different kinds of graphs.<br/><br/>
+> moment - Moment was only used to create a global date formatting component.<br/><br/>
+> React - React makes frotend development easy to manage with is component based architecture and focus on an easy to read type script. <br/><br/>
+> react-charsjs-2 - Basically an add on to chartjs for more features and graphs.<br/><br/>
+> react-datepicker - was one of the simpliest tools to add datepickers to our forms.<br/><br/>
+> react-dom - The react-dom dependency is responsible for rendering React components into the DOM (Document Object Model) and provides additional functionality for working with the DOM in React applications, such as event handling and DOM manipulation <br/><br/>
+> react-scripts - The react-scripts dependency is a set of scripts and configuration used by Create React App to streamline the development process it allows for  pre-configured build setup, hot reloading, etc.<br/><br/>
+> styled-components The styled-components dependency allows you to write CSS in javascript. This lets you style React components with scoped styles that are easier to read and that can dynamically change based on props. <br/><br/>
+> web-vitals - The web-vitals dependency provides a way to measure and track essential user-centric performance metrics, such as Core Web Vitals (LCP, FID, CLS), helping us monitor and improve the overall performance of our application. Even during debugging we did not take full advantage of this dependancy. <br/><br/>
 ### Acceptance Testing
 Correctness testing using four test cases only (sc of both inputs and outputs).
 > Correctness Test Case 1: Login<br/>
