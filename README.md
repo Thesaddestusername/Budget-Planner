@@ -245,6 +245,7 @@ Robustness Test Case 4: Add Child - Cannot Add Yourself As A Child<br/>
 ><img width="1128" alt="Screenshot 2024-03-27 191503" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/c7dbb5d8-1389-4b82-87d4-f7ffec683fd2"><br/>
 
 Time-efficiency testing of two functions only. Indicate the method you used to measure the time. 
+> We used the postman event timer to compare time efficiency between 2 function: Adding an income vs adding a child. The income adds much faster at 143.67ms while the add child is 367.57 <br/>
 > Function 1: Adding an Income<br/>
 ><img width="1128" alt="Screenshot 2024-03-27 190637" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/1108691c-e584-4071-8597-91fc193ff2f9"><br/>
 ><img width="1128" alt="Screenshot 2024-03-27 190646" src="https://github.com/Thesaddestusername/Budget-Planner/assets/158781323/422ecaa2-a521-4e72-af4e-cafa54e70ec2"><br/>
