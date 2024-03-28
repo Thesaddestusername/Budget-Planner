@@ -162,10 +162,10 @@ Submit the entire code for observer and factory patterns.
 
 Structure of the code within the web framework.
 > ![image](https://github.com/Thesaddestusername/Budget-Planner/assets/72892765/7b3a0d3a-0273-4fbc-b5b0-e442292a87a3)
-.
 
 Deployment diagram regarding hardware configuration of the code. Indication the supported Web browser, the application/Web servers and the database solution.
-> .
+> ![deploymentDiagram](https://github.com/Thesaddestusername/Budget-Planner/assets/72892765/41c29936-4d6a-41ee-b0fb-95d3cdefc444)
+
 
 Table of Contents of the System Data
 > .
