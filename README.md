@@ -132,10 +132,19 @@ Provide the MVC architecture according to the selected Web framework. Also, desc
 > A characteristic that makes React so useful is that The CONTROLLER aspect can also be handle by user defined components. To explain, the components themselves can contain the logic that we need to handle user input and changing states. However, we also use specific controllers, middleware, and axios for our backend queries.
 
 Observer and Factory design patterns. Explain in detail the usability of these two patterns for your specific application. Include the complete class diagram for each pattern. For each class, provide the data types of the attributes and prototypes of the methods. 
-> Both of the Observer and Factory pattern are very usable in our application. For example, the observer pattern can be used to pass around data from one provider so our components are as loosely coupled as possible. Our mainContext acts as the provider/publisher/subject in the observer pattern. It passes useful information from the database like income, expense, and user info, as well as states like isLoggedIn to our UI components. These UI components acts as the observer and are loosely coupled as they do not have to rely on each other, just react based on the information they receive from mainContext. <br/> The factory pattern is also extremely useful as We can have cohesive and accurate criteria/data-checking for our information, as well as provide a structured way to create/delete data for our observers. The database is responsible for creating instances based on certain criteria which can be passed to mainContext for observer use. 
+> Both of the Observer and Factory pattern are very usable in our application. For example, the observer pattern can be used to pass around data from one provider so our components are as loosely coupled as possible. Our mainContext acts as the provider/publisher/subject in the observer pattern. It passes useful information from the database like income, expense, and user info, as well as states like isLoggedIn to our UI components. These UI components acts as the observer and are loosely coupled as they do not have to rely on each other, just react based on the information they receive from mainContext. <br/> The factory pattern is also extremely useful as We can have cohesive and accurate criteria/data-checking for our information, as well as provide a structured way to create/delete data for our observers. The database is responsible for creating instances based on certain criteria which can be passed to mainContext for observer use.
+
+observer pattern
+
+> ![firefox_G6hGu5R4Lp](https://github.com/Thesaddestusername/Budget-Planner/assets/30159056/dbcf998d-0843-4f09-8339-6f57a94b7636)
+
+factory pattern
+
+> ![firefox_Rj4sXQbKqr](https://github.com/Thesaddestusername/Budget-Planner/assets/30159056/016069df-51a8-4d9c-adcf-d772fe3edf5b)
 
 Provide the class diagram of the whole system by incorporating the two design patterns. 
-> .
+
+> ![firefox_UcOLexB1Da](https://github.com/Thesaddestusername/Budget-Planner/assets/30159056/9365c635-03e5-45c3-8d3d-9227f708435a)
 
 ### Software Construction
 Submit the entire code for observer and factory patterns.
