@@ -76,7 +76,7 @@ function AddMyChild(){
                         <div className="inputEffect">
                             <input type="password" required value={password} name={'password'} placeholder="Their Password" onChange={handleInput('password')}/>
                         </div>
-                        <div>
+                        <div className="button">
                             <Button name={" Add This Account's Information"} icon={newChildSign} buttonPad={'1rem'} buttonRadius={'10px'} buttonBackground={'white'} color={'var(--primaryColor)'} iColor={'white'}/>
                         </div>
                         
@@ -85,9 +85,14 @@ function AddMyChild(){
         </InnerLayout>
         <StyledChildList>
             <InnerLayout>
-                <div>
-                    {(userChildren.child1) ? <ChildComponent key={userChildren.child1._id} id={userChildren.child1._id} email={userChildren.child1.email} label="Child 1:" pipColor="#ffd93d" deleteMe={deleteChild}/> : ''}
-                    {(userChildren.child2) ? <ChildComponent key={userChildren.child2._id} id={userChildren.child2._id} email={userChildren.child2.email} label="Child 2:" pipColor="#ffd93d" deleteMe={deleteChild}/> : ''}
+                <div className="childHistory">
+                    <h2 classname="AddChild">My Children</h2>
+                    <div className="child">
+                        {(userChildren.child1) ? <ChildComponent key={userChildren.child1._id} id={userChildren.child1._id} email={userChildren.child1.email} label="Child 1:" pipColor="#ffd93d" deleteMe={deleteChild}/> : ''}
+                    </div>
+                    <div className="child">
+                        {(userChildren.child2) ? <ChildComponent key={userChildren.child2._id} id={userChildren.child2._id} email={userChildren.child2.email} label="Child 2:" pipColor="#ffd93d" deleteMe={deleteChild}/> : ''}
+                    </div>
                 </div>
             </InnerLayout>
         </StyledChildList>
@@ -115,14 +120,31 @@ const StyledAddChild = styled.form`
             color: rgba(71,41,120, 0.8);
         }
     }
+    .AddChild {
+        text-align: center;
+    }
+    .button {
+        width: 40%;
+        margin: 8px 0;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
     .inputEffect{
         input{
-            width: 100%;
+            width: 60%;
+            margin: 8px 0;
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
         select{
             color: rgba(34,34,96, 1)
         }
     }
+
     .confirmButton{
         button{
             &:hover{
@@ -133,6 +155,12 @@ const StyledAddChild = styled.form`
 `;
 
 const StyledChildList = styled.div`
+    .child {
+        display: inline-block;
+        padding: 1rem 1rem;
+        vertical-align: middle;
+    }
+        
 
 `;
 export default AddMyChild;

@@ -43,7 +43,7 @@ const StyledNav = styled.nav`
     }
     padding: 2rem 1.5rem;
     width: 300px;
-    height: 49dvw;
+    height: 52dvw;
     //background-color: rgba(135, 54, 170, 0.8);
     background-color: #A7C7E7;
     border: 2px solid #EFE9AE;
@@ -73,7 +73,15 @@ const StyledNav = styled.nav`
             position: relative;
         }
     }
-
+    .lowerNav {
+        font-size: 15px;
+        width: 250px;
+        position: absolute;
+        bottom: 30px;
+        text-align: left;
+        
+    
+    }
     .current{
         //color: rgba(255,217,61, 0.9) !important;
         color: white;
